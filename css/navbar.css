@@ -130,7 +130,8 @@ body {
   background-color: var(--body_background);
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  user-select: none; /* Dezactivează selecția textului */
+  user-select: none;
+  /* Dezactivează selecția textului */
   transition: all 0.3s;
 }
 
@@ -373,29 +374,29 @@ li {
   width: 80%;
 }
 
-#checkbox2:checked + .toggle2 .bars {
+#checkbox2:checked+.toggle2 .bars {
   position: absolute;
   transition-duration: 0.5s;
 }
 
-#checkbox2:checked + .toggle2 #bar5 {
+#checkbox2:checked+.toggle2 #bar5 {
   transform: scaleX(0);
   transition-duration: 0.5s;
 }
 
-#checkbox2:checked + .toggle2 #bar4 {
+#checkbox2:checked+.toggle2 #bar4 {
   width: 100%;
   transform: rotate(45deg);
   transition-duration: 0.5s;
 }
 
-#checkbox2:checked + .toggle2 #bar6 {
+#checkbox2:checked+.toggle2 #bar6 {
   width: 100%;
   transform: rotate(-45deg);
   transition-duration: 0.5s;
 }
 
-#checkbox2:checked + .toggle2 {
+#checkbox2:checked+.toggle2 {
   transition-duration: 0.5s;
   transform: rotate(180deg);
 }
@@ -475,10 +476,8 @@ li {
 }
 
 .tracking-in-expand-fwd-bottom {
-  -webkit-animation: tracking-in-expand-fwd-bottom 2s
-    cubic-bezier(0.215, 0.61, 0.355, 1) 1s both;
-  animation: tracking-in-expand-fwd-bottom 2s
-    cubic-bezier(0.215, 0.61, 0.355, 1) 1s both;
+  -webkit-animation: tracking-in-expand-fwd-bottom 2s cubic-bezier(0.215, 0.61, 0.355, 1) 1s both;
+  animation: tracking-in-expand-fwd-bottom 2s cubic-bezier(0.215, 0.61, 0.355, 1) 1s both;
 }
 
 @keyframes tracking-in-expand-fwd-bottom {
@@ -516,25 +515,6 @@ a {
   text-decoration: none;
   color: var(--link_color);
   position: relative;
-}
-
-.line {
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 0.5rem;
-  background: var(--link_color); /* sau culoarea dorită pentru linie */
-  transform: scaleX(0);
-  transform-origin: bottom;
-  transition: transform 0.3s;
-}
-
-a:hover .line {
-  transform: scaleX(1);
-}
-
-
-.container:hover .line {
-  transform: scaleX(1);
 }
 
 .main_div {
@@ -623,4 +603,26 @@ a:hover .line {
 .li5 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.line>a {
+  position: relative;
+}
+
+.line>a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  margin: -5px 0;
+  background-color: white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.line>a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
 }

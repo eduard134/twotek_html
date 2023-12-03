@@ -57,21 +57,17 @@ function navbarContent() {
 
       <!-- Navigation links for PC -->
       <ul class="links" style="color: var(--link_color);">
-        <li class="le group  tracking-in-expand-fwd-bottom">
+        <li class="le group  tracking-in-expand-fwd-bottom line">
           <a href="#" class="cursor-pointer" style="color: var(--link_color)">Performanță</a>
-          <div class="line"></div>
         </li>
-        <li class="le group  tracking-in-expand-fwd-bottom">
+        <li class="le group  tracking-in-expand-fwd-bottom line">
           <a href="#" class="cursor-pointer" style="color: var(--link_color)">Echipa</a>
-          <div class="line"></div>
         </li>
-        <li class="le group  tracking-in-expand-fwd-bottom">
+        <li class="le group  tracking-in-expand-fwd-bottom line">
           <a href="#" class="cursor-pointer" style="color: var(--link_color)">Proiecte</a>
-          <div class="line"></div>
         </li>
-        <li class="le group  tracking-in-expand-fwd-bottom">
+        <li class="le group  tracking-in-expand-fwd-bottom line">
           <a href="#" class="cursor-pointer" style="color: var(--link_color)">Feedback</a>
-          <div class="line"></div>
         </li>
       </ul>
 
