@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  },
+  "name": "twotek_html1",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./css/navbar.css -o ./dist/output-navbar.css --watch && npx tailwindcss -i ./css/info.css -o ./dist/output-info.css --watch && npx tailwindcss -i ./css/loading.css -o ./dist/output-loading.css --watch  && npx tailwindcss -i ./css/carousel.css -o ./dist/output-carousel.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

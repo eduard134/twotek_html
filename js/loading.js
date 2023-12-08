@@ -18,6 +18,15 @@ const toggleTheme = () => {
     }
 };
 
+const delayLoading = () => {
+    setTimeout(() => {
+        // Adaugă aici codul pentru a înlocui pagina de încărcare cu conținutul
+        document.getElementById("loading").style.display = "none"; // Ascunde pagina de încărcare
+        // Adaugă codul pentru a afișa conținutul real al paginii
+        // Exemplu: document.getElementById("content").style.display = "block";
+    }, 2000); // 2000 milisecunde = 2 secunde
+};
+
 // Loading component
 const Loading = () => {
     const hasLocalStorage = typeof localStorage !== "undefined";
@@ -39,11 +48,12 @@ const Loading = () => {
             percentage += 1;
         } else {
             clearInterval(interval);
+            delayLoading();
         }
     }, 30);
 
     return `
-        <div class=" first ${hasLocalStorage ? 'dark-bg' : 'light-bg'}" style="background: var(--loading_bg)">
+        <div class=" flex flex-col justify-center items-center min-h-screen ${hasLocalStorage ? 'dark-bg' : 'light-bg'}" style="background: var(--loading_bg)">
             <div class="blobs">
                 <div class="blob-center" style="background: var(--loading_blob)"></div>
                 <div class="blob" style="background: var(--loading_blob)"></div>
@@ -62,7 +72,7 @@ const Loading = () => {
                     </filter>
                 </defs>
             </svg>
-            <h1 class="text fade-in1" style="color: var(--loading_text)">
+            <h1 class="text-lg mt-10 fade-in1" style="color: var(--loading_text)">
                 Developed by <span class="text-2xl font-bold">2Tek</span>
             </h1>
         </div>

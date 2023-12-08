@@ -318,19 +318,6 @@ body {
   }
 }
 
-.first{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.text{
-    font: 1.125rem;
-    margin-top: 1vh;
-}
-
 .fade-in1 {
     animation: fadeIn 2s ease-in-out;
     /* Adjust the duration and easing as needed */
