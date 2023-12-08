@@ -59,12 +59,34 @@ function populateLogoSlider() {
       darkSrc: "images/apisudex-dark.png",
       link: "https://apisudex.store/",
     },
+
   ];
 
   const logoSlider = document.getElementById("logoSlider");
   const isDarkMode = document.body.classList.contains("dark-mode");
 
-  logoData.forEach((logo, index) => {
+  // Create initial slides
+  logoData.forEach(createAndAppendLogoSlide);
+
+  // Clone and append slides for infinite carousel
+  const initialSlides = document.querySelectorAll(".logo-slide");
+  initialSlides.forEach((slide) => {
+    const clone = slide.cloneNode(true);
+    logoSlider.appendChild(clone);
+  });
+
+  // Set up event listeners for mouse enter and mouse leave
+  document.querySelectorAll(".logo-slide").forEach((slide) => {
+    slide.addEventListener("mouseenter", handleMouseEnter);
+    slide.addEventListener("mouseleave", handleMouseLeave);
+  });
+
+  // Set up animation
+  const animationDuration = 16; // Adjust the duration as needed
+  logoSlider.style.animation = `scroll ${animationDuration}s linear infinite`;
+  logoSlider.addEventListener("animationiteration", handleAnimationIteration);
+
+  function createAndAppendLogoSlide(logo, index) {
     const logoSlide = document.createElement("div");
     logoSlide.className = "logo-slide";
 
@@ -80,11 +102,7 @@ function populateLogoSlider() {
     logoLink.appendChild(logoImage);
     logoSlide.appendChild(logoLink);
     logoSlider.appendChild(logoSlide);
-
-    // Add event listeners for mouse enter and mouse leave to pause and resume the animation
-    logoSlide.addEventListener("mouseenter", handleMouseEnter);
-    logoSlide.addEventListener("mouseleave", handleMouseLeave);
-  });
+  }
 }
 
 function handleMouseEnter() {
@@ -95,12 +113,16 @@ function handleMouseLeave() {
   setIsAnimationPaused(false);
 }
 
+function handleAnimationIteration() {
+  setIsAnimationPaused(false);
+}
+
 let isAnimationPaused = false;
 
 function setIsAnimationPaused(value) {
   isAnimationPaused = value;
   document.querySelectorAll(".logo-slider").forEach((slider) => {
-    slider.classList.toggle("paused", isAnimationPaused);
+    slider.style.animationPlayState = isAnimationPaused ? "paused" : "running";
   });
 }
 
