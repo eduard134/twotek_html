@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "main": "tailwind.config.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./css/navbar.css -o ./dist/output-navbar.css --watch && npx tailwindcss -i ./css/info.css -o ./dist/output-info.css --watch && npx tailwindcss -i ./css/loading.css -o ./dist/output-loading.css --watch  && npx tailwindcss -i ./css/carousel.css -o ./dist/output-carousel.css --watch"
+    "build": "npx tailwindcss -i ./css/navbar.css -o ./dist/output-navbar.css --watch && npx tailwindcss -i ./css/info.css -o ./dist/output-info.css --watch && npx tailwindcss -i ./css/loading.css -o ./dist/output-loading.css --watch  && npx tailwindcss -i ./css/carousel.css -o ./dist/output-carousel.css --watch && npx tailwindcss -i ./css/paralax1.css -o ./dist/output-paralax1.css --watch && npx tailwindcss -i ./css/paralax2.css -o ./dist/output-paralax2.css --watch && npx tailwindcss -i ./css/echipa.css -o ./dist/output-echipa.css --watch && npx tailwindcss -i ./css/scrollup.css -o ./dist/output-scrollup.css --watch && npx tailwindcss -i ./css/imaginea.css -o ./dist/output-imaginea.css --watch"
   },
   "keywords": [],
   "author": "",

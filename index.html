@@ -9,8 +9,12 @@
     <link href="./css/navbar.css" rel="stylesheet" />
     <link href="./css/info.css" rel="stylesheet" />
     <link href="./css/loading.css" rel="stylesheet" />
-    <link href="./css/color.css" rel="stylesheet" />
     <link href="./css/carousel.css" rel="stylesheet" />
+    <link href="./css/paralax1.css" rel="stylesheet" />
+    <link href="./css/paralax2.css" rel="stylesheet" />
+    <link href="./css/echipa.css" rel="stylesheet" />
+    <link href="./css/scrollup.css" rel="stylesheet" />
+    <link href="./css/imaginea.css" rel="stylesheet" />
     <meta
       name="description"
       content="Obține un site care nu doar atrage atenția, ci și transformă vizitatorii în clienți fideli. Înălțăm standardele digitale, iar succesul tău este misiunea noastră!"
@@ -23,6 +27,19 @@
     <div id="loading"></div>
     <script src="./js/loading.js"></script>
 
+    <!--ScrollUp-->
+    <div id="scrollToTopContainer" class="scroll-to-top-container">
+      <div id="scrollButton" class="scroll-button">
+        <img
+          id="scrollImage"
+          class="md:w-[20px] md:h-[20px] w-[17.5px]"
+          src="./images/scroll.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <script src="./js/scrollup.js"></script>
+
     <!--NavBar-->
     <div id="navbar"></div>
     <script src="./js/navbar.js"></script>
@@ -31,9 +48,312 @@
     <div id="info"></div>
     <script src="./js/info.js"></script>
 
-      <!--Carousel-->
-      <div id="carousel"></div>
-      <script src="./js/carousel.js"></script>
+    <!--Carousel-->
+    <div id="carousel"></div>
+    <script src="./js/carousel.js"></script>
 
+    <!--Paralax1-->
+    <div id="paralax1"></div>
+    <script src="./js/paralax1.js"></script>
+
+    <!--Paralax2-->
+    <div class="mt-20 sm:mt-0 lg:mt-64 lg:mx-64 p-4 md:p-8 lg:p-0">
+      <h1
+        class="text-center text-2xl sm:text-5xl font-semibold slide-in-bck-top"
+        style="color: var(--carousel_h1)"
+      >
+        HowTitle1 <span class="text-[#008DFD]">HowTitle2</span> HowTitle3
+      </h1>
+      <p
+        class="text-center sm:text-2xl mb-10 sm:mb-20 sm:mt-7 px-2 mt-5 sm:leading-[35px] slide-in-bck-bottom"
+        style="color: var(--carousel_p)"
+      >
+        HowText
+      </p>
+    </div>
+    <div class="sm:flex sm:flex-wrap block justify-center">
+      <div
+        class="lg:w-[34%] w-[full] rounded-xl sm:p-4 element1 tilt-in-fwd-tl"
+        style="
+          background: linear-gradient(
+            120deg,
+            var(--carousel_gradient1),
+            var(--carousel_gradient2)
+          );
+        "
+      >
+        <div class="circle"></div>
+        <h1
+          class="sm:text-3xl text-2xl text-start font-bold pl-6 sm:pl-6 pt-6 sm:leading-tight"
+        >
+          HowBoxTitle1
+        </h1>
+        <p
+          class="sm:text-xl sm:mb-0 mb-2 p-6 sm:max-w-[700px] lg:max-w-full sm:p-6 sm:leading-normal"
+          style="color: var(--paralax_p)"
+        >
+          HowBoxText
+        </p>
+      </div>
+      <div
+        class="lg:w-[34%] w-[full] sm:mt-8 lg:mt-0 mt-8 lg:ml-20 rounded-xl sm:p-4 element2 tilt-in-fwd-tr"
+        style="
+          background: linear-gradient(
+            120deg,
+            var(--carousel_gradient1),
+            var(--carousel_gradient2)
+          );
+        "
+      >
+        <div class="circle1"></div>
+        <h1
+          class="sm:text-3xl text-2xl text-start font-bold pt-6 pl-6 sm:pl-6 sm:leading-tight"
+        >
+          HowBoxTitlev2
+        </h1>
+        <p
+          class="sm:text-xl sm:mb-0 mb-2 p-6 sm:p-6 sm:max-w-[700px] lg:max-w-full sm:leading-normal"
+          style="color: var(--paralax_p)"
+        >
+          HowBoxTextv2
+        </p>
+      </div>
+      <div
+        class="lg:w-[34%] h-[full] mt-8 sm:mt-8 lg:mt-10 rounded-xl p-4 element3 tilt-in-fwd-tl"
+        style="
+          background: linear-gradient(
+            120deg,
+            var(--carousel_gradient1),
+            var(--carousel_gradient2)
+          );
+        "
+      >
+        <div class="circle2"></div>
+        <h1
+          class="sm:text-3xl text-2xl text-start font-bold pt-3 pl-3 sm:pl-6 lg:pl-0 sm:leading-tight"
+        >
+          HowBoxTitlev3
+        </h1>
+        <p
+          class="sm:text-xl sm:mb-0 mb-2 p-3 sm:pl-6 sm:max-w-[700px] lg:max-w-full lg:pl-0 sm:leading-normal"
+          style="color: var(--paralax_p)"
+        >
+          HowBoxTextv3
+        </p>
+        <div
+          class="lg:w-[100vw] w-[23%] rounded-[50%] circle-shape sm:w-[7.5%] float-rigth text-center"
+        ></div>
+      </div>
+    </div>
+
+    <script src="./js/paralax2.js"></script>
+
+    <!--Echipa-->
+    <div
+      id="echipa"
+      class="flex flex-col lg:flex-row mt-24 sm:mt-44 justify-around items-center"
+    >
+      <div class="sm:max-w-lg mb-5 sm:mb-5 lg:mb-0">
+        <h1
+          class="sm:text-6xl text-center text-2xl lg:text-start font-bold mb-5 slide-in-blurred-left"
+          style="color: var(--carousel_h1)"
+        >
+          Echipa Title 1 <br class="hidden lg:inline-block" />
+          Echipa Title 2
+        </h1>
+        <p
+          class="sm:text-lg text-center px-3 lg:text-start slide-in-blurred-right"
+          style="color: var(--carousel_p)"
+        >
+          Echipa Text Content
+        </p>
+      </div>
+      <div class="flex justify-center items-center flex-col">
+        <div class="flex">
+          <div class="p-4 slide-in-elliptic-right-fwd">
+            <img
+              src="/images/danu.jpeg"
+              alt=""
+              class="rounded-[20px] w-[250px]"
+            />
+            <div id="curve" class="card">
+              <div class="footer">
+                <div class="connections">
+                  <div class="connection twitter">
+                    <a href="https://www.instagram.com/loghindan/" class="icon">
+                      <img
+                        src="/images/instagram.png"
+                        alt=""
+                        class="w-[10px] h-[10px] sm:w-[20px] sm:h-[20px] mt-[7.85px] ml-[7.25px]"
+                      />
+                    </a>
+                  </div>
+                  <div class="connection behance">
+                    <a href="https://github.com/admin090609" class="icon">
+                      <img
+                        src="/images/github.png"
+                        alt=""
+                        class="w-[12.5px] h-[12.5px] sm:w-[22.5px] sm:h-[22.5px] mt-[3.5px] ml-[6px]"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="name">Danu</div>
+                  <div class="job">Job Title 1</div>
+                </div>
+              </div>
+              <div class="card-blur"></div>
+            </div>
+          </div>
+          <div class="p-4 slide-in-elliptic-left-fwd">
+            <img
+              src="/images/eduard.jpeg"
+              alt=""
+              class="rounded-[20px] w-[250px]"
+            />
+            <div id="curve" class="card">
+              <div class="footer">
+                <div class="connections">
+                  <div class="connection twitter">
+                    <a href="https://www.instagram.com/i_edy_/" class="icon">
+                      <img
+                        src="/images/instagram.png"
+                        alt=""
+                        class="w-[10px] h-[10px] sm:w-[20px] sm:h-[20px] mt-[7.85px] ml-[7.25px]"
+                      />
+                    </a>
+                  </div>
+                  <div class="connection behance">
+                    <a href="https://github.com/eduard134" class="icon">
+                      <img
+                        src="/images/github.png"
+                        alt=""
+                        class="w-[12.5px] h-[12.5px] sm:w-[22.5px] sm:h-[22.5px] mt-[3.5px] ml-[6px]"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="name">Eduard</div>
+                  <div class="job">Job Title 2</div>
+                </div>
+              </div>
+              <div class="card-blur"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/echipa.js"></script>
+
+    <!-- Imaginea -->
+    <div class="mb-52 sm:mt-44 mt-8 sm:mb-0 flex justify-around">
+      <div class="lg:mt-16 mb-5 sm:mb-10 ">
+        <h1
+          id="h1Title"
+          class="sm:text-5xl text-3xl leading-tight text-center font-bold fade-in-right"
+          style="color: var(--carousel_p)"
+        >
+          Slider Title 1 <br />
+          Slider Title 2
+        </h1>
+      </div>
+      <div class="container fade-in-left">
+        <div id="slide">
+          <div
+            class="item border-t-gray-300 border-[1px]"
+            style="
+              background-image: url(/images/ad-display.png);
+              background-color: var(--cont_bg);
+            "
+          >
+            <div class="content">
+              <div class="name1 mb-3">Website AD</div>
+              <a
+                class="website mb-6"
+                href="https://adfitness.vercel.app/"
+                target="_blank"
+              >
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front text">Slider Button</span>
+              </a>
+            </div>
+          </div>
+          <div
+            class="item border-t-gray-300 border-[1px]"
+            style="
+              background-image: url(/images/apisudex-display.png);
+              background-color: var(--cont_bg);
+            "
+          >
+            <div class="content">
+              <div class="name1 mb-3">Website Apisudex</div>
+              <a
+                class="website mb-6"
+                href="https://apisudex.store/"
+                target="_blank"
+              >
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front text">Slider Button</span>
+              </a>
+            </div>
+          </div>
+          <div
+            class="item border-t-gray-300 border-[1px]"
+            style="
+              background-image: url(/images/buffy-display.png);
+              background-color: var(--cont_bg);
+            "
+          >
+            <div class="content">
+              <div class="name1 mb-3">Website Buffy</div>
+              <a
+                class="website mb-6"
+                href="https://admin090609.github.io/"
+                target="_blank"
+              >
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front text">Slider Button</span>
+              </a>
+            </div>
+          </div>
+          <div
+            class="item border-t-gray-300 border-[1px]"
+            style="
+              background-image: url(/images/sanduta-display.png);
+              background-color: var(--cont_bg);
+            "
+          >
+            <div class="content">
+              <div class="name1 mb-3">Website SA</div>
+              <a
+                class="website mb-6"
+                href="https://sandutart.vercel.app/"
+                target="_blank"
+              >
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front text">Slider Button</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button id="prev">
+            <span class="text-4xl">&#8249;</span>
+          </button>
+          <button id="next">
+            <span class="text-4xl">&#8250;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/imaginea.js"></script>
   </body>
 </html>
