@@ -1,48 +1,46 @@
-// Add event listeners for dark mode, light mode, and theme toggle
-const setDarkMode = () => {
+// Obiect global pentru funcțiile tematice
+if (typeof myThemeFunctions === 'undefined') {
+    window.myThemeFunctions = {};
+}
+
+// Adaugare functie setDarkMode la obiectul global
+myThemeFunctions.setDarkMode = () => {
     document.body.setAttribute("data-theme", "dark");
     localStorage.setItem("selectedTheme", "dark");
 };
 
-const setLightMode = () => {
+// Adaugare functie setLightMode la obiectul global
+myThemeFunctions.setLightMode = () => {
     document.body.setAttribute("data-theme", "light");
     localStorage.setItem("selectedTheme", "light");
 };
 
-const toggleTheme = () => {
+// Adaugare functie toggleTheme la obiectul global
+myThemeFunctions.toggleTheme = () => {
     const isDark = document.body.getAttribute("data-theme") === "dark";
     if (isDark) {
-        setLightMode();
+        myThemeFunctions.setLightMode();
     } else {
-        setDarkMode();
+        myThemeFunctions.setDarkMode();
     }
 };
 
-const delayLoading = () => {
-    setTimeout(() => {
-        // Adaugă aici codul pentru a înlocui pagina de încărcare cu conținutul
-        document.getElementById("loading").style.display = "none"; // Ascunde pagina de încărcare
-        // Adaugă codul pentru a afișa conținutul real al paginii
-        // Exemplu: document.getElementById("content").style.display = "block";
-    }, 2000); // 2000 milisecunde = 2 secunde
-};
-
-// Loading component
+// Functie pentru încărcarea componentei
 const Loading = () => {
     const hasLocalStorage = typeof localStorage !== "undefined";
     let percentage = 0;
 
-    // Set theme based on local storage
+    // Setarea temei pe baza local storage-ului
     if (hasLocalStorage) {
         const selectedTheme = localStorage.getItem("selectedTheme");
         if (selectedTheme === "dark") {
-            setDarkMode();
+            myThemeFunctions.setDarkMode();
         } else {
-            setLightMode();
+            myThemeFunctions.setLightMode();
         }
     }
 
-    // Update percentage with interval
+    // Actualizarea procentajului cu interval
     const interval = setInterval(() => {
         if (percentage < 100) {
             percentage += 1;
@@ -52,6 +50,32 @@ const Loading = () => {
         }
     }, 30);
 
+    // Funcție pentru întârzierea încărcării
+    const delayLoading = () => {
+        const loadingElement = document.getElementById("loading");
+        const contentElement = document.getElementById("content");
+
+        if (loadingElement && contentElement) {
+            console.log("Starting animation...");
+            loadingElement.style.opacity = "0";
+            setTimeout(() => {
+                console.log("Animation completed. Showing content...");
+                loadingElement.style.display = "none";
+                contentElement.style.opacity = "1";
+            }, 2700);
+        } else {
+            console.error("Error: loadingElement or contentElement not found.");
+        }
+    };
+
+    // Încărcare inițială
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log("Document is loaded. Initiating delayLoading...");
+        delayLoading();
+        console.log("delayLoading initiated.");
+    });
+
+    // Render the Loading component
     return `
         <div class=" flex flex-col justify-center items-center min-h-screen ${hasLocalStorage ? 'dark-bg' : 'light-bg'}" style="background: var(--loading_bg)">
             <div class="blobs">

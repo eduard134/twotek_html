@@ -1,38 +1,37 @@
-// Simplified JavaScript code for navbar logic
+document.addEventListener("DOMContentLoaded", function () {
+  let nav = false;
+  let isMenuOpen = false;
+  let isBurgerMenuOpen = false;
+  let language = "en"; // Set your initial language
 
-let nav = false;
-let isMenuOpen = false;
-let isBurgerMenuOpen = false;
-let language = "en"; // Set your initial language
-
-function render() {
-  document.getElementById("navbar").innerHTML = `
+  function render() {
+    document.getElementById("navbar").innerHTML = `
       <div class="left-0 top-0 w-full text-focus-in mt-0 md:mt-5 text-black z-bug px-0 md:px-8 transition-all duration-1000 ease-in-out">
         ${navbarContent()}
       </div>
     `;
-  addEventListeners();
-}
-
-function addEventListeners() {
-  document.getElementById("checkbox2").addEventListener("change", toggleMenu);
-  document
-    .querySelector(".toggle-burger")
-    .addEventListener("click", toggleBurgerMenu);
-
-  const languageSelect = document.getElementById("languageSelect");
-  if (languageSelect) {
-    languageSelect.addEventListener("change", changeLanguage);
+    addEventListeners();
   }
 
-  const colorInput = document.getElementById("colorInput");
-  if (colorInput) {
-    colorInput.addEventListener("input", changeColor);
-  }
-}
+  function addEventListeners() {
+    document.getElementById("checkbox2").addEventListener("change", toggleMenu);
+    document
+      .querySelector(".toggle-burger")
+      .addEventListener("click", toggleBurgerMenu);
 
-function navbarContent() {
-  return `
+    const languageSelect = document.getElementById("languageSelect");
+    if (languageSelect) {
+      languageSelect.addEventListener("change", changeLanguage);
+    }
+
+    const colorInput = document.getElementById("colorInput");
+    if (colorInput) {
+      colorInput.addEventListener("change", changeColor);
+    }
+  }
+
+  function navbarContent() {
+    return `
       <div class="lg:max-w-[1305px] transition-all duration-300 max-w-[768px] sm:mt-4 sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
         style="background-image: linear-gradient(to bottom, var(--nav_bg1), var(--nav_bg2), var(--nav_bg3));">
         <div class="text-4xl font-bold text-focus-in flex items-center -ml-14 lg:ml-0">
@@ -76,23 +75,19 @@ function navbarContent() {
 
         <div class="flex items-center">
           <div class="mr-5 hidden lg:block text-focus-in">
-            <!-- Add your TranslateRoToRu component or content here -->
-            <select id="languageSelect">
-              <option value="en">English</option>
-              <option value="ro">Romanian</option>
-            </select>
+          <div id="translate"></div>
           </div>
           <div class="-mr-[3vw] sm:mr-0 text-focus-in">
-            <!-- Add your Color component here -->
-            <input type="color" id="colorInput" />
+          <!-- Add your Color component here -->
+          <input type="color" id="colorInput" />
           </div>
         </div>
       </div>
     `;
-}
+  }
 
-function mobileMenuContent() {
-  return `
+  function mobileMenuContent() {
+    return `
       <div class=" lg:hidden top-0 right-0 text-white h-screen flex justify-center items-center text-center lg-hidden-menu"
         style="background-image: linear-gradient(to bottom, var(--nav_bg1), var(--nav_bg2), var(--nav_bg3)); height: 101%; width: 100%; position: fixed; z-index: 2;">
         <ul class=" flex flex-col justify-center items-center text-center gap-4 md:text-2xl">
@@ -113,41 +108,50 @@ function mobileMenuContent() {
             <a href="#" onclick="closeMenu()">Feedback</a>
           </li>
           <li class=" my-2">
-            <!-- Add your TranslateRoToRu component or content in mobile menu here -->
-            <select id="languageSelect" onchange="changeLanguage()">
-              <option value="en">English</option>
-              <option value="ro">Romanian</option>
-            </select>
+          <div id="translate"></div>
           </li>
         </ul>
       </div>
     `;
-}
+  }
 
-function toggleMenu() {
-  isMenuOpen = !isMenuOpen;
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    render();
+  }
+
+  function closeMenu() {
+    isMenuOpen = false;
+    render();
+  }
+
+  function toggleBurgerMenu() {
+    isBurgerMenuOpen = !isBurgerMenuOpen;
+    render();
+  }
+
+  function changeLanguage() {
+    handleLanguageChange("ro");
+  }
+
+  function changeColor() {
+    // Adăugați aici logica pentru schimbarea culorilor temei
+    // De exemplu, puteți accesa variabilele de culoare definite în :root și să le modificați
+    const rootStyles = document.querySelector(":root").style;
+    const isDark =
+      rootStyles.getPropertyValue("--theme_dark_background") === "black";
+
+    if (isDark) {
+      // Schimbă la temă luminoasă
+      rootStyles.setProperty("--theme_dark_background", "white");
+      rootStyles.setProperty("--theme_dark_color", "black");
+    } else {
+      // Schimbă la temă întunecată
+      rootStyles.setProperty("--theme_dark_background", "black");
+      rootStyles.setProperty("--theme_dark_color", "white");
+    }
+  }
+
+  // Initial render
   render();
-}
-
-function closeMenu() {
-  isMenuOpen = false;
-  render();
-}
-
-function toggleBurgerMenu() {
-  isBurgerMenuOpen = !isBurgerMenuOpen;
-  render();
-}
-
-function changeLanguage() {
-  // Add your logic to change the language
-  console.log("Language changed");
-}
-
-function changeColor() {
-  // Add your logic to change the color
-  console.log("Color changed");
-}
-
-// Initial render
-render();
+});

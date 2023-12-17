@@ -4,31 +4,37 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevButton = document.getElementById("prev");
     const nextButton = document.getElementById("next");
 
-    let isVisible1 = false;
+    if (h1Title && slide && prevButton && nextButton) {
+        let isVisible1 = false;
 
-    const h1Observer = new IntersectionObserver((entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-            isVisible1 = true;
-            h1Observer.unobserve(h1Title);
-        }
-    });
-    h1Observer.observe(h1Title);
+        const h1Observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (entry.isIntersecting) {
+                isVisible1 = true;
+                h1Observer.unobserve(h1Title);
+            }
+        });
 
-    nextButton.addEventListener("click", function () {
-        if (slide) {
+        h1Observer.observe(h1Title);
+
+        nextButton.addEventListener("click", function () {
             const firstSlide = slide.querySelector(".item");
-            slide.removeChild(firstSlide);
-            slide.appendChild(firstSlide);
-        }
-    });
+            if (firstSlide) {
+                slide.removeChild(firstSlide);
+                slide.appendChild(firstSlide);
+            }
+        });
 
-    prevButton.addEventListener("click", function () {
-        if (slide) {
+        prevButton.addEventListener("click", function () {
             const slides = slide.querySelectorAll(".item");
             const lastSlide = slides[slides.length - 1];
-            slide.removeChild(lastSlide);
-            slide.prepend(lastSlide);
-        }
-    });
+            if (lastSlide) {
+                slide.removeChild(lastSlide);
+                slide.prepend(lastSlide);
+            }
+        });
+    } else {
+        console.error("Error: One or more elements not found.");
+    }
 });
+

@@ -1,4 +1,3 @@
-// echipa.js
 
 document.addEventListener('DOMContentLoaded', function () {
   const person1 = document.getElementById('person1');

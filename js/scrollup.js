@@ -1,35 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let isButtonVisible = false;
     const scrollToTopContainer = document.getElementById("scrollToTopContainer");
   
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+    if (scrollToTopContainer) {
+      let isButtonVisible = false;
   
-      if (scrollPosition > 80 && !isButtonVisible) {
-        scrollToTopContainer.classList.add("visible");
-        scrollToTopContainer.classList.remove("hidden");
-        isButtonVisible = true;
-      } else if (scrollPosition <= 80 && isButtonVisible) {
-        scrollToTopContainer.classList.remove("visible");
-        scrollToTopContainer.classList.add("hidden");
-        isButtonVisible = false;
-      }
-    };
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
   
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+        if (scrollPosition > 80 && !isButtonVisible) {
+          scrollToTopContainer.classList.add("visible");
+          scrollToTopContainer.classList.remove("hidden");
+          isButtonVisible = true;
+        } else if (scrollPosition <= 80 && isButtonVisible) {
+          scrollToTopContainer.classList.remove("visible");
+          scrollToTopContainer.classList.add("hidden");
+          isButtonVisible = false;
+        }
+      };
   
-    document.getElementById("scrollToTopContainer").addEventListener("click", scrollToTop);
-    window.addEventListener("scroll", handleScroll);
+      const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
   
-    // Initial check for the scroll position
-    handleScroll();
+      scrollToTopContainer.addEventListener("click", scrollToTop);
+      window.addEventListener("scroll", handleScroll);
   
-    // Clean up event listeners on component unmount
-    return () => {
-      document.getElementById("scrollToTopContainer").removeEventListener("click", scrollToTop);
-      window.removeEventListener("scroll", handleScroll);
-    };
+      // Initial check for the scroll position
+      handleScroll();
+  
+      // Log success message
+      console.log("Scroll Up functionality initialized successfully.");
+  
+      // Clean up event listeners on component unmount
+      return () => {
+        scrollToTopContainer.removeEventListener("click", scrollToTop);
+        window.removeEventListener("scroll", handleScroll);
+      };
+    } else {
+      console.error("Error: ScrollToTopContainer element not found.");
+    }
   });
   
