@@ -69,7 +69,7 @@
 
         <div class="block lg:hidden">
           <input id="checkbox2" type="checkbox" checked="${isMenuOpen}" />
-          <label class="toggle2X" for="checkbox2">
+          <label class="toggle2" for="checkbox2" onclick="toggleMenu()">
             <div id="bar4" class="bars"></div>
             <div id="bar5" class="bars"></div>
             <div id="bar6" class="bars"></div>
@@ -82,16 +82,36 @@
           style="color: var(--link_color)"
         >
           <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-            <a href="#" class="cursor-pointer">Performanță</a>
+            <a
+              href="#paralax1"
+              class="cursor-pointer"
+              onclick="scrollToSection('parallax1')"
+              >Performanță</a
+            >
           </li>
           <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-            <a href="#" class="cursor-pointer">Echipa</a>
+            <a
+              href="#echipa"
+              class="cursor-pointer"
+              onclick="scrollToSection('echipa')"
+              >Echipa</a
+            >
           </li>
           <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-            <a href="#" class="cursor-pointer">Proiecte</a>
+            <a
+              href="#proiecte"
+              class="cursor-pointer"
+              onclick="scrollToSection('proiecte')"
+              >Proiecte</a
+            >
           </li>
           <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-            <a href="#" class="cursor-pointer">Feedback</a>
+            <a
+              href="#feedback"
+              class="cursor-pointer"
+              onclick="scrollToSection('feedback')"
+              >Feedback</a
+            >
           </li>
         </ul>
       </div>
@@ -122,7 +142,9 @@
               height="34"
               class="w-8 mr-2"
             />
-            <a href="#">Performanță</a>
+            <a href="#paralax1" onclick="scrollToSection('parallax1')"
+              >Performanță</a
+            >
           </li>
           <li class="my-2 flex items-center">
             <img
@@ -132,7 +154,7 @@
               height="34"
               class="w-8 mr-2"
             />
-            <a href="#">Echipa</a>
+            <a href="#echipa" onclick="scrollToSection('echipa')">Echipa</a>
           </li>
           <li class="my-2 flex items-center">
             <img
@@ -142,7 +164,9 @@
               height="34"
               class="w-8 mr-2"
             />
-            <a href="#">Proiecte</a>
+            <a href="#proiecte" onclick="scrollToSection('proiecte')"
+              >Proiecte</a
+            >
           </li>
           <li class="my-2 flex items-center">
             <img
@@ -152,7 +176,9 @@
               height="34"
               class="w-8 mr-2"
             />
-            <a href="#">Feedback</a>
+            <a href="#feedback" onclick="scrollToSection('feedback')"
+              >Feedback</a
+            >
           </li>
         </ul>
       </div>
@@ -178,7 +204,7 @@
             <span
               class="sm:tracking-wide text-[30px] sm:text-[45px] rounded-[50px] tracking-in-contract-bck px-3 font-light border-2 border-[#91A8B7]"
               >WebSite-ul</span
-            ><br />Dumneavoastră
+            ><br />Dvs
           </p>
           <a href="tel:+37368548789" class="text-shadow-pop-left">
             <button
@@ -345,121 +371,120 @@
     </div>
 
     <!--Paralax1-->
-    <div
-      class="mb-20 sm:mb-20 mt-24 sm:mt-44 lg:mt-44 sm:flex justify-evenly mx-2 sm:mx-10 lg:mx-32 items-center"
-    >
-      <h1
-        class="tilt-in-right-1 text-center text-2xl mb-5 lg:mb-7 sm:text-[43px] sm:leading-[50px] lg:text-5xl lg:max-w-[350px] lg:leading-[60px] font-semibold"
-        style="color: var(--carousel_h1)"
+    <section id="paralax1">
+      <div
+        class="mb-20 sm:mb-20 mt-24 sm:mt-44 lg:mt-44 sm:flex justify-evenly mx-2 sm:mx-10 lg:mx-32 items-center"
       >
-        Ce vă oferim ca parteneri
-      </h1>
-      <hr
-        class="tracking-in-expand h-1 rounded-xl sm:rotate-90 flex justify-center items-center sm:block sm:mx-0 mx-[12vw] mb-5 sm:mb-0 sm:w-56 lg:w-24"
-        style="background: var(--carousel_hr)"
-      />
-      <p
-        class="tilt-in-right-1 sm:text-xl sm:text-start text-center"
-        style="color: var(--carousel_h1)"
-      >
-        Suntem parteneri de încredere, <br />
-        pregătiți să vă sprijinim cu soluții inovatoare <br />
-        <span class="text-[#008DFD] font-semibold"
-          >și servicii de înaltă calitate</span
+        <h1
+          class="tilt-in-right-1 text-center text-2xl mb-5 lg:mb-7 sm:text-[43px] sm:leading-[50px] lg:text-5xl lg:max-w-[350px] lg:leading-[60px] font-semibold"
+          style="color: var(--carousel_h1)"
         >
-      </p>
-    </div>
-
-    <div
-      class="flex flex-col justify-between text-center items-center font-semibold text-white fade-in-bck"
-    >
-      <!-- Render circles based on isMobile condition -->
-      <!-- First set of circles -->
-      <div class="flex justify-between">
-        <!-- Circle 1 -->
-        <div
-          class="circle-box circle-box-1 shadow-md shadow-white border-[1px] mobile-circle-box"
-          style="
-            background: linear-gradient(
-              to bottom,
-              var(--nav_bg1),
-              var(--nav_bg2),
-              var(--nav_bg3)
-            );
-          "
+          Ce vă oferim ca parteneri
+        </h1>
+        <hr
+          class="tracking-in-expand h-1 rounded-xl sm:rotate-90 flex justify-center items-center sm:block sm:mx-0 mx-[12vw] mb-5 sm:mb-0 sm:w-56 lg:w-24"
+          style="background: var(--carousel_hr)"
+        />
+        <p
+          class="tilt-in-right-1 sm:text-xl sm:text-start text-center"
+          style="color: var(--carousel_h1)"
         >
-          <div class="circle-title">Title 1</div>
-          <div class="circle-description">Description 1</div>
-        </div>
-        <!-- Circle 2 -->
-        <div
-          class="circle-box circle-box-2 shadow-md shadow-white border-[1px] mobile-circle-box"
-          style="
-            background: linear-gradient(
-              to bottom,
-              var(--nav_bg1),
-              var(--nav_bg2),
-              var(--nav_bg3)
-            );
-          "
-        >
-          <div class="circle-title">Title 2</div>
-          <div class="circle-description">Description 2</div>
-        </div>
-        <!-- Circle 3 -->
-        <div
-          class="circle-box circle-box-3 shadow-md shadow-white border-[1px] mobile-circle-box"
-          style="
-            background: linear-gradient(
-              to bottom,
-              var(--nav_bg1),
-              var(--nav_bg2),
-              var(--nav_bg3)
-            );
-          "
-        >
-          <div class="circle-title">Title 3</div>
-          <div class="circle-description">Description 3</div>
-        </div>
+          Suntem parteneri de încredere, <br />
+          pregătiți să vă sprijinim cu soluții inovatoare <br />
+          <span class="text-[#008DFD] font-semibold"
+            >și servicii de înaltă calitate</span
+          >
+        </p>
       </div>
 
-      <!-- Second set of circles -->
-      <div class="flex justify-between mb-10">
-        <!-- Circle 4 -->
-        <div
-          class="circle-box circle-box-4 shadow-md shadow-white border-[1px] mobile-circle-box"
-          style="
-            background: linear-gradient(
-              to bottom,
-              var(--nav_bg1),
-              var(--nav_bg2),
-              var(--nav_bg3)
-            );
-          "
-        >
-          <div class="circle-title">Title 4</div>
-          <div class="circle-description">Description 4</div>
+      <div
+        class="flex flex-col justify-between text-center items-center font-semibold text-white fade-in-bck"
+      >
+        <div class="flex justify-between">
+          <div
+            class="circle-box circle-box-1 shadow-md shadow-white border-[1px] mobile-circle-box"
+            style="
+              background: linear-gradient(
+                to bottom,
+                var(--nav_bg1),
+                var(--nav_bg2),
+                var(--nav_bg3)
+              );
+            "
+          >
+            <div class="circle-title">Title 1</div>
+            <div class="circle-description">Description 1</div>
+          </div>
+          <!-- Circle 2 -->
+          <div
+            class="circle-box circle-box-2 shadow-md shadow-white border-[1px] mobile-circle-box"
+            style="
+              background: linear-gradient(
+                to bottom,
+                var(--nav_bg1),
+                var(--nav_bg2),
+                var(--nav_bg3)
+              );
+            "
+          >
+            <div class="circle-title">Title 2</div>
+            <div class="circle-description">Description 2</div>
+          </div>
+          <!-- Circle 3 -->
+          <div
+            class="circle-box circle-box-3 shadow-md shadow-white border-[1px] mobile-circle-box"
+            style="
+              background: linear-gradient(
+                to bottom,
+                var(--nav_bg1),
+                var(--nav_bg2),
+                var(--nav_bg3)
+              );
+            "
+          >
+            <div class="circle-title">Title 3</div>
+            <div class="circle-description">Description 3</div>
+          </div>
         </div>
-        <!-- Circle 5 -->
-        <div
-          class="circle-box circle-box-5 shadow-md shadow-white border-[1px] mobile-circle-box"
-          style="
-            background: linear-gradient(
-              to bottom,
-              var(--nav_bg1),
-              var(--nav_bg2),
-              var(--nav_bg3)
-            );
-          "
-        >
-          <div class="circle-title">Title 5</div>
-          <div class="circle-description">Description 5</div>
+
+        <!-- Second set of circles -->
+        <div class="flex justify-between mb-10">
+          <!-- Circle 4 -->
+          <div
+            class="circle-box circle-box-4 shadow-md shadow-white border-[1px] mobile-circle-box"
+            style="
+              background: linear-gradient(
+                to bottom,
+                var(--nav_bg1),
+                var(--nav_bg2),
+                var(--nav_bg3)
+              );
+            "
+          >
+            <div class="circle-title">Title 4</div>
+            <div class="circle-description">Description 4</div>
+          </div>
+          <!-- Circle 5 -->
+          <div
+            class="circle-box circle-box-5 shadow-md shadow-white border-[1px] mobile-circle-box"
+            style="
+              background: linear-gradient(
+                to bottom,
+                var(--nav_bg1),
+                var(--nav_bg2),
+                var(--nav_bg3)
+              );
+            "
+          >
+            <div class="circle-title">Title 5</div>
+            <div class="circle-description">Description 5</div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!--Paralax2-->
-    <div class="mt-20 sm:mt-0 lg:mt-64 lg:mx-64 p-4 md:p-8 lg:p-0">
+    <div class="mt-20 sm:mt-0 lg:mt-20 lg:mx-64 p-4 md:p-8 lg:p-0">
       <h1
         class="text-center text-2xl sm:text-5xl font-semibold slide-in-bck-top"
         style="color: var(--carousel_h1)"
@@ -660,11 +685,14 @@
     </div>
 
     <!-- Imaginea -->
-    <div class="mb-52 sm:mt-44 mt-8 sm:mb-0 flex justify-around">
+    <div
+      id="proiecte"
+      class="mb-52 sm:mt-44 mt-20 sm:mb-0 lg:flex flex-col justify-center lg:justify-around"
+    >
       <div class="lg:mt-16 mb-5 sm:mb-10">
         <h1
           id="h1Title"
-          class="sm:text-5xl text-3xl leading-tight text-ellipsis font-bold fade-in-right"
+          class="sm:text-5xl text-3xl leading-tight text-center lg:text-start text-ellipsis font-bold fade-in-right"
           style="color: var(--carousel_p)"
         >
           Accesează <br />
@@ -767,18 +795,24 @@
 
     <!-- Review -->
     <div
+      id="feedback"
       class="flex sm:mt-96 lg:mt-32 justify-around items-center bg-black border-white border-y-[.1px] text-black p-7 lg:p-20"
     >
       <div>
         <div
+          id="reviewContainer"
           class="bg-white p-10 rounded-bl-[20%] rounded-tr-[20%] rounded-md shadow-md shadow-white mb-10"
         >
           <h1
+            id="reviewTitle"
             class="text-start font-semibold text-xl sm:text-3xl lg:text-4xl mb-5 fade-in-top"
           >
-            Review A&D
+            Review APISUDEX
           </h1>
-          <p class="text-start sm:text-xl sm:max-w-[700px] fade-in-left1">
+          <p
+            id="reviewDescription"
+            class="text-start sm:text-xl sm:max-w-[700px] fade-in-left1"
+          >
             Colaborarea cu Two Tek pentru dezvoltarea website-ului nostru a fost
             cu adevărat excepțională. De la calitatea lor remarcabilă și atenția
             minuțioasă acordată fiecărui detaliu, până la crearea unui website
@@ -790,6 +824,7 @@
           <!-- Image 1 -->
           <div
             class="rounded-[50px] shadow-md shadow-white hover:scale-[0.9] transition duration-500 ease-in-out cursor-pointer"
+            onclick="changeReview(0)"
           >
             <img
               src="/images/misha.png"
@@ -800,6 +835,7 @@
           <!-- Image 2 -->
           <div
             class="rounded-[50px] shadow-md shadow-white hover:scale-[0.9] transition duration-500 ease-in-out cursor-pointer"
+            onclick="changeReview(1)"
           >
             <img
               src="/images/viorel.png"
@@ -810,6 +846,7 @@
           <!-- Image 3 -->
           <div
             class="rounded-[50px] shadow-md shadow-white hover:scale-[0.9] transition duration-500 ease-in-out cursor-pointer"
+            onclick="changeReview(2)"
           >
             <img
               src="/images/vasea.png"
@@ -819,13 +856,18 @@
           </div>
         </div>
       </div>
-      <div class="hidden sm:block tilt-in-fwd-br">
-        <img src="/images/viorel.png" alt="" width="307" height="298" />
+      <div id="hiddenImage" class="hidden sm:block tilt-in-fwd-br">
+        <img
+          id="mainImage"
+          src="/images/viorel.png"
+          alt=""
+          width="307"
+          height="298"
+        />
       </div>
     </div>
 
     <!-- Email -->
-
     <div>
       <div
         class="flex justify-center items-center mx-6 rounded-lg mt-20 lg:mx-[34vw] bg-[#191919] mb-16 gap-4 lg:gap-0 fade-in-bottom"
@@ -855,13 +897,22 @@
             width="30"
             height="10"
             class="mr-5"
+            onmouseover="hoverInstagram(this)"
+            onmouseout="originalInstagram(this)"
           />
         </a>
         <a
           href="https://www.tiktok.com/@_2.tek_"
           class="hover:-translate-y-1 transition duration-500 ease-in-out"
         >
-          <img src="/images/tik-tok.png" alt="" width="30" height="10" />
+          <img
+            src="/images/tik-tok.png"
+            alt=""
+            width="30"
+            height="10"
+            onmouseover="hoverTikTok(this)"
+            onmouseout="originalTikTok(this)"
+          />
         </a>
       </div>
       <div class="md:ml-20 text-sm mt-5 md:mb-0">
@@ -875,5 +926,207 @@
     </div>
 
     <script src="./js/scrollup.js"></script>
+    <script>
+      // Burger
+      document.addEventListener("DOMContentLoaded", function () {
+        let isMenuOpen = false;
+        let isBurgerMenuOpen = false;
+
+        function addEventListeners() {
+          document
+            .getElementById("checkbox2")
+            .addEventListener("change", toggleMenu);
+          document
+            .querySelector(".toggle2")
+            .addEventListener("click", toggleBurgerMenu);
+
+          const menuLinks = document.querySelectorAll(".lg-hidden-menu a");
+          menuLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+              closeMenu();
+              document.body.style.overflow = "auto";
+            });
+          });
+        }
+
+        function toggleMenu() {
+          isMenuOpen = !isMenuOpen;
+          isBurgerMenuOpen = false;
+          render();
+        }
+
+        function closeMenu() {
+          isMenuOpen = false;
+          render();
+        }
+
+        function toggleBurgerMenu() {
+          isBurgerMenuOpen = !isBurgerMenuOpen;
+          if (isBurgerMenuOpen) {
+            document.body.style.overflow = "hidden";
+          }
+          render();
+        }
+
+        function render() {
+          if (window.innerWidth <= 768) {
+            if (isMenuOpen || isBurgerMenuOpen) {
+              document.querySelector(".lg-hidden-menu").style.display = "flex";
+            } else {
+              document.querySelector(".lg-hidden-menu").style.display = "none";
+            }
+          } else {
+            document.querySelector(".lg-hidden-menu").style.display = "none";
+          }
+
+          const burgerIcon = document.querySelector(".toggle2");
+          if (isBurgerMenuOpen) {
+            burgerIcon.classList.add("open");
+          } else {
+            burgerIcon.classList.remove("open");
+          }
+        }
+
+        addEventListeners();
+        render();
+      });
+
+      // NavBar Links
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              const offset = 50;
+              window.scrollTo({
+                top: targetElement.offsetTop - offset,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+
+      // Carousel
+      document.addEventListener("DOMContentLoaded", function () {
+        const logoSliderContainer = document.querySelector(
+          ".logo-slider-container"
+        );
+        const logoSlides = document.querySelectorAll(".logo-slider");
+
+        let isPaused = false;
+
+        function pauseAnimation() {
+          isPaused = true;
+          logoSlides.forEach((logoSlide) => {
+            logoSlide.style.animationPlayState = "paused";
+          });
+        }
+
+        function resumeAnimation() {
+          isPaused = false;
+          logoSlides.forEach((logoSlide) => {
+            logoSlide.style.animation = `slideRightToLeft ${
+              window.innerWidth > 768 ? 17.5 : 10
+            }s linear infinite`;
+            logoSlide.style.animationPlayState = "running";
+          });
+        }
+
+        logoSliderContainer.addEventListener("mouseover", pauseAnimation);
+        logoSliderContainer.addEventListener("mouseout", resumeAnimation);
+      });
+
+      // Imaginea
+      document.addEventListener("DOMContentLoaded", function () {
+        const h1Title = document.getElementById("h1Title");
+        const slide = document.getElementById("slide");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+
+        if (h1Title && slide && prevButton && nextButton) {
+          let isVisible1 = false;
+
+          const h1Observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (entry.isIntersecting) {
+              isVisible1 = true;
+              h1Observer.unobserve(h1Title);
+            }
+          });
+
+          h1Observer.observe(h1Title);
+
+          nextButton.addEventListener("click", function () {
+            const firstSlide = slide.querySelector(".item");
+            if (firstSlide) {
+              slide.removeChild(firstSlide);
+              slide.appendChild(firstSlide);
+            }
+          });
+
+          prevButton.addEventListener("click", function () {
+            const slides = slide.querySelectorAll(".item");
+            const lastSlide = slides[slides.length - 1];
+            if (lastSlide) {
+              slide.removeChild(lastSlide);
+              slide.prepend(lastSlide);
+            }
+          });
+        } else {
+          console.error("Error: One or more elements not found.");
+        }
+      });
+
+      // Review
+      const reviews = [
+        {
+          title: "Review - APISUDEX",
+          description:
+            "Colaborarea cu Two Tek pentru dezvoltarea website-ului nostru a fost cu adevărat excepțională. De la calitatea lor remarcabilă și atenția minuțioasă acordată fiecărui detaliu, până la crearea unui website unic și memorabil. Îi recomandăm cu încredere celor care caută parteneri de încredere în acest domeniu.",
+          image: "/images/misha.png",
+        },
+        {
+          title: "Review - A&D",
+          description:
+            "Suntem extrem de mulțumiți de experiența noastră de colaborare cu Two Tek pentru dezvoltarea site-ului nostru. Aceștia au livrat un produs de excepție, cu performanță remarcabilă, timp de încărcare rapid și comunicare eficientă, ceea ce îi recomandă cu încredere ca partener de încredere în dezvoltarea web.",
+          image: "/images/viorel.png",
+        },
+        {
+          title: "Review - SĂNDUȚA ART",
+          description:
+            "Echipa Two Tek a furnizat o colaborare de excepție pentru dezvoltarea site-ului Sanduta Art. Site-ul funcționează perfect, iar calitatea, viteza și transparența serviciului lor ne-au uimit. Recomandăm cu încredere serviciile Two Tek pentru oricine caută o echipă profesionistă de dezvoltare web.",
+          image: "/images/vasea.png",
+        },
+      ];
+
+      function changeReview(index) {
+        document.getElementById("reviewTitle").innerText = reviews[index].title;
+        document.getElementById("reviewDescription").innerText =
+          reviews[index].description;
+        document.getElementById("mainImage").src = reviews[index].image;
+      }
+
+      // Footer
+      function hoverInstagram(element) {
+        element.src = "/images/instagram_hover.png";
+      }
+
+      function originalInstagram(element) {
+        element.src = "/images/instagram.png";
+      }
+
+      function hoverTikTok(element) {
+        element.src = "/images/tik-tok_hover.png";
+      }
+
+      function originalTikTok(element) {
+        element.src = "/images/tik-tok.png";
+      }
+    </script>
   </body>
 </html>

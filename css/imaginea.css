@@ -322,7 +322,7 @@ body {
     position: absolute;
     z-index: 1;
     top: 130%;
-    transform: translate(-123%, -70%);
+    transform: translate(-123%, -90%);
     border-radius: 20px;
     box-shadow: 0 30px 50px var(--item_shadow);
   }
@@ -496,7 +496,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .buttons button {
-    width: 7vw;
+    width: 11vw;
   }
 }
 

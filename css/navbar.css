@@ -219,10 +219,6 @@ body {
   margin-top: -3.75%;
 }
 
-.fixed {
-  position: fixed;
-}
-
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .toggle2 {
     width: 40px;
@@ -328,7 +324,10 @@ body {
   }
 }
 
-.lg-hidden-menu {
+.lg-hidden-menu { 
+  top: 0;
+  right: 0;
+  position: fixed;
   transform: translateX(100%);
   animation: slideIn 0.5s forwards;
   opacity: 0;
@@ -424,5 +423,4 @@ lin>a {
 #content.fade-in {
     opacity: 1;
 }
-
 

@@ -181,7 +181,6 @@ body {
 @media screen and (max-width: 768px) {
   .logo-slider {
     animation: slideRightToLeft 10s linear infinite;
-    /* Redu timpul de animație pentru dispozitive mobile */
   }
 }
 
@@ -201,37 +200,46 @@ body {
 
 .logo-slider img {
   width: 100px;
-  /* Lățimea logo-urilor */
   height: auto;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 200px;
   margin-left: 100px;
-  /* Spațierea dintre logo-uri */
 }
 
 @media screen and (max-width: 768px) {
   .logo-slider img {
     width: 50px;
-    /* Redu lățimea imaginilor pentru dispozitive mobile */
     margin-right: 55px;
-    /* Mărește marginul dintre logo-uri pentru dispozitive mobile */
     margin-left: 55px;
-    /* Mărește marginul dintre logo-uri pentru dispozitive mobile */
   }
 }
 
 @keyframes slideRightToLeft {
-  from {
+  0% {
     transform: translateX(0%);
-    /* Logo-urile pornesc în afara ecranului dreapta */
   }
 
-  to {
+  25% {
     transform: translateX(-100%);
-    /* Logo-urile trec complet prin ecran și apar din nou la dreapta */
+  }
+
+  50% {
+    transform: translateX(-200%);
+  }
+
+  75% {
+    transform: translateX(-300%);
+  }
+
+  100% {
+    transform: translateX(-400%);
   }
 }
+
+
+
+
 
 .tracking-in-expand-fwd-top {
   -webkit-animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s both;
@@ -419,10 +427,3 @@ body {
   }
 }
 
-.logo-slider {
-  animation: scroll 10s linear infinite;
-}
-
-.paused {
-  animation-play-state: paused;
-}
