@@ -28,905 +28,1085 @@
   </head>
 
   <body>
-    <!--ScrollUp-->
-    <div id="scrollToTopContainer" class="scroll-to-top-container">
-      <div id="scrollButton" class="scroll-button">
-        <img
-          id="scrollImage"
-          class="md:w-[20px] md:h-[20px] w-[17.5px]"
-          src="./images/scroll.png"
-          alt=""
-        />
+    <!-- Loading -->
+    <div
+      class="flex flex-col justify-center items-center min-h-screen loading-container"
+      style="background: var(--loading_bg)"
+    >
+      <div class="blobs">
+        <div class="blob-center" style="background: var(--loading_blob)"></div>
+        <div class="blob" style="background: var(--loading_blob)"></div>
+        <div class="blob" style="background: var(--loading_blob)"></div>
+        <div class="blob" style="background: var(--loading_blob)"></div>
+        <div class="blob" style="background: var(--loading_blob)"></div>
+        <div class="blob" style="background: var(--loading_blob)"></div>
+        <div class="blob" style="background: var(--loading_blob)"></div>
       </div>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="10"
+              result="blur"
+            ></feGaussianBlur>
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+              result="goo"
+            ></feColorMatrix>
+            <feBlend in="SourceGraphic" in2="goo"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+      <h1 class="text-lg mt-10 fade-in1" style="color: var(--loading_text)">
+        Developed by <span class="text-2xl font-bold">2Tek</span>
+      </h1>
     </div>
 
-    <!--NavBar-->
-    <div
-      class="left-0 top-0 w-full text-focus-in mt-0 md:mt-5 text-black z-bug px-0 md:px-8 transition-all duration-1000 ease-in-out"
-    >
-      <div
-        class="lg:max-w-[1305px] transition-all duration-300 max-w-[768px] sm:mt-4 sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
-        style="
-          background-image: linear-gradient(
-            to bottom,
-            var(--nav_bg1),
-            var(--nav_bg2),
-            var(--nav_bg3)
-          );
-        "
-      >
-        <div
-          class="text-4xl font-bold text-focus-in flex items-center -ml-14 lg:ml-0"
-        >
+    <div id="content" style="display: none">
+      <!--ScrollUp-->
+      <div id="scrollToTopContainer" class="scroll-to-top-container">
+        <div id="scrollButton" class="scroll-button">
           <img
-            src="../images/logo.png"
-            alt="Logo"
-            width="100"
-            height="100"
-            class="w-[16vh]"
+            id="scrollImage"
+            class="md:w-[20px] md:h-[20px] w-[17.5px]"
+            src="./images/scroll.png"
+            alt=""
           />
         </div>
-
-        <div class="block lg:hidden">
-          <input id="checkbox2" type="checkbox" checked="${isMenuOpen}" />
-          <label class="toggle2" for="checkbox2" onclick="toggleMenu()">
-            <div id="bar4" class="bars"></div>
-            <div id="bar5" class="bars"></div>
-            <div id="bar6" class="bars"></div>
-          </label>
-        </div>
-
-        <!-- Navigation links for PC -->
-        <ul
-          class="hidden lg:flex text-base font-semibold text-white"
-          style="color: var(--link_color)"
-        >
-          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-            <a
-              href="#paralax1"
-              class="cursor-pointer"
-              onclick="scrollToSection('parallax1')"
-              >Performanță</a
-            >
-          </li>
-          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-            <a
-              href="#echipa"
-              class="cursor-pointer"
-              onclick="scrollToSection('echipa')"
-              >Echipa</a
-            >
-          </li>
-          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-            <a
-              href="#proiecte"
-              class="cursor-pointer"
-              onclick="scrollToSection('proiecte')"
-              >Proiecte</a
-            >
-          </li>
-          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-            <a
-              href="#feedback"
-              class="cursor-pointer"
-              onclick="scrollToSection('feedback')"
-              >Feedback</a
-            >
-          </li>
-        </ul>
       </div>
 
+      <!--NavBar-->
       <div
-        class="lg:hidden top-0 right-0 text-white h-screen flex justify-center items-center text-center lg-hidden-menu"
-        style="
-          background-image: linear-gradient(
-            to bottom,
-            var(--nav_bg1),
-            var(--nav_bg2),
-            var(--nav_bg3)
-          );
-          height: 101%;
-          width: 100%;
-          position: fixed;
-          z-index: 2;
-        "
+        class="left-0 top-0 w-full text-focus-in mt-0 md:mt-5 text-black z-bug px-0 md:px-8 transition-all duration-1000 ease-in-out"
       >
-        <ul
-          class="flex flex-col justify-center items-center text-center gap-4 md:text-2xl"
-        >
-          <li class="my-2 flex items-center">
-            <img
-              src="../images/performance.png"
-              alt="Icon"
-              width="34"
-              height="34"
-              class="w-8 mr-2"
-            />
-            <a href="#paralax1" onclick="scrollToSection('parallax1')"
-              >Performanță</a
-            >
-          </li>
-          <li class="my-2 flex items-center">
-            <img
-              src="../images/team.png"
-              alt="Icon"
-              width="34"
-              height="34"
-              class="w-8 mr-2"
-            />
-            <a href="#echipa" onclick="scrollToSection('echipa')">Echipa</a>
-          </li>
-          <li class="my-2 flex items-center">
-            <img
-              src="../images/projects.png"
-              alt="Icon"
-              width="34"
-              height="34"
-              class="w-8 mr-2"
-            />
-            <a href="#proiecte" onclick="scrollToSection('proiecte')"
-              >Proiecte</a
-            >
-          </li>
-          <li class="my-2 flex items-center">
-            <img
-              src="../images/feedback.png"
-              alt="Icon"
-              width="34"
-              height="34"
-              class="w-8 mr-2"
-            />
-            <a href="#feedback" onclick="scrollToSection('feedback')"
-              >Feedback</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!--Info-->
-    <div
-      class="lg:mt-22 mt-10 lg:mt-20 text-center relative px-4 md:px-8 lg:px-0 text-focus-in"
-    >
-      <div class="lg:w-[70vw] mx-2 sm:mx-auto relative">
         <div
-          class="object-cover overflow-hidden rounded-3xl h-[450px] sm:w-[100%] sm:h-[500px]"
+          class="lg:max-w-[1305px] transition-all duration-300 max-w-[768px] sm:mt-4 sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
+          style="
+            background-image: linear-gradient(
+              to bottom,
+              var(--nav_bg1),
+              var(--nav_bg2),
+              var(--nav_bg3)
+            );
+          "
         >
-          <img src="./images/slider.jpg" alt="" class="w-full h-full" />
-        </div>
-        <div
-          class="absolute top-0 left-0 tracking-[.1em] right-0 bottom-0 px-5 sm:px-10 flex flex-col justify-center items-start text-white rounded-3xl text-start tracking-in-contract-bck"
-        >
-          <p
-            class="sm:text-6xl text-[50px] font-semibold sm:mb-4 leading-[50px] sm:leading-[60px] py-3"
+          <div
+            class="text-4xl font-bold text-focus-in flex items-center -ml-14 lg:ml-0"
           >
-            Creăm <br />Profesional <br />
-            <span
-              class="sm:tracking-wide text-[30px] sm:text-[45px] rounded-[50px] tracking-in-contract-bck px-3 font-light border-2 border-[#91A8B7]"
-              >WebSite-ul</span
-            ><br />Dvs
-          </p>
-          <a href="tel:+37368548789" class="text-shadow-pop-left">
-            <button
-              class="sm:px-8 ml-[-8px] px-3 py-2 text-[14px] sm:text-lg sm:tracking-wider font-semibold mb-5 text-black bg-white rounded-[50px] hover:bg-opacity-70"
-            >
-              Contact +373 685 487 89
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
+            <img
+              src="../images/logo.png"
+              alt="Logo"
+              width="100"
+              height="100"
+              class="w-[16vh]"
+            />
+          </div>
 
-    <!--Carousel-->
-    <div
-      class="mt-24 sm:mt-44 lg:mt-32 mb-10 lg:mb-20 flex-col justify-evenly mx-2 lg:mx-32 items-center"
-    >
-      <h1
-        class="text-center text-2xl sm:text-5xl lg:text-4xl mb-5 sm:mb-7 font-semibold tracking-in-expand-fwd-top"
-        style="color: var(--carousel_h1)"
-      >
-        Transformăm conceptele in realitate online
-      </h1>
-      <hr
-        class="h-1 rounded-xl flex justify-center items-center mb-5 mx-[12vw] sm:mb-7 lg:mx-[25vw] tracking-in-expand"
-        style="background: var(--carousel_hr)"
-      />
+          <div class="block lg:hidden">
+            <input id="checkbox2" type="checkbox" checked="${isMenuOpen}" />
+            <label class="toggle2" for="checkbox2" onclick="toggleMenu()">
+              <div id="bar4" class="bars"></div>
+              <div id="bar5" class="bars"></div>
+              <div id="bar6" class="bars"></div>
+            </label>
+          </div>
 
-      <p
-        class="sm:text-2xl lg:text-xl text-center sm:mx-[8vw] lg:mx-[19vw] tilt-in-left-1"
-        style="color: var(--carousel_h1)"
-      >
-        Oportunitatea de a beneficia de expertiza noastră și de a dezvolta
-        împreuna soluții de succes este baza
-        <span class="font-semibold" style="color: var(--carousel_hr)">
-          colaborării noastre
-        </span>
-      </p>
-    </div>
-    <div>
-      <div class="tilt-in-right-2">
-        <div class="sm:mt-12 logo-slider-container">
-          <div class="logo-slider">
-            <div class="logo-slide">
-              <a href="https://adfitness.vercel.app/" target="_blank">
-                <div class="w-100 h-100">
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="images/a&d.png"
-                    alt=""
-                    class="object-contain"
-                  />
+          <!-- Navigation links for PC -->
+          <ul
+            class="hidden lg:flex text-base font-semibold text-white"
+            style="color: var(--link_color)"
+          >
+            <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+              <a
+                href="#paralax1"
+                class="cursor-pointer"
+                onclick="scrollToSection('parallax1')"
+                >Performanță</a
+              >
+            </li>
+            <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+              <a
+                href="#echipa"
+                class="cursor-pointer"
+                onclick="scrollToSection('echipa')"
+                >Echipa</a
+              >
+            </li>
+            <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+              <a
+                href="#proiecte"
+                class="cursor-pointer"
+                onclick="scrollToSection('proiecte')"
+                >Proiecte</a
+              >
+            </li>
+            <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+              <a
+                href="#feedback"
+                class="cursor-pointer"
+                onclick="scrollToSection('feedback')"
+                >Feedback</a
+              >
+            </li>
+          </ul>
+          <div className="flex items-center ">
+            <div className="mr-5 hidden lg:block">
+              <div class="relative" id="translationContainer">
+                <div
+                  class="flex items-center justify-between sm:px-4 lg:px-3 px-3 py-2 rounded-full cursor-pointer"
+                  onclick="toggleMenu()"
+                  style="
+                    min-height: 40px;
+                    color: var(--translate_color);
+                    background: var(--translate_bg);
+                  "
+                >
+                  <span
+                    style="color: var(--translate_lang_color)"
+                    id="languageText"
+                    >Language</span
+                  >
+                  <svg
+                    class="h-4 w-4 ml-2 lg:ml-0"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="var(  --arrow)"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
                 </div>
-              </a>
+
+                <div
+                  class="opacity-0 scale-y-0 absolute mt-2 lg:w-40 h-20 lg:h-20 w-32 rounded-lg overflow-hidden z-10 transform origin-top"
+                  id="dropdownMenu"
+                  style="
+                    background: var(--translate_bg);
+                    box-shadow: 0px 3px 10px var(--translate_shadow);
+                    transition: transform 0.3s ease-in-out;
+                  "
+                >
+                  <ul
+                    class="divide-y flex flex-col"
+                    style="border-color: var(--translate_line)"
+                  >
+                    <li class="-mt-2 pb-1 lg:-mt-0 lg:pb-0">
+                      <a
+                        class="block lg:px-4 lg:py-2 ul1 cursor-pointer"
+                        style="color: var(--translate_lang_color)"
+                        onclick="handleLanguageChange('ro')"
+                        >Română</a
+                      >
+                    </li>
+                    <li class="-mt-2 pb-1 lg:-mt-0 lg:pb-0">
+                      <a
+                        class="block lg:px-4 lg:py-2 ul1 cursor-pointer"
+                        style="color: var(--translate_lang_color)"
+                        onclick="handleLanguageChange('ru')"
+                        >Русский</a
+                      >
+                    </li>
+                    <li class="pt-2 pb-1 lg:pt-0 lg:pb-0">
+                      <a
+                        class="block lg:px-4 lg:py-2 ul1 cursor-pointer"
+                        style="color: var(--translate_lang_color)"
+                        onclick="handleLanguageChange('en')"
+                        >English</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="logo-slider">
-            <div class="logo-slide">
-              <a href="https://sandutart.vercel.app/" target="_blank">
-                <div class="w-100 h-100">
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="images/sanduta.png"
-                    alt=""
-                    class="object-contain"
-                  />
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="logo-slider">
-            <div class="logo-slide">
-              <a href="https://admin090609.github.io/" target="_blank">
-                <div class="w-100 h-100">
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="images/buffy.png"
-                    alt=""
-                    class="object-contain"
-                  />
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="logo-slider">
-            <div class="logo-slide">
-              <a href="https://apisudex.store/" target="_blank">
-                <div class="w-100 h-100">
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="images/apisudex.png"
-                    alt=""
-                    class="object-contain"
-                  />
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="logo-slider">
-            <div class="logo-slide">
-              <a href="https://adfitness.vercel.app/" target="_blank">
-                <div class="w-100 h-100">
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="images/a&d.png"
-                    alt=""
-                    class="object-contain"
-                  />
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="logo-slider">
-            <div class="logo-slide">
-              <a href="https://sandutart.vercel.app/" target="_blank">
-                <div class="w-100 h-100">
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="images/sanduta.png"
-                    alt=""
-                    class="object-contain"
-                  />
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="logo-slider">
-            <div class="logo-slide">
-              <a href="https://admin090609.github.io/" target="_blank">
-                <div class="w-100 h-100">
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="images/buffy.png"
-                    alt=""
-                    class="object-contain"
-                  />
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="logo-slider">
-            <div class="logo-slide">
-              <a href="https://apisudex.store/" target="_blank">
-                <div class="w-100 h-100">
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="images/apisudex.png"
-                    alt=""
-                    class="object-contain"
-                  />
-                </div>
-              </a>
+            <div className="-mr-[3vw] sm:mr-0">
+              <div id="colorToggle">
+                <label class="toggle transition-all duration-300" for="switch">
+                  <input id="switch" class="input" type="checkbox" />
+                  <div class="icon icon--moon">
+                    <svg
+                      height="20"
+                      width="20"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                        fill-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="icon icon--sun">
+                    <svg
+                      height="20"
+                      width="20"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59-1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
+                        fill="black"
+                      ></path>
+                    </svg>
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!--Paralax1-->
-    <section id="paralax1">
+        <div
+          class="lg:hidden top-0 right-0 text-white h-screen flex justify-center items-center text-center lg-hidden-menu"
+          style="
+            background-image: linear-gradient(
+              to bottom,
+              var(--nav_bg1),
+              var(--nav_bg2),
+              var(--nav_bg3)
+            );
+            height: 101%;
+            width: 100%;
+            position: fixed;
+            z-index: 2;
+          "
+        >
+          <ul
+            class="flex flex-col justify-center items-center text-center gap-4 md:text-2xl"
+          >
+            <li class="my-2 flex items-center">
+              <img
+                src="../images/performance.png"
+                alt="Icon"
+                width="34"
+                height="34"
+                class="w-8 mr-2"
+              />
+              <a href="#paralax1" onclick="scrollToSection('parallax1')"
+                >Performanță</a
+              >
+            </li>
+            <li class="my-2 flex items-center">
+              <img
+                src="../images/team.png"
+                alt="Icon"
+                width="34"
+                height="34"
+                class="w-8 mr-2"
+              />
+              <a href="#echipa" onclick="scrollToSection('echipa')">Echipa</a>
+            </li>
+            <li class="my-2 flex items-center">
+              <img
+                src="../images/projects.png"
+                alt="Icon"
+                width="34"
+                height="34"
+                class="w-8 mr-2"
+              />
+              <a href="#proiecte" onclick="scrollToSection('proiecte')"
+                >Proiecte</a
+              >
+            </li>
+            <li class="my-2 flex items-center">
+              <img
+                src="../images/feedback.png"
+                alt="Icon"
+                width="34"
+                height="34"
+                class="w-8 mr-2"
+              />
+              <a href="#feedback" onclick="scrollToSection('feedback')"
+                >Feedback</a
+              >
+            </li>
+            <li class="my-2"></li>
+          </ul>
+        </div>
+      </div>
+
+      <!--Info-->
       <div
-        class="mb-20 sm:mb-20 mt-24 sm:mt-44 lg:mt-44 sm:flex justify-evenly mx-2 sm:mx-10 lg:mx-32 items-center"
+        class="lg:mt-22 mt-10 lg:mt-20 text-center relative px-4 md:px-8 lg:px-0 text-focus-in"
+      >
+        <div class="lg:w-[70vw] mx-2 sm:mx-auto relative">
+          <div
+            class="object-cover overflow-hidden rounded-3xl h-[450px] sm:w-[100%] sm:h-[500px]"
+          >
+            <img
+              id="themeImage"
+              src="./images/slider.jpg"
+              alt=""
+              class="w-full h-full"
+            />
+          </div>
+          <div
+            class="absolute top-0 left-0 tracking-[.1em] right-0 bottom-0 px-5 sm:px-10 flex flex-col justify-center items-start text-white rounded-3xl text-start tracking-in-contract-bck"
+          >
+            <p
+              class="sm:text-6xl text-[50px] font-semibold sm:mb-4 leading-[50px] sm:leading-[60px] py-3"
+            >
+              Creăm <br />Profesional <br />
+              <span
+                class="sm:tracking-wide text-[30px] sm:text-[45px] rounded-[50px] tracking-in-contract-bck px-3 font-light border-2 border-[#91A8B7]"
+                >WebSite-ul</span
+              ><br />Dvs
+            </p>
+            <a href="tel:+37368548789" class="text-shadow-pop-left">
+              <button
+                class="sm:px-8 ml-[-8px] px-3 py-2 text-[14px] sm:text-lg sm:tracking-wider font-semibold mb-5 text-black bg-white rounded-[50px] hover:bg-opacity-70"
+              >
+                Contact +373 685 487 89
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!--Carousel-->
+      <div
+        class="mt-24 sm:mt-44 lg:mt-32 mb-10 lg:mb-20 flex-col justify-evenly mx-2 lg:mx-32 items-center"
       >
         <h1
-          class="tilt-in-right-1 text-center text-2xl mb-5 lg:mb-7 sm:text-[43px] sm:leading-[50px] lg:text-5xl lg:max-w-[350px] lg:leading-[60px] font-semibold"
+          class="text-center text-2xl sm:text-5xl lg:text-4xl mb-5 sm:mb-7 font-semibold tracking-in-expand-fwd-top"
           style="color: var(--carousel_h1)"
         >
-          Ce vă oferim ca parteneri
+          Transformăm conceptele in realitate online
         </h1>
         <hr
-          class="tracking-in-expand h-1 rounded-xl sm:rotate-90 flex justify-center items-center sm:block sm:mx-0 mx-[12vw] mb-5 sm:mb-0 sm:w-56 lg:w-24"
+          class="h-1 rounded-xl flex justify-center items-center mb-5 mx-[12vw] sm:mb-7 lg:mx-[25vw] tracking-in-expand"
           style="background: var(--carousel_hr)"
         />
+
         <p
-          class="tilt-in-right-1 sm:text-xl sm:text-start text-center"
+          class="sm:text-2xl lg:text-xl text-center sm:mx-[8vw] lg:mx-[19vw] tilt-in-left-1"
           style="color: var(--carousel_h1)"
         >
-          Suntem parteneri de încredere, <br />
-          pregătiți să vă sprijinim cu soluții inovatoare <br />
-          <span class="text-[#008DFD] font-semibold"
-            >și servicii de înaltă calitate</span
-          >
+          Oportunitatea de a beneficia de expertiza noastră și de a dezvolta
+          împreuna soluții de succes este baza
+          <span class="font-semibold" style="color: var(--carousel_hr)">
+            colaborării noastre
+          </span>
         </p>
       </div>
-
-      <div
-        class="flex flex-col justify-between text-center items-center font-semibold text-white fade-in-bck"
-      >
-        <div class="flex justify-between">
-          <div
-            class="circle-box circle-box-1 shadow-md shadow-white border-[1px] mobile-circle-box"
-            style="
-              background: linear-gradient(
-                to bottom,
-                var(--nav_bg1),
-                var(--nav_bg2),
-                var(--nav_bg3)
-              );
-            "
-          >
-            <div class="circle-title">Title 1</div>
-            <div class="circle-description">Description 1</div>
-          </div>
-          <!-- Circle 2 -->
-          <div
-            class="circle-box circle-box-2 shadow-md shadow-white border-[1px] mobile-circle-box"
-            style="
-              background: linear-gradient(
-                to bottom,
-                var(--nav_bg1),
-                var(--nav_bg2),
-                var(--nav_bg3)
-              );
-            "
-          >
-            <div class="circle-title">Title 2</div>
-            <div class="circle-description">Description 2</div>
-          </div>
-          <!-- Circle 3 -->
-          <div
-            class="circle-box circle-box-3 shadow-md shadow-white border-[1px] mobile-circle-box"
-            style="
-              background: linear-gradient(
-                to bottom,
-                var(--nav_bg1),
-                var(--nav_bg2),
-                var(--nav_bg3)
-              );
-            "
-          >
-            <div class="circle-title">Title 3</div>
-            <div class="circle-description">Description 3</div>
-          </div>
-        </div>
-
-        <!-- Second set of circles -->
-        <div class="flex justify-between mb-10">
-          <!-- Circle 4 -->
-          <div
-            class="circle-box circle-box-4 shadow-md shadow-white border-[1px] mobile-circle-box"
-            style="
-              background: linear-gradient(
-                to bottom,
-                var(--nav_bg1),
-                var(--nav_bg2),
-                var(--nav_bg3)
-              );
-            "
-          >
-            <div class="circle-title">Title 4</div>
-            <div class="circle-description">Description 4</div>
-          </div>
-          <!-- Circle 5 -->
-          <div
-            class="circle-box circle-box-5 shadow-md shadow-white border-[1px] mobile-circle-box"
-            style="
-              background: linear-gradient(
-                to bottom,
-                var(--nav_bg1),
-                var(--nav_bg2),
-                var(--nav_bg3)
-              );
-            "
-          >
-            <div class="circle-title">Title 5</div>
-            <div class="circle-description">Description 5</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--Paralax2-->
-    <div class="mt-20 sm:mt-0 lg:mt-20 lg:mx-64 p-4 md:p-8 lg:p-0">
-      <h1
-        class="text-center text-2xl sm:text-5xl font-semibold slide-in-bck-top"
-        style="color: var(--carousel_h1)"
-      >
-        Modul <span class="text-[#008DFD]">nostru</span> de lucru
-      </h1>
-      <p
-        class="text-center sm:text-2xl mb-10 sm:mb-20 sm:mt-7 px-2 mt-5 sm:leading-[35px] slide-in-bck-bottom"
-        style="color: var(--carousel_p)"
-      >
-        În cadrul metodei noastre de lucru, punem accent pe lucru în echipă și
-        comunicarea eficientă, astfel încât să atingem cu succes obiectivele
-        stabilite.
-      </p>
-    </div>
-    <div class="sm:flex sm:flex-wrap block justify-center">
-      <div
-        class="lg:w-[34%] w-[full] rounded-xl sm:p-4 element1 tilt-in-fwd-tl"
-        style="
-          background: linear-gradient(
-            120deg,
-            var(--carousel_gradient1),
-            var(--carousel_gradient2)
-          );
-        "
-      >
-        <div class="circle"></div>
-        <h1
-          class="sm:text-3xl text-2xl text-start font-bold pl-6 sm:pl-6 pt-6 sm:leading-tight"
-        >
-          Analiza produsului
-        </h1>
-        <p
-          class="sm:text-xl sm:mb-0 mb-2 p-6 sm:max-w-[700px] lg:max-w-full sm:p-6 sm:leading-normal"
-          style="color: var(--paralax_p)"
-        >
-          Ne vom implica într-un dialog constructiv cu clientul nostru pentru a
-          discuta în detaliu despre produsul nostru, apoi preluăm
-          responsabilitatea de a elabora specificațiile tehnice, împărțindu-le
-          în grupuri mici printre colegii noștri.
-        </p>
-      </div>
-      <div
-        class="lg:w-[34%] w-[full] sm:mt-8 lg:mt-0 mt-8 lg:ml-20 rounded-xl sm:p-4 element2 tilt-in-fwd-tr"
-        style="
-          background: linear-gradient(
-            120deg,
-            var(--carousel_gradient1),
-            var(--carousel_gradient2)
-          );
-        "
-      >
-        <div class="circle1"></div>
-        <h1
-          class="sm:text-3xl text-2xl text-start font-bold pt-6 pl-6 sm:pl-6 sm:leading-tight"
-        >
-          Împărțirea lucrării în etape
-        </h1>
-        <p
-          class="sm:text-xl sm:mb-0 mb-2 p-6 sm:p-6 sm:max-w-[700px] lg:max-w-full sm:leading-normal"
-          style="color: var(--paralax_p)"
-        >
-          Divizăm procesul în etape. În prima săptămână, ne concentrăm pe
-          crearea designului web și lucrăm la acest aspect până când sunteți
-          complet mulțumit cu produsul final.
-        </p>
-      </div>
-      <div
-        class="lg:w-[34%] h-[full] mt-8 sm:mt-8 lg:mt-10 rounded-xl p-4 element3 tilt-in-fwd-tl"
-        style="
-          background: linear-gradient(
-            120deg,
-            var(--carousel_gradient1),
-            var(--carousel_gradient2)
-          );
-        "
-      >
-        <div class="circle2"></div>
-        <h1
-          class="sm:text-3xl text-2xl text-start font-bold pt-3 pl-3 sm:pl-6 lg:pl-0 sm:leading-tight"
-        >
-          Dezvoltarea produsului
-        </h1>
-        <p
-          class="sm:text-xl sm:mb-0 mb-2 p-3 sm:pl-6 sm:max-w-[700px] lg:max-w-full lg:pl-0 sm:leading-normal"
-          style="color: var(--paralax_p)"
-        >
-          Dezvoltarea produsului, inclusiv toate aspectele legate de design,
-          producție, actualizări, și serviciile oferite pentru a asigura buna
-          funcționare a acestuia.
-        </p>
-        <div
-          class="lg:w-[100vw] w-[23%] rounded-[50%] circle-shape sm:w-[7.5%] float-rigth text-center"
-        ></div>
-      </div>
-    </div>
-
-    <!--Echipa-->
-    <div
-      id="echipa"
-      class="flex flex-col lg:flex-row mt-24 sm:mt-44 justify-around items-center"
-    >
-      <div class="sm:max-w-lg mb-5 sm:mb-5 lg:mb-0">
-        <h1
-          class="sm:text-6xl text-center text-2xl lg:text-start font-bold mb-5 slide-in-blurred-left"
-          style="color: var(--carousel_h1)"
-        >
-          Echipa <br class="hidden lg:inline-block" />
-          Noastră
-        </h1>
-        <p
-          class="sm:text-lg text-center px-3 lg:text-start slide-in-blurred-right"
-          style="color: var(--carousel_p)"
-        >
-          Echipa noastră are ca obiectiv să aducă inovație și să sporească
-          eficiența colaborării în colectiv, oferind suport clienților noștri
-          pentru a se dezvolta în mediul digital și a atinge rezultate pe care
-          nu le-au atins până acum. Suntem o companie în plină expansiune,
-          orientată către progres continuu.
-        </p>
-      </div>
-      <div class="flex justify-center items-center flex-col">
-        <div class="flex">
-          <div class="p-4 slide-in-elliptic-right-fwd">
-            <img
-              src="/images/danu.jpeg"
-              alt=""
-              class="rounded-[20px] w-[250px]"
-            />
-            <div id="curve" class="card">
-              <div class="footer">
-                <div class="connections">
-                  <div class="connection twitter">
-                    <a href="https://www.instagram.com/loghindan/" class="icon">
-                      <img
-                        src="/images/instagram.png"
-                        alt=""
-                        class="w-[10px] h-[10px] sm:w-[20px] sm:h-[20px] mt-[7.85px] ml-[7.25px]"
-                      />
-                    </a>
-                  </div>
-                  <div class="connection behance">
-                    <a href="https://github.com/admin090609" class="icon">
-                      <img
-                        src="/images/github.png"
-                        alt=""
-                        class="w-[12.5px] h-[12.5px] sm:w-[22.5px] sm:h-[22.5px] mt-[3.5px] ml-[6px]"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="info">
-                  <div class="name">Loghin Dan</div>
-                  <div class="job">Developer</div>
-                </div>
-              </div>
-              <div class="card-blur"></div>
-            </div>
-          </div>
-          <div class="p-4 slide-in-elliptic-left-fwd">
-            <img
-              src="/images/eduard.jpeg"
-              alt=""
-              class="rounded-[20px] w-[250px]"
-            />
-            <div id="curve" class="card">
-              <div class="footer">
-                <div class="connections">
-                  <div class="connection twitter">
-                    <a href="https://www.instagram.com/i_edy_/" class="icon">
-                      <img
-                        src="/images/instagram.png"
-                        alt=""
-                        class="w-[10px] h-[10px] sm:w-[20px] sm:h-[20px] mt-[7.85px] ml-[7.25px]"
-                      />
-                    </a>
-                  </div>
-                  <div class="connection behance">
-                    <a href="https://github.com/eduard134" class="icon">
-                      <img
-                        src="/images/github.png"
-                        alt=""
-                        class="w-[12.5px] h-[12.5px] sm:w-[22.5px] sm:h-[22.5px] mt-[3.5px] ml-[6px]"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="info">
-                  <div class="name">Ivanov Eduard</div>
-                  <div class="job">Developer</div>
-                </div>
-              </div>
-              <div class="card-blur"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Imaginea -->
-    <div
-      id="proiecte"
-      class="mb-52 sm:mt-44 mt-20 sm:mb-0 lg:flex-row flex flex-col justify-center lg:justify-around"
-    >
-      <div class="lg:mt-16 mb-5 sm:mb-10">
-        <h1
-          id="h1Title"
-          class="sm:text-5xl text-3xl leading-tight text-center lg:text-start text-ellipsis font-bold fade-in-right"
-          style="color: var(--carousel_p)"
-        >
-          Accesează <br />
-          Proiectele Noastre
-        </h1>
-      </div>
-      <div class="container fade-in-left">
-        <div id="slide">
-          <div
-            class="item border-t-gray-300 border-[1px]"
-            style="
-              background-image: url(/images/ad-display.png);
-              background-color: var(--cont_bg);
-            "
-          >
-            <div class="content">
-              <div class="name1 mb-3">A&D</div>
-              <a
-                class="website mb-6"
-                href="https://adfitness.vercel.app/"
-                target="_blank"
-              >
-                <span class="shadow"></span>
-                <span class="edge"></span>
-                <span class="front text">Vezi Website-ul</span>
-              </a>
-            </div>
-          </div>
-          <div
-            class="item border-t-gray-300 border-[1px]"
-            style="
-              background-image: url(/images/apisudex-display.png);
-              background-color: var(--cont_bg);
-            "
-          >
-            <div class="content">
-              <div class="name1 mb-3">APISUDEX</div>
-              <a
-                class="website mb-6"
-                href="https://apisudex.store/"
-                target="_blank"
-              >
-                <span class="shadow"></span>
-                <span class="edge"></span>
-                <span class="front text">Vezi Website-ul</span>
-              </a>
-            </div>
-          </div>
-          <div
-            class="item border-t-gray-300 border-[1px]"
-            style="
-              background-image: url(/images/buffy-display.png);
-              background-color: var(--cont_bg);
-            "
-          >
-            <div class="content">
-              <div class="name1 mb-3">Buffy</div>
-              <a
-                class="website mb-6"
-                href="https://admin090609.github.io/"
-                target="_blank"
-              >
-                <span class="shadow"></span>
-                <span class="edge"></span>
-                <span class="front text">Vezi Website-ul</span>
-              </a>
-            </div>
-          </div>
-          <div
-            class="item border-t-gray-300 border-[1px]"
-            style="
-              background-image: url(/images/sanduta-display.png);
-              background-color: var(--cont_bg);
-            "
-          >
-            <div class="content">
-              <div class="name1 mb-3">SĂNDUȚA ART</div>
-              <a
-                class="website mb-6"
-                href="https://sandutart.vercel.app/"
-                target="_blank"
-              >
-                <span class="shadow"></span>
-                <span class="edge"></span>
-                <span class="front text">Vezi Website-ul</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="buttons">
-          <button id="prev">
-            <span class="text-4xl">&#8249;</span>
-          </button>
-          <button id="next">
-            <span class="text-4xl">&#8250;</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Review -->
-    <div
-      id="feedback"
-      class="flex sm:mt-96 lg:mt-32 justify-around items-center bg-black border-white border-y-[.1px] text-black p-7 lg:p-20"
-    >
       <div>
+        <div class="tilt-in-right-2">
+          <div class="sm:mt-12 logo-slider-container">
+            <div class="logo-slider">
+              <div class="logo-slide">
+                <a href="https://adfitness.vercel.app/" target="_blank">
+                  <div class="w-100 h-100">
+                    <img
+                      width="{100}"
+                      height="{100}"
+                      src="images/a&d.png"
+                      alt=""
+                      class="object-contain"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="logo-slider">
+              <div class="logo-slide">
+                <a href="https://sandutart.vercel.app/" target="_blank">
+                  <div class="w-100 h-100">
+                    <img
+                      width="{100}"
+                      height="{100}"
+                      src="images/sanduta.png"
+                      alt=""
+                      class="object-contain"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="logo-slider">
+              <div class="logo-slide">
+                <a href="https://admin090609.github.io/" target="_blank">
+                  <div class="w-100 h-100">
+                    <img
+                      id="buffyLogo"
+                      width="{100}"
+                      height="{100}"
+                      src="images/buffy.png"
+                      alt=""
+                      class="object-contain"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="logo-slider">
+              <div class="logo-slide">
+                <a href="https://apisudex.store/" target="_blank">
+                  <div class="w-100 h-100">
+                    <img
+                      width="{100}"
+                      height="{100}"
+                      src="images/apisudex.png"
+                      alt=""
+                      class="object-contain"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="logo-slider">
+              <div class="logo-slide">
+                <a href="https://adfitness.vercel.app/" target="_blank">
+                  <div class="w-100 h-100">
+                    <img
+                      width="{100}"
+                      height="{100}"
+                      src="images/a&d.png"
+                      alt=""
+                      class="object-contain"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="logo-slider">
+              <div class="logo-slide">
+                <a href="https://sandutart.vercel.app/" target="_blank">
+                  <div class="w-100 h-100">
+                    <img
+                      width="{100}"
+                      height="{100}"
+                      src="images/sanduta.png"
+                      alt=""
+                      class="object-contain"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="logo-slider">
+              <div class="logo-slide">
+                <a href="https://admin090609.github.io/" target="_blank">
+                  <div class="w-100 h-100">
+                    <img
+                      id="buffyLogo"
+                      width="{100}"
+                      height="{100}"
+                      src="images/buffy.png"
+                      alt=""
+                      class="object-contain"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="logo-slider">
+              <div class="logo-slide">
+                <a href="https://apisudex.store/" target="_blank">
+                  <div class="w-100 h-100">
+                    <img
+                      width="{100}"
+                      height="{100}"
+                      src="images/apisudex.png"
+                      alt=""
+                      class="object-contain"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Paralax1-->
+      <section id="paralax1">
         <div
-          id="reviewContainer"
-          class="bg-white p-10 rounded-bl-[20%] rounded-tr-[20%] rounded-md shadow-md shadow-white mb-10"
+          class="mb-20 sm:mb-20 mt-24 sm:mt-44 lg:mt-44 sm:flex justify-evenly mx-2 sm:mx-10 lg:mx-32 items-center"
         >
           <h1
-            id="reviewTitle"
-            class="text-start font-semibold text-xl sm:text-3xl lg:text-4xl mb-5 fade-in-top"
+            class="tilt-in-right-1 text-center text-2xl mb-5 lg:mb-7 sm:text-[43px] sm:leading-[50px] lg:text-5xl lg:max-w-[350px] lg:leading-[60px] font-semibold"
+            style="color: var(--carousel_h1)"
           >
-            Review APISUDEX
+            Ce vă oferim ca parteneri
           </h1>
+          <hr
+            class="tracking-in-expand h-1 rounded-xl sm:rotate-90 flex justify-center items-center sm:block sm:mx-0 mx-[12vw] mb-5 sm:mb-0 sm:w-56 lg:w-24"
+            style="background: var(--carousel_hr)"
+          />
           <p
-            id="reviewDescription"
-            class="text-start sm:text-xl sm:max-w-[700px] fade-in-left1"
+            class="tilt-in-right-1 sm:text-xl sm:text-start text-center"
+            style="color: var(--carousel_h1)"
           >
-            Colaborarea cu Two Tek pentru dezvoltarea website-ului nostru a fost
-            cu adevărat excepțională. De la calitatea lor remarcabilă și atenția
-            minuțioasă acordată fiecărui detaliu, până la crearea unui website
-            unic și memorabil. Îi recomandăm cu încredere celor care caută
-            parteneri de încredere în acest domeniu.
+            Suntem parteneri de încredere, <br />
+            pregătiți să vă sprijinim cu soluții inovatoare <br />
+            <span class="text-[#008DFD] font-semibold"
+              >și servicii de înaltă calitate</span
+            >
           </p>
         </div>
-        <div class="flex justify-between scale-in-center">
-          <!-- Image 1 -->
-          <div
-            class="rounded-[50px] shadow-md shadow-white hover:scale-[0.9] transition duration-500 ease-in-out cursor-pointer"
-            onclick="changeReview(0)"
-          >
-            <img
-              src="/images/misha.png"
-              alt=""
-              class="rounded-[50%] w-[24vw] sm:w-[17vw] lg:w-[9vw]"
-            />
+
+        <div
+          class="flex flex-col justify-between text-center items-center font-semibold text-white fade-in-bck"
+        >
+          <div class="flex justify-between">
+            <div
+              class="circle-box circle-box-1 shadow-md shadow-white border-[1px] mobile-circle-box"
+              style="
+                background: linear-gradient(
+                  to bottom,
+                  var(--nav_bg1),
+                  var(--nav_bg2),
+                  var(--nav_bg3)
+                );
+              "
+            >
+              <div class="circle-title">Title 1</div>
+              <div class="circle-description">Description 1</div>
+            </div>
+            <!-- Circle 2 -->
+            <div
+              class="circle-box circle-box-2 shadow-md shadow-white border-[1px] mobile-circle-box"
+              style="
+                background: linear-gradient(
+                  to bottom,
+                  var(--nav_bg1),
+                  var(--nav_bg2),
+                  var(--nav_bg3)
+                );
+              "
+            >
+              <div class="circle-title">Title 2</div>
+              <div class="circle-description">Description 2</div>
+            </div>
+            <!-- Circle 3 -->
+            <div
+              class="circle-box circle-box-3 shadow-md shadow-white border-[1px] mobile-circle-box"
+              style="
+                background: linear-gradient(
+                  to bottom,
+                  var(--nav_bg1),
+                  var(--nav_bg2),
+                  var(--nav_bg3)
+                );
+              "
+            >
+              <div class="circle-title">Title 3</div>
+              <div class="circle-description">Description 3</div>
+            </div>
           </div>
-          <!-- Image 2 -->
-          <div
-            class="rounded-[50px] shadow-md shadow-white hover:scale-[0.9] transition duration-500 ease-in-out cursor-pointer"
-            onclick="changeReview(1)"
-          >
-            <img
-              src="/images/viorel.png"
-              alt=""
-              class="rounded-[50%] w-[24vw] sm:w-[17vw] lg:w-[9vw]"
-            />
-          </div>
-          <!-- Image 3 -->
-          <div
-            class="rounded-[50px] shadow-md shadow-white hover:scale-[0.9] transition duration-500 ease-in-out cursor-pointer"
-            onclick="changeReview(2)"
-          >
-            <img
-              src="/images/vasea.png"
-              alt=""
-              class="rounded-[50%] w-[24vw] sm:w-[17vw] lg:w-[9vw]"
-            />
+
+          <!-- Second set of circles -->
+          <div class="flex justify-between mb-10">
+            <!-- Circle 4 -->
+            <div
+              class="circle-box circle-box-4 shadow-md shadow-white border-[1px] mobile-circle-box"
+              style="
+                background: linear-gradient(
+                  to bottom,
+                  var(--nav_bg1),
+                  var(--nav_bg2),
+                  var(--nav_bg3)
+                );
+              "
+            >
+              <div class="circle-title">Title 4</div>
+              <div class="circle-description">Description 4</div>
+            </div>
+            <!-- Circle 5 -->
+            <div
+              class="circle-box circle-box-5 shadow-md shadow-white border-[1px] mobile-circle-box"
+              style="
+                background: linear-gradient(
+                  to bottom,
+                  var(--nav_bg1),
+                  var(--nav_bg2),
+                  var(--nav_bg3)
+                );
+              "
+            >
+              <div class="circle-title">Title 5</div>
+              <div class="circle-description">Description 5</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div id="hiddenImage" class="hidden sm:block tilt-in-fwd-br">
-        <img
-          id="mainImage"
-          src="/images/viorel.png"
-          alt=""
-          width="307"
-          height="298"
-        />
-      </div>
-    </div>
+      </section>
 
-    <!-- Email -->
-    <div>
+      <!--Paralax2-->
+      <div class="mt-20 sm:mt-0 lg:mt-20 lg:mx-64 p-4 md:p-8 lg:p-0">
+        <h1
+          class="text-center text-2xl sm:text-5xl font-semibold slide-in-bck-top"
+          style="color: var(--carousel_h1)"
+        >
+          Modul <span class="text-[#008DFD]">nostru</span> de lucru
+        </h1>
+        <p
+          class="text-center sm:text-2xl mb-10 sm:mb-20 sm:mt-7 px-2 mt-5 sm:leading-[35px] slide-in-bck-bottom"
+          style="color: var(--carousel_p)"
+        >
+          În cadrul metodei noastre de lucru, punem accent pe lucru în echipă și
+          comunicarea eficientă, astfel încât să atingem cu succes obiectivele
+          stabilite.
+        </p>
+      </div>
+      <div class="sm:flex sm:flex-wrap block justify-center">
+        <div
+          class="lg:w-[34%] w-[full] rounded-xl sm:p-4 element1 tilt-in-fwd-tl"
+          style="
+            background: linear-gradient(
+              120deg,
+              var(--carousel_gradient1),
+              var(--carousel_gradient2)
+            );
+          "
+        >
+          <div class="circle"></div>
+          <h1
+            class="sm:text-3xl text-2xl text-start font-bold pl-6 sm:pl-6 pt-6 sm:leading-tight"
+          >
+            Analiza produsului
+          </h1>
+          <p
+            class="sm:text-xl sm:mb-0 mb-2 p-6 sm:max-w-[700px] lg:max-w-full sm:p-6 sm:leading-normal"
+            style="color: var(--paralax_p)"
+          >
+            Ne vom implica într-un dialog constructiv cu clientul nostru pentru
+            a discuta în detaliu despre produsul nostru, apoi preluăm
+            responsabilitatea de a elabora specificațiile tehnice, împărțindu-le
+            în grupuri mici printre colegii noștri.
+          </p>
+        </div>
+        <div
+          class="lg:w-[34%] w-[full] sm:mt-8 lg:mt-0 mt-8 lg:ml-20 rounded-xl sm:p-4 element2 tilt-in-fwd-tr"
+          style="
+            background: linear-gradient(
+              120deg,
+              var(--carousel_gradient1),
+              var(--carousel_gradient2)
+            );
+          "
+        >
+          <div class="circle1"></div>
+          <h1
+            class="sm:text-3xl text-2xl text-start font-bold pt-6 pl-6 sm:pl-6 sm:leading-tight"
+          >
+            Împărțirea lucrării în etape
+          </h1>
+          <p
+            class="sm:text-xl sm:mb-0 mb-2 p-6 sm:p-6 sm:max-w-[700px] lg:max-w-full sm:leading-normal"
+            style="color: var(--paralax_p)"
+          >
+            Divizăm procesul în etape. În prima săptămână, ne concentrăm pe
+            crearea designului web și lucrăm la acest aspect până când sunteți
+            complet mulțumit cu produsul final.
+          </p>
+        </div>
+        <div
+          class="lg:w-[34%] h-[full] mt-8 sm:mt-8 lg:mt-10 rounded-xl p-4 element3 tilt-in-fwd-tl"
+          style="
+            background: linear-gradient(
+              120deg,
+              var(--carousel_gradient1),
+              var(--carousel_gradient2)
+            );
+          "
+        >
+          <div class="circle2"></div>
+          <h1
+            class="sm:text-3xl text-2xl text-start font-bold pt-3 pl-3 sm:pl-6 lg:pl-0 sm:leading-tight"
+          >
+            Dezvoltarea produsului
+          </h1>
+          <p
+            class="sm:text-xl sm:mb-0 mb-2 p-3 sm:pl-6 sm:max-w-[700px] lg:max-w-full lg:pl-0 sm:leading-normal"
+            style="color: var(--paralax_p)"
+          >
+            Dezvoltarea produsului, inclusiv toate aspectele legate de design,
+            producție, actualizări, și serviciile oferite pentru a asigura buna
+            funcționare a acestuia.
+          </p>
+          <div
+            class="lg:w-[100vw] w-[23%] rounded-[50%] circle-shape sm:w-[7.5%] float-rigth text-center"
+          ></div>
+        </div>
+      </div>
+
+      <!--Echipa-->
       <div
-        class="flex justify-center items-center mx-6 rounded-lg mt-20 lg:mx-[34vw] bg-[#191919] mb-16 gap-4 lg:gap-0 fade-in-bottom"
+        id="echipa"
+        class="flex flex-col lg:flex-row mt-24 sm:mt-44 justify-around items-center"
       >
-        <div class="flex mt-10">
-          <iframe
-            id="emailForm"
-            class="border-transparent w-[200%] h-[260px]"
-            src="https://noteforms.com/forms/mail-oakabe"
-          ></iframe>
+        <div class="sm:max-w-lg mb-5 sm:mb-5 lg:mb-0">
+          <h1
+            class="sm:text-6xl text-center text-2xl lg:text-start font-bold mb-5 slide-in-blurred-left"
+            style="color: var(--carousel_h1)"
+          >
+            Echipa <br class="hidden lg:inline-block" />
+            Noastră
+          </h1>
+          <p
+            class="sm:text-lg text-center px-3 lg:text-start slide-in-blurred-right"
+            style="color: var(--carousel_p)"
+          >
+            Echipa noastră are ca obiectiv să aducă inovație și să sporească
+            eficiența colaborării în colectiv, oferind suport clienților noștri
+            pentru a se dezvolta în mediul digital și a atinge rezultate pe care
+            nu le-au atins până acum. Suntem o companie în plină expansiune,
+            orientată către progres continuu.
+          </p>
+        </div>
+        <div class="flex justify-center items-center flex-col">
+          <div class="flex">
+            <div class="p-4 slide-in-elliptic-right-fwd">
+              <img
+                src="/images/danu.jpeg"
+                alt=""
+                class="rounded-[20px] w-[250px]"
+              />
+              <div id="curve" class="card">
+                <div class="footer">
+                  <div class="connections">
+                    <div class="connection twitter">
+                      <a
+                        href="https://www.instagram.com/loghindan/"
+                        class="icon"
+                      >
+                        <img
+                          src="/images/instagram.png"
+                          alt=""
+                          class="w-[10px] h-[10px] sm:w-[20px] sm:h-[20px] mt-[7.85px] ml-[7.25px]"
+                        />
+                      </a>
+                    </div>
+                    <div class="connection behance">
+                      <a href="https://github.com/admin090609" class="icon">
+                        <img
+                          src="/images/github.png"
+                          alt=""
+                          class="w-[12.5px] h-[12.5px] sm:w-[22.5px] sm:h-[22.5px] mt-[3.5px] ml-[6px]"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="info">
+                    <div class="name">Loghin Dan</div>
+                    <div class="job">Developer</div>
+                  </div>
+                </div>
+                <div class="card-blur"></div>
+              </div>
+            </div>
+            <div class="p-4 slide-in-elliptic-left-fwd">
+              <img
+                src="/images/eduard.jpeg"
+                alt=""
+                class="rounded-[20px] w-[250px]"
+              />
+              <div id="curve" class="card">
+                <div class="footer">
+                  <div class="connections">
+                    <div class="connection twitter">
+                      <a href="https://www.instagram.com/i_edy_/" class="icon">
+                        <img
+                          src="/images/instagram.png"
+                          alt=""
+                          class="w-[10px] h-[10px] sm:w-[20px] sm:h-[20px] mt-[7.85px] ml-[7.25px]"
+                        />
+                      </a>
+                    </div>
+                    <div class="connection behance">
+                      <a href="https://github.com/eduard134" class="icon">
+                        <img
+                          src="/images/github.png"
+                          alt=""
+                          class="w-[12.5px] h-[12.5px] sm:w-[22.5px] sm:h-[22.5px] mt-[3.5px] ml-[6px]"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="info">
+                    <div class="name">Ivanov Eduard</div>
+                    <div class="job">Developer</div>
+                  </div>
+                </div>
+                <div class="card-blur"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!--Footer-->
-    <div
-      class="flex flex-col-reverse md:flex-row items-center md:justify-around justify-center sm:py-10 lg:p-10 text-center mb-10"
-    >
-      <div class="flex md:ml-20 mt-5 md:mb-0">
-        <a
-          href="https://www.instagram.com/two_2tek"
-          class="hover:-translate-y-1 transition duration-500 ease-in-out"
-        >
-          <img
-            src="/images/instagram.png"
-            alt=""
-            width="30"
-            height="10"
-            class="mr-5"
-            onmouseover="hoverInstagram(this)"
-            onmouseout="originalInstagram(this)"
-          />
-        </a>
-        <a
-          href="https://www.tiktok.com/@_2.tek_"
-          class="hover:-translate-y-1 transition duration-500 ease-in-out"
-        >
-          <img
-            src="/images/tik-tok.png"
-            alt=""
-            width="30"
-            height="10"
-            onmouseover="hoverTikTok(this)"
-            onmouseout="originalTikTok(this)"
-          />
-        </a>
+      <!-- Imaginea -->
+      <div
+        id="proiecte"
+        class="mb-52 sm:mt-44 mt-20 sm:mb-0 lg:flex-row flex flex-col justify-center lg:justify-around"
+      >
+        <div class="lg:mt-16 mb-5 sm:mb-10">
+          <h1
+            id="h1Title"
+            class="sm:text-5xl text-3xl leading-tight text-center lg:text-start text-ellipsis font-bold fade-in-right"
+            style="color: var(--carousel_p)"
+          >
+            Accesează <br />
+            Proiectele Noastre
+          </h1>
+        </div>
+        <div class="container fade-in-left">
+          <div id="slide">
+            <div
+              class="item border-t-gray-300 border-[1px]"
+              style="
+                background-image: url(/images/ad-display.png);
+                background-color: var(--cont_bg);
+              "
+            >
+              <div class="content">
+                <div class="name1 mb-3">A&D</div>
+                <a
+                  class="website mb-6"
+                  href="https://adfitness.vercel.app/"
+                  target="_blank"
+                >
+                  <span class="shadow"></span>
+                  <span class="edge"></span>
+                  <span class="front text">Vezi Website-ul</span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="item border-t-gray-300 border-[1px]"
+              style="
+                background-image: url(/images/apisudex-display.png);
+                background-color: var(--cont_bg);
+              "
+            >
+              <div class="content">
+                <div class="name1 mb-3">APISUDEX</div>
+                <a
+                  class="website mb-6"
+                  href="https://apisudex.store/"
+                  target="_blank"
+                >
+                  <span class="shadow"></span>
+                  <span class="edge"></span>
+                  <span class="front text">Vezi Website-ul</span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="item border-t-gray-300 border-[1px]"
+              style="
+                background-image: url(/images/buffy-display.png);
+                background-color: var(--cont_bg);
+              "
+            >
+              <div class="content">
+                <div class="name1 mb-3">Buffy</div>
+                <a
+                  class="website mb-6"
+                  href="https://admin090609.github.io/"
+                  target="_blank"
+                >
+                  <span class="shadow"></span>
+                  <span class="edge"></span>
+                  <span class="front text">Vezi Website-ul</span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="item border-t-gray-300 border-[1px]"
+              style="
+                background-image: url(/images/sanduta-display.png);
+                background-color: var(--cont_bg);
+              "
+            >
+              <div class="content">
+                <div class="name1 mb-3">SĂNDUȚA ART</div>
+                <a
+                  class="website mb-6"
+                  href="https://sandutart.vercel.app/"
+                  target="_blank"
+                >
+                  <span class="shadow"></span>
+                  <span class="edge"></span>
+                  <span class="front text">Vezi Website-ul</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="prev">
+              <span class="text-4xl">&#8249;</span>
+            </button>
+            <button id="next">
+              <span class="text-4xl">&#8250;</span>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="md:ml-20 text-sm mt-5 md:mb-0">
-        <h1 class="font-semibold">Simțiți-vă liber să ne contactați oricînd</h1>
-        <p class="text-xs underline">two2tek@gmail.com</p>
+
+      <!-- Review -->
+      <div
+        id="feedback"
+        class="flex sm:mt-96 lg:mt-32 justify-around items-center bg-black border-white border-y-[.1px] text-black p-7 lg:p-20"
+      >
+        <div>
+          <div
+            id="reviewContainer"
+            class="bg-white p-10 rounded-bl-[20%] rounded-tr-[20%] rounded-md shadow-md shadow-white mb-10"
+          >
+            <h1
+              id="reviewTitle"
+              class="text-start font-semibold text-xl sm:text-3xl lg:text-4xl mb-5 fade-in-top"
+            >
+              Review APISUDEX
+            </h1>
+            <p
+              id="reviewDescription"
+              class="text-start sm:text-xl sm:max-w-[700px] fade-in-left1"
+            >
+              Colaborarea cu Two Tek pentru dezvoltarea website-ului nostru a
+              fost cu adevărat excepțională. De la calitatea lor remarcabilă și
+              atenția minuțioasă acordată fiecărui detaliu, până la crearea unui
+              website unic și memorabil. Îi recomandăm cu încredere celor care
+              caută parteneri de încredere în acest domeniu.
+            </p>
+          </div>
+          <div class="flex justify-between scale-in-center">
+            <!-- Image 1 -->
+            <div
+              class="rounded-[50px] shadow-md shadow-white hover:scale-[0.9] transition duration-500 ease-in-out cursor-pointer"
+              onclick="changeReview(0)"
+            >
+              <img
+                src="/images/misha.png"
+                alt=""
+                class="rounded-[50%] w-[24vw] sm:w-[17vw] lg:w-[9vw]"
+              />
+            </div>
+            <!-- Image 2 -->
+            <div
+              class="rounded-[50px] shadow-md shadow-white hover:scale-[0.9] transition duration-500 ease-in-out cursor-pointer"
+              onclick="changeReview(1)"
+            >
+              <img
+                src="/images/viorel.png"
+                alt=""
+                class="rounded-[50%] w-[24vw] sm:w-[17vw] lg:w-[9vw]"
+              />
+            </div>
+            <!-- Image 3 -->
+            <div
+              class="rounded-[50px] shadow-md shadow-white hover:scale-[0.9] transition duration-500 ease-in-out cursor-pointer"
+              onclick="changeReview(2)"
+            >
+              <img
+                src="/images/vasea.png"
+                alt=""
+                class="rounded-[50%] w-[24vw] sm:w-[17vw] lg:w-[9vw]"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="hiddenImage" class="hidden sm:block tilt-in-fwd-br">
+          <img
+            id="mainImage"
+            src="/images/viorel.png"
+            alt=""
+            width="307"
+            height="298"
+          />
+        </div>
       </div>
-      <div class="md:ml-20 text-sm">
-        <h1>Realizat de <span class="font-semibold">2Tek</span></h1>
-        <p class="text-xs">© 2023 Toate drepturile rezervate</p>
+
+      <!-- Email -->
+      <div>
+        <div
+          class="flex justify-center items-center mx-6 rounded-lg mt-20 lg:mx-[34vw] bg-[#191919] mb-16 gap-4 lg:gap-0 fade-in-bottom"
+        >
+          <div class="flex mt-10">
+            <iframe
+              id="emailForm"
+              class="border-transparent w-[200%] h-[260px]"
+              src="https://noteforms.com/forms/mail-oakabe"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div
+        class="flex flex-col-reverse md:flex-row items-center md:justify-around justify-center sm:py-10 lg:p-10 text-center mb-10"
+      >
+        <div class="flex md:ml-20 mt-5 md:mb-0">
+          <a
+            id="instagramLink"
+            href="https://www.instagram.com/two_2tek"
+            class="hover:-translate-y-1 transition duration-500 ease-in-out"
+          >
+            <img
+              id="instagramIcon"
+              src="/images/instagram.png"
+              alt=""
+              width="30"
+              height="10"
+              class="mr-5"
+              onmouseover="hoverInstagram(this)"
+              onmouseout="originalInstagram(this)"
+            />
+          </a>
+          <a
+            id="tiktokLink"
+            href="https://www.tiktok.com/@_2.tek_"
+            class="hover:-translate-y-1 transition duration-500 ease-in-out"
+          >
+            <img
+              id="tiktokIcon"
+              src="/images/tik-tok.png"
+              alt=""
+              width="30"
+              height="10"
+              onmouseover="hoverTikTok(this)"
+              onmouseout="originalTikTok(this)"
+            />
+          </a>
+        </div>
+        <div class="md:ml-20 text-sm mt-5 md:mb-0">
+          <h1 class="font-semibold">
+            Simțiți-vă liber să ne contactați oricînd
+          </h1>
+          <p class="text-xs underline">two2tek@gmail.com</p>
+        </div>
+        <div class="md:ml-20 text-sm">
+          <h1>Realizat de <span class="font-semibold">2Tek</span></h1>
+          <p class="text-xs">© 2023 Toate drepturile rezervate</p>
+        </div>
       </div>
     </div>
 
     <script src="./js/scrollup.js"></script>
     <script>
+      // Loading
+      window.onload = function () {
+        // Function to simulate loading
+        function simulateLoading() {
+          // Simulate some delay (you can replace this with actual loading logic)
+          setTimeout(function () {
+            // Hide the loading container
+            document.querySelector(".loading-container").style.display = "none";
+            // Show the content
+            document.getElementById("content").style.display = "block";
+          }, 2000); // Adjust the delay as needed
+        }
+
+        // Call the loading function when the window has finished loading
+        simulateLoading();
+      };
+
       // Burger
       document.addEventListener("DOMContentLoaded", function () {
         let isMenuOpen = false;
@@ -1113,20 +1293,155 @@
 
       // Footer
       function hoverInstagram(element) {
-        element.src = "/images/instagram_hover.png";
+        const selectedTheme = localStorage.getItem("selectedTheme");
+
+        if (selectedTheme === "dark") {
+          element.src = "/images/instagram_hover.png";
+        } else {
+          element.src = "/images/instagram_hover.png";
+        }
       }
 
       function originalInstagram(element) {
-        element.src = "/images/instagram.png";
+        const selectedTheme = localStorage.getItem("selectedTheme");
+
+        if (selectedTheme === "dark") {
+          element.src = "/images/instagram-dark.png";
+        } else {
+          element.src = "/images/instagram.png";
+        }
       }
 
       function hoverTikTok(element) {
-        element.src = "/images/tik-tok_hover.png";
+        const selectedTheme = localStorage.getItem("selectedTheme");
+
+        if (selectedTheme === "dark") {
+          element.src = "/images/tik-tok_hover.png";
+        } else {
+          element.src = "/images/tik-tok_hover.png";
+        }
       }
 
       function originalTikTok(element) {
-        element.src = "/images/tik-tok.png";
+        const selectedTheme = localStorage.getItem("selectedTheme");
+
+        if (selectedTheme === "dark") {
+          element.src = "/images/tik-tok-dark_hover.png";
+        } else {
+          element.src = "/images/tik-tok.png";
+        }
       }
+
+      // Translate
+      document.addEventListener("DOMContentLoaded", function () {
+        // Load stored language or set default to Romanian
+        const storedLanguage = localStorage.getItem("selectedLanguage") || "ro";
+        setLanguage(storedLanguage);
+
+        // Additional logic for loading stored language and other useEffect equivalents if needed
+      });
+
+      function handleLanguageChange(newLanguage) {
+        document.getElementById("languageText").innerText =
+          newLanguage === "ro"
+            ? "Română"
+            : newLanguage === "ru"
+            ? "Русский"
+            : "English";
+        toggleMenu();
+        localStorage.setItem("selectedLanguage", newLanguage);
+
+        // Additional logic if needed
+      }
+
+      function toggleMenu() {
+        const isOpen = document
+          .getElementById("dropdownMenu")
+          .classList.contains("opacity-100");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        dropdownMenu.classList.toggle("opacity-100", !isOpen);
+        dropdownMenu.classList.toggle("scale-y-100", !isOpen);
+        dropdownMenu.classList.toggle("opacity-0", isOpen);
+        dropdownMenu.classList.toggle("scale-y-0", isOpen);
+      }
+
+      function setLanguage(newLanguage) {
+        const languageText = document.getElementById("languageText");
+        languageText.innerText =
+          newLanguage === "ro"
+            ? "Română"
+            : newLanguage === "ru"
+            ? "Русский"
+            : "English";
+
+        // Ensure the selected option is updated
+        const selectedOption =
+          newLanguage === "ro"
+            ? "Română"
+            : newLanguage === "ru"
+            ? "Русский"
+            : "English";
+        document.getElementById("selectedOption").innerText = selectedOption;
+
+        // Additional logic for setting the language, if needed
+      }
+
+      // Color
+      document.addEventListener("DOMContentLoaded", function () {
+        const switchInput = document.getElementById("switch");
+        const moonIcon = document.querySelector(".icon--moon");
+        const sunIcon = document.querySelector(".icon--sun");
+        const themeImage = document.getElementById("themeImage");
+        const buffyLogo = document.getElementById("buffyLogo");
+        const instagramIcon = document.getElementById("instagramIcon");
+        const tiktokIcon = document.getElementById("tiktokIcon");
+
+        // Check if localStorage is available
+        if (typeof localStorage === "object") {
+          const selectedTheme = localStorage.getItem("selectedTheme");
+          if (selectedTheme === "dark") {
+            switchInput.checked = true;
+            moonIcon.style.fill = "white";
+            sunIcon.style.fill = "black";
+            themeImage.src = "./images/image.jpg"; // Change to the dark theme image path
+            buffyLogo.src = "./images/buffy-dark.png"; // Change to the dark theme logo path
+            instagramIcon.src = "./images/instagram-dark.png"; // Change to the dark theme Instagram icon path
+            tiktokIcon.src = "./images/tik-tok-dark.png"; // Change to the dark theme TikTok icon path
+            document.querySelector("body").setAttribute("data-theme", "dark");
+          } else {
+            switchInput.checked = false;
+            moonIcon.style.fill = "black";
+            sunIcon.style.fill = "white";
+            themeImage.src = "./images/slider.jpg"; // Change to the light theme image path
+            buffyLogo.src = "./images/buffy.png"; // Change to the light theme logo path
+            instagramIcon.src = "./images/instagram.png"; // Change to the light theme Instagram icon path
+            tiktokIcon.src = "./images/tik-tok.png"; // Change to the light theme TikTok icon path
+            document.querySelector("body").setAttribute("data-theme", "light");
+          }
+        }
+
+        switchInput.addEventListener("change", function () {
+          if (this.checked) {
+            document.querySelector("body").setAttribute("data-theme", "dark");
+            localStorage.setItem("selectedTheme", "dark");
+            moonIcon.style.fill = "white";
+            sunIcon.style.fill = "black";
+            themeImage.src = "./images/image.jpg"; // Change to the dark theme image path
+            buffyLogo.src = "./images/buffy-dark.png"; // Change to the dark theme logo path
+            instagramIcon.src = "./images/instagram-dark.png"; // Change to the dark theme Instagram icon path
+            tiktokIcon.src = "./images/tik-tok-dark.png"; // Change to the dark theme TikTok icon path
+          } else {
+            document.querySelector("body").setAttribute("data-theme", "light");
+            localStorage.setItem("selectedTheme", "light");
+            moonIcon.style.fill = "black";
+            sunIcon.style.fill = "white";
+            themeImage.src = "./images/slider.jpg"; // Change to the light theme image path
+            buffyLogo.src = "./images/buffy.png"; // Change to the light theme logo path
+            instagramIcon.src = "./images/instagram.png"; // Change to the light theme Instagram icon path
+            tiktokIcon.src = "./images/tik-tok.png"; // Change to the light theme TikTok icon path
+          }
+        });
+      });
     </script>
   </body>
 </html>

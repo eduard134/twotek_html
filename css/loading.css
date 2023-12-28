@@ -130,7 +130,7 @@ body {
   background-color: var(--body_background);
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  user-select: none; /* Dezactivează selecția textului */
+  user-select: none; 
   transition: all 0.3s;
 }
 
@@ -320,7 +320,6 @@ body {
 
 .fade-in1 {
   animation: fadeIn 2s ease-in-out;
-  /* Adjust the duration and easing as needed */
 }
 
 @keyframes fadeIn {
@@ -332,34 +331,3 @@ body {
     opacity: 1;
   }
 }
-
-.fade-in-up {
-  animation: fadeInUp 1s ease;
-}
-
-.fade-in-up.show {
-  opacity: 0;
-}
-
-@keyframes fadeInUp {
-  from {
-    transform: translateY(120px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
-
-#content {
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-#content.fade-in {
-  opacity: 1;
-}
-
