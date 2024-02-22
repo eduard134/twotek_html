@@ -284,11 +284,11 @@ body {
   display: fixed;
 }
 
-.mr-2{
+.mr-2 {
   margin-right: 10px;
 }
 
-.my-2{
+.my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -314,6 +314,7 @@ body {
     -webkit-transform: translateZ(0) translateY(0);
     transform: translateZ(0) translateY(0);
     opacity: 1;
+
   }
 }
 
@@ -324,7 +325,7 @@ body {
   }
 }
 
-.lg-hidden-menu { 
+.lg-hidden-menu {
   top: 0;
   right: 0;
   position: fixed;
@@ -392,6 +393,7 @@ body {
   width: 2rem;
   margin-right: 0.5rem;
 }
+
 lin>a {
   position: relative;
 }
@@ -416,11 +418,10 @@ lin>a {
 
 
 #content {
-    opacity: 0;
-    transition: opacity 1s ease;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 #content.fade-in {
-    opacity: 1;
+  opacity: 1;
 }
-
