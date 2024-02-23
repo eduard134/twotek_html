@@ -76,7 +76,6 @@
   --toggle_shadow: #ffffff1a;
   --card_shadow: rgb(160, 158, 158);
   --card_color: #bebebe;
-  /* Adjusted to a typical blue color for dark themes */
   --card__blur_bg: #454545;
   --conection_bg: white;
   --job_color: white;
@@ -88,7 +87,6 @@
   --edge_bg2: #09538b;
   --front_color: black;
   --front_bg: #0d69af;
-  /* Adjusted to a typical blue color for dark themes */
   --translate_bg: black;
   --translate_color: white;
   --translate_lang_color: white;
@@ -131,7 +129,6 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
   user-select: none;
-  /* Dezactivează selecția textului */
   transition: all 0.3s;
 }
 

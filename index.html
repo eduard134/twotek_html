@@ -29,9 +29,9 @@
 
   <body>
     <!-- Loading -->
-    <div class="absolute loading  ">
+    <div class="absolute loading">
       <div
-        class="flex flex-col justify-center items-center loading-container w-[100vw] h-[100vh] " 
+        class="flex flex-col justify-center items-center loading-container w-[100vw] h-[100vh]"
       >
         <div class="blobs">
           <div
@@ -159,6 +159,21 @@
                 >Proiecte</a
               >
             </li>
+            <li class="my-2 flex items-center">
+              <img
+                src="../images/contact.png"
+                alt="Icon"
+                width="34"
+                height="34"
+                class="w-8 mr-2"
+              />
+              <a
+                href="#footer"
+                onclick="scrollToSection('footer')"
+                data-translate="Nav4"
+                >Contacte</a
+              >
+            </li>
           </ul>
         </div>
 
@@ -194,9 +209,18 @@
               >Proiecte</a
             >
           </li>
+          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+            <a
+              href="#footer"
+              class="cursor-pointer"
+              onclick="scrollToSection('footer')"
+              data-translate="Nav4"
+              >Contacte</a
+            >
+          </li>
         </ul>
         <div class="flex items-center justify-center">
-          <div class=" sm:mr-0 flex  items-center justify-center semi-burger">
+          <div class="sm:mr-0 flex items-center justify-center semi-burger">
             <div class="relative" id="translationContainer">
               <div class="language-selector">
                 <select
@@ -245,7 +269,6 @@
                 </div>
               </label>
             </div>
-            
           </div>
         </div>
       </div>
@@ -549,7 +572,6 @@
           </div>
         </div>
 
-        <!-- Second set of circles -->
         <div class="flex justify-between mb-10">
           <!-- Circle 4 -->
           <div
@@ -943,14 +965,26 @@
       </div>
     </div>
 
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1361.9589014414814!2d28.77521083885535!3d46.943654592784206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97f5e64797ac9%3A0xdf77d1fefdc33fc1!2z0K_Qu9C-0LLQtdC90YssINCc0L7Qu9C00L7QstCw!5e0!3m2!1sru!2s!4v1708696280733!5m2!1sru!2s"
+      width="100%"
+      height="250px"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+
     <!--Footer-->
     <div
+      id="footer"
       class="flex flex-col-reverse md:flex-row items-center md:justify-around justify-center sm:py-10 lg:p-10 text-center mb-10"
     >
       <div class="flex md:ml-20 mt-5 md:mb-0">
         <a
           id="instagramLink"
           href="https://www.instagram.com/two_2tek"
+          target="_blank"
           class="hover:-translate-y-1 transition duration-500 ease-in-out"
         >
           <img
@@ -967,6 +1001,7 @@
         <a
           id="tiktokLink"
           href="https://www.tiktok.com/@_2.tek_"
+          target="_blank"
           class="hover:-translate-y-1 transition duration-500 ease-in-out"
         >
           <img
@@ -986,39 +1021,41 @@
         </h1>
         <p class="text-xs underline">two2tek@gmail.com</p>
       </div>
-      <div class="md:ml-20 text-sm">
+
+      <div class="md:ml-20 text-sm mt-5 md:mb-0">
+        <p>Tel: 060008857</p>
+        <p class="underline">Str. Basarabia 2</p>
+      </div>
+
+      
+    </div>
+
+      <div class="md:ml-20 text-sm flex justify-center items-center">
         <h1>
           <span data-translate="FooterRealized">Realizat de </span>
-          <span class="font-semibold">2Tek</span>
+          <span class="font-semibold">2Tek. </span>
         </h1>
-        <p class="text-xs" data-translate="FooterRights">
+        <p  data-translate="FooterRights">
           © 2023 Toate drepturile rezervate
         </p>
       </div>
-    </div>
 
-    <script src="./js/scrollup.js"></script>
+    <script src="./js/script.js"></script>
     <script>
       // Loading
       window.onload = function () {
-        // Function to simulate loading
         function simulateLoading() {
-          // Simulate some delay (you can replace this with actual loading logic)
           setTimeout(function () {
-            // Hide the loading container
             document.querySelector(".loading-container").style.display = "none";
             document.querySelector(".loading").style.display = "none";
 
-            // Show the content
             document.getElementById("content").style.display = "block";
-          }, 2700); // Adjust the delay as needed
+          }, 2700);
         }
 
-        // Call the loading function when the window has finished loading
         simulateLoading();
       };
 
-      // NavBar Links
       document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
           anchor.addEventListener("click", function (e) {
@@ -1189,26 +1226,25 @@
         const instagramIcon = document.getElementById("instagramIcon");
         const tiktokIcon = document.getElementById("tiktokIcon");
 
-        // Check if localStorage is available
         if (typeof localStorage === "object") {
           const selectedTheme = localStorage.getItem("selectedTheme");
           if (selectedTheme === "dark") {
             switchInput.checked = true;
             moonIcon.style.fill = "white";
             sunIcon.style.fill = "white";
-            themeImage.src = "./images/image.jpg"; // Change to the dark theme image path
-            buffyLogo.src = "./images/buffy-dark.png"; // Change to the dark theme logo path
-            instagramIcon.src = "./images/instagram-dark.png"; // Change to the dark theme Instagram icon path
-            tiktokIcon.src = "./images/tik-tok-dark_hover.png"; // Change to the dark theme TikTok icon path
+            themeImage.src = "./images/image.jpg";
+            buffyLogo.src = "./images/buffy-dark.png";
+            instagramIcon.src = "./images/instagram-dark.png";
+            tiktokIcon.src = "./images/tik-tok-dark_hover.png";
             document.querySelector("body").setAttribute("data-theme", "dark");
           } else {
             switchInput.checked = false;
             moonIcon.style.fill = "black";
             sunIcon.style.fill = "white";
-            themeImage.src = "./images/slider.jpg"; // Change to the light theme image path
-            buffyLogo.src = "./images/buffy.png"; // Change to the light theme logo path
-            instagramIcon.src = "./images/instagram.png"; // Change to the light theme Instagram icon path
-            tiktokIcon.src = "./images/tik-tok.png"; // Change to the light theme TikTok icon path
+            themeImage.src = "./images/slider.jpg";
+            buffyLogo.src = "./images/buffy.png";
+            instagramIcon.src = "./images/instagram.png";
+            tiktokIcon.src = "./images/tik-tok.png";
             document.querySelector("body").setAttribute("data-theme", "light");
           }
         }
@@ -1219,19 +1255,19 @@
             localStorage.setItem("selectedTheme", "dark");
             moonIcon.style.fill = "white";
             sunIcon.style.fill = "white";
-            themeImage.src = "./images/image.jpg"; // Change to the dark theme image path
-            buffyLogo.src = "./images/buffy-dark.png"; // Change to the dark theme logo path
-            instagramIcon.src = "./images/instagram-dark.png"; // Change to the dark theme Instagram icon path
-            tiktokIcon.src = "./images/tik-tok.png"; // Change to the dark theme TikTok icon path
+            themeImage.src = "./images/image.jpg";
+            buffyLogo.src = "./images/buffy-dark.png";
+            instagramIcon.src = "./images/instagram-dark.png";
+            tiktokIcon.src = "./images/tik-tok.png";
           } else {
             document.querySelector("body").setAttribute("data-theme", "light");
             localStorage.setItem("selectedTheme", "light");
             moonIcon.style.fill = "black";
             sunIcon.style.fill = "white";
-            themeImage.src = "./images/slider.jpg"; // Change to the light theme image path
-            buffyLogo.src = "./images/buffy.png"; // Change to the light theme logo path
-            instagramIcon.src = "./images/instagram.png"; // Change to the light theme Instagram icon path
-            tiktokIcon.src = "./images/tik-tok.png"; // Change to the light theme TikTok icon path
+            themeImage.src = "./images/slider.jpg";
+            buffyLogo.src = "./images/buffy.png";
+            instagramIcon.src = "./images/instagram.png";
+            tiktokIcon.src = "./images/tik-tok.png";
           }
         });
       });
