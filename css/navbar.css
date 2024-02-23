@@ -7,6 +7,13 @@
 @tailwind utilities;
 
 :root {
+  --arrow-bg: rgba(2, 2, 2, 0.3);
+  --arrow-icon: url('/images/arrow.png');
+  --option-bg: white;
+  --select-bg: rgba(0, 0, 0, 0.2);
+}
+
+:root {
   --body_background: white;
   --body_color: black;
   --container_bg: #f5f5f5;
@@ -157,8 +164,8 @@ body {
 }
 
 .text-focus-in {
-  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s both;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s both;
 }
 
 @-webkit-keyframes text-focus-in {
@@ -228,56 +235,99 @@ body {
   }
 }
 
-#checkbox2 {
-  display: none;
+#menu__toggle {
+  opacity: 0;
 }
 
-.bars {
+.menu__btn {
+  display: flex; 
+  position: relative;
+  top: 0px;
+  right: -42vw;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 21;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
   width: 100%;
   height: 4px;
-  background-color: var(--translate_color);
-  border-radius: 6px;
+  border-radius: 10px;
+  background-color: #fdfdfd;
+  transition: 0.3s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
 }
 
-#bar5 {
-  transition-duration: 0.8s;
+.menu__box {
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  right: -100%;
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  align-items: center;
+  background-color: var(--nav_bg3);
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  transition: 0.3s;
 }
 
-#bar4,
-#bar6 {
-  width: 80%;
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.menu__item:hover {
+  background-color: #CFD8DC;
 }
 
-#checkbox2:checked+.toggle2 .bars {
-  position: absolute;
-  transition-duration: 0.5s;
-}
-
-#checkbox2:checked+.toggle2 #bar5 {
-  transform: scaleX(0);
-  transition-duration: 0.5s;
-}
-
-#checkbox2:checked+.toggle2 #bar4 {
-  width: 100%;
+#menu__toggle:checked ~ .menu__btn > span {
   transform: rotate(45deg);
-  transition-duration: 0.5s;
 }
 
-#checkbox2:checked+.toggle2 #bar6 {
-  width: 100%;
-  transform: rotate(-45deg);
-  transition-duration: 0.5s;
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
 }
 
-#checkbox2:checked+.toggle2 {
-  transition-duration: 0.5s;
-  transform: rotate(180deg);
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
 }
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  right: 0;
+}
+
 
 .z-bug {
   position: relative;
-  z-index: 10000;
+  z-index: 900;
 }
 
 .fix {
@@ -294,8 +344,8 @@ body {
 }
 
 .tracking-in-expand-fwd-bottom {
-  -webkit-animation: tracking-in-expand-fwd-bottom 2s cubic-bezier(0.215, 0.61, 0.355, 1) 1s both;
-  animation: tracking-in-expand-fwd-bottom 2s cubic-bezier(0.215, 0.61, 0.355, 1) 1s both;
+  -webkit-animation: tracking-in-expand-fwd-bottom 2s cubic-bezier(0.215, 0.61, 0.355, 1) 3s both;
+  animation: tracking-in-expand-fwd-bottom 2s cubic-bezier(0.215, 0.61, 0.355, 1) 3s both;
 }
 
 @keyframes tracking-in-expand-fwd-bottom {
@@ -424,4 +474,23 @@ lin>a {
 
 #content.fade-in {
   opacity: 1;
+}
+
+.language-css{
+  appearance: none;
+  outline: none;
+  
+  
+}
+
+select option {
+  background-color: var(--nav_bg3);
+  color: #000000;
+  outline: none;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.semi-burger{
+  gap: 8px
 }
