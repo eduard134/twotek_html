@@ -245,7 +245,7 @@ body {
 
 
 .circle {
-  background-image: url("/images/search.png");
+  background-image: url("/twotek/images/search.png");
   width: 200px;
   height: 200px;
   background-size: contain;
@@ -264,7 +264,7 @@ body {
 }
 
 .circle1 {
-  background-image: url("/images/web.png");
+  background-image: url("/twotek/images/web.png");
   width: 200px;
   height: 200px;
   background-size: contain;
@@ -283,7 +283,7 @@ body {
 }
 
 .circle2 {
-  background-image: url("/images/mobile.png");
+  background-image: url("/twotek/images/mobile.png");
   width: 200px;
   height: 200px;
   background-size: contain;
