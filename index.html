@@ -63,8 +63,12 @@
             </filter>
           </defs>
         </svg>
-        <h1 class="text-lg mt-10 fade-in1" style="color: var(--loading_text)">
-          Developed by <span class="text-2xl font-bold">2Tek</span>
+        <h1
+          class="text-lg flex items-center fade-in1"
+          style="color: var(--loading_text)"
+        >
+          Developed by<span style="margin-right: 5px"></span
+          ><span class="text-2xl font-bold">2Tek</span>
         </h1>
       </div>
     </div>
@@ -318,7 +322,7 @@
       class="mt-24 sm:mt-44 lg:mt-32 mb-10 lg:mb-20 flex-col justify-evenly mx-2 lg:mx-32 items-center"
     >
       <h1
-        class="text-center text-2xl sm:text-5xl lg:text-4xl mb-5 sm:mb-7 font-semibold tracking-in-expand-fwd-top"
+        class=" text-center text-2xl sm:text-5xl lg:text-4xl mb-5 sm:mb-7 font-semibold tracking-in-expand-fwd-top"
         style="color: var(--carousel_h1)"
         data-translate="CarouselTitle"
       >
@@ -1033,7 +1037,9 @@
         <span data-translate="FooterRealized">Realizat de </span>
         <span class="font-semibold">2Tek. </span>
       </h1>
-      <p data-translate="FooterRights">© 2023 Toate drepturile rezervate</p>
+      <p data-translate="FooterRights" class="ml-[6px]">
+        Toate drepturile rezervate
+      </p>
     </div>
 
     <script src="./js/script.js"></script>
@@ -1281,6 +1287,9 @@
           link.addEventListener("click", closeMenu);
         });
       });
+
+      //Animations
+      
     </script>
   </body>
 </html>
