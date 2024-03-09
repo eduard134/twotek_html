@@ -154,7 +154,7 @@ body {
 }
 
 .circle {
-  background-image: url("/css/images/search.png");
+  background-image: url("./css/images/search.png");
   width: 200px;
   height: 200px;
   background-size: contain;
@@ -173,7 +173,7 @@ body {
 }
 
 .circle1 {
-  background-image: url("/css/images/web.png");
+  background-image: url("./css/images/web.png");
   width: 200px;
   height: 200px;
   background-size: contain;
@@ -192,7 +192,7 @@ body {
 }
 
 .circle2 {
-  background-image: url("/css/images/mobile.png");
+  background-image: url("./css/images/mobile.png");
   width: 200px;
   height: 200px;
   background-size: contain;
