@@ -20,6 +20,7 @@
     <link href="./css/review.css" rel="stylesheet" />
     <link href="./css/email.css" rel="stylesheet" />
     <link href="./css/footer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/animate.css" />
     <meta
       name="description"
       content="Obține un site care nu doar atrage atenția, ci și transformă vizitatorii în clienți fideli. Înălțăm standardele digitale, iar succesul tău este misiunea noastră!"
@@ -322,19 +323,22 @@
       class="mt-24 sm:mt-44 lg:mt-32 mb-10 lg:mb-20 flex-col justify-evenly mx-2 lg:mx-32 items-center"
     >
       <h1
-        class=" text-center text-2xl sm:text-5xl lg:text-4xl mb-5 sm:mb-7 font-semibold tracking-in-expand-fwd-top"
+        class="text-center text-2xl sm:text-5xl lg:text-4xl mb-5 sm:mb-7 font-semibold wow fadeInUp"
+        data-wow-offset="100"
         style="color: var(--carousel_h1)"
         data-translate="CarouselTitle"
       >
         Transformăm conceptele in realitate online
       </h1>
       <hr
-        class="h-1 rounded-xl flex justify-center items-center mb-5 mx-[12vw] sm:mb-7 lg:mx-[25vw] tracking-in-expand"
+        class="h-1 rounded-xl flex justify-center items-center mb-5 mx-[12vw] sm:mb-7 lg:mx-[25vw] wow fadeIn"
+        data-wow-offset="100"
         style="background: var(--carousel_hr)"
       />
 
       <p
-        class="sm:text-2xl lg:text-xl text-center sm:mx-[8vw] lg:mx-[19vw] tilt-in-left-1"
+        class="sm:text-2xl lg:text-xl text-center sm:mx-[8vw] lg:mx-[19vw] wow fadeInLeft"
+        data-wow-offset="100"
         style="color: var(--carousel_h1)"
         data-translate="CarouselText1"
       >
@@ -350,7 +354,7 @@
       </p>
     </div>
     <div>
-      <div class="tilt-in-right-2">
+      <div class="wow fadeInRight" data-wow-offset="100">
         <div class="sm:mt-12 logo-slider-container">
           <div class="logo-slider">
             <div class="logo-slide">
@@ -484,18 +488,21 @@
         class="mb-20 sm:mb-20 mt-24 sm:mt-44 lg:mt-44 sm:flex justify-evenly mx-2 sm:mx-10 lg:mx-32 items-center"
       >
         <h1
-          class="tilt-in-right-1 text-center text-2xl mb-5 lg:mb-7 sm:text-[43px] sm:leading-[50px] lg:text-5xl lg:max-w-[350px] lg:leading-[60px] font-semibold"
+          class="wow fadeInLeft text-center text-2xl mb-5 lg:mb-3 sm:text-[43px] sm:leading-[50px] lg:text-5xl lg:max-w-[350px] lg:leading-[60px] font-semibold"
           style="color: var(--carousel_h1)"
+          data-wow-offset="100"
         >
           <span data-translate="BlobsTitle1">Ce vă oferim</span>
           <span data-translate="BlobsTitle2">ca parteneri</span>
         </h1>
         <hr
-          class="tracking-in-expand h-1 rounded-xl sm:rotate-90 flex justify-center items-center sm:block sm:mx-0 mx-[12vw] mb-5 sm:mb-0 sm:w-56 lg:w-24"
+          class="wow fadeIn h-1 rounded-xl sm:rotate-90 flex justify-center items-center sm:block sm:mx-0 mx-[12vw] mb-5 sm:mb-0 sm:w-56 lg:w-24"
+          data-wow-offset="100"
           style="background: var(--carousel_hr)"
         />
         <p
-          class="tilt-in-right-1 sm:text-xl sm:text-start text-center"
+          class="wow fadeInRight sm:text-xl sm:text-start text-center"
+          data-wow-offset="100"
           style="color: var(--carousel_h1)"
         >
           <span data-translate="BlobsText1"
@@ -512,7 +519,8 @@
       </div>
 
       <div
-        class="flex flex-col justify-between text-center items-center font-semibold text-white fade-in-bck"
+        class="flex flex-col justify-between text-center items-center font-semibold text-white wow fadeIn"
+        data-wow-offset="100"
       >
         <div class="flex justify-between">
           <div
@@ -624,7 +632,8 @@
     <!--Paralax2-->
     <div class="mt-20 sm:mt-0 lg:mt-20 lg:mx-64 p-4 md:p-8 lg:p-0">
       <h1
-        class="text-center text-2xl sm:text-5xl font-semibold slide-in-bck-top"
+        class="text-center text-2xl sm:text-5xl font-semibold wow fadeInDown"
+        data-wow-offset="100"
         style="color: var(--carousel_h1)"
       >
         <span data-translate="HowTitle1">Modul</span>
@@ -632,7 +641,8 @@
         <span data-translate="HowTitle3">de lucru</span>
       </h1>
       <p
-        class="text-center sm:text-2xl mb-10 sm:mb-20 sm:mt-7 px-2 mt-5 sm:leading-[35px] slide-in-bck-bottom"
+        class="text-center sm:text-2xl mb-10 sm:mb-20 sm:mt-7 px-2 mt-5 sm:leading-[35px] wow fadeInUp"
+        data-wow-offset="100"
         style="color: var(--carousel_p)"
         data-translate="HowText"
       >
@@ -643,7 +653,8 @@
     </div>
     <div class="sm:flex sm:flex-wrap block justify-center">
       <div
-        class="lg:w-[34%] w-[full] rounded-xl sm:p-4 element1 tilt-in-fwd-tl"
+        class="lg:w-[34%] w-[full] rounded-xl sm:p-4 element1 wow fadeInLeft"
+        data-wow-offset="10"
         style="
           background: linear-gradient(
             120deg,
@@ -671,7 +682,8 @@
         </p>
       </div>
       <div
-        class="lg:w-[34%] w-[full] sm:mt-8 lg:mt-0 mt-8 lg:ml-20 rounded-xl sm:p-4 element2 tilt-in-fwd-tr"
+        class="lg:w-[34%] w-[full] sm:mt-8 lg:mt-0 mt-8 lg:ml-20 rounded-xl sm:p-4 element2 wow fadeInRight"
+        data-wow-offset="100"
         style="
           background: linear-gradient(
             120deg,
@@ -698,7 +710,8 @@
         </p>
       </div>
       <div
-        class="lg:w-[34%] h-[full] mt-8 sm:mt-8 lg:mt-10 rounded-xl p-4 element3 tilt-in-fwd-tl"
+        class="lg:w-[34%] h-[full] mt-8 sm:mt-8 lg:mt-10 rounded-xl p-4 element3 wow fadeInUp"
+        data-wow-offset="100"
         style="
           background: linear-gradient(
             120deg,
@@ -736,7 +749,8 @@
     >
       <div class="sm:max-w-lg mb-5 sm:mb-5 lg:mb-0">
         <h1
-          class="sm:text-6xl text-center text-2xl lg:text-start font-bold mb-5 slide-in-blurred-left"
+          class="sm:text-6xl text-center text-2xl lg:text-start font-bold mb-5 wow fadeInRight"
+          data-wow-offset="100"
           style="color: var(--carousel_h1)"
         >
           <span data-translate="EchipaTitle1">Echipa</span>
@@ -744,7 +758,8 @@
           <span data-translate="EchipaTitle2">Noastră</span>
         </h1>
         <p
-          class="sm:text-lg text-center px-3 lg:text-start slide-in-blurred-right"
+          class="sm:text-lg text-center px-3 lg:text-start wow fadeInRight"
+          data-wow-offset="100"
           style="color: var(--carousel_p)"
           data-translate="EchipaText"
         >
@@ -757,7 +772,7 @@
       </div>
       <div class="flex justify-center items-center flex-col">
         <div class="flex">
-          <div class="p-4 slide-in-elliptic-right-fwd">
+          <div class="p-4 wow zoomIn" data-wow-offset="100">
             <img
               src="./images/danu.jpeg"
               alt=""
@@ -793,7 +808,7 @@
               <div class="card-blur"></div>
             </div>
           </div>
-          <div class="p-4 slide-in-elliptic-left-fwd">
+          <div class="p-4 wow zoomIn" data-wow-offset="100">
             <img
               src="./images/eduard.jpeg"
               alt=""
@@ -836,19 +851,20 @@
     <!-- Imaginea -->
     <div
       id="proiecte"
-      class="mb-52 sm:mt-36 mt-20 sm:mb-0 flex-row flex flex-col justify-center items-center lg:justify-around"
+      class="mb-52 sm:mt-40 mt-20 sm:mb-0 flex-row flex flex-col justify-center items-center lg:justify-around"
     >
       <div class="lg:mt-16 mb-5 sm:mb-10">
         <h1
           id="h1Title"
-          class="sm:text-5xl text-3xl leading-tight text-center lg:text-start text-ellipsis font-bold fade-in-right"
+          class="sm:text-5xl text-3xl leading-tight text-center lg:text-start text-ellipsis font-bold wow fadeInUp"
+          data-wow-offset="100"
           style="color: var(--carousel_p)"
         >
           <span data-translate="SliderTitle1">Accesează</span>
           <span data-translate="SliderTitle2">Proiectele Noastre</span>
         </h1>
       </div>
-      <div class="container fade-in-left">
+      <div class="container wow fadeInUp" data-wow-offset="100">
         <div id="slide">
           <div
             class="item border-t-gray-300 border-[1px]"
@@ -957,7 +973,8 @@
     <!-- Email -->
     <div>
       <div
-        class="flex justify-center items-center mx-6 rounded-lg mt-20 lg:mx-[34vw] bg-[#191919] mb-16 gap-4 lg:gap-0 fade-in-bottom"
+        class="flex justify-center items-center mx-6 rounded-lg mt-20 lg:mx-[34vw] bg-[#191919] mb-16 gap-4 lg:gap-0 wow fadeInUp"
+        data-wow-offset="100"
       >
         <div class="flex mt-10">
           <iframe
@@ -984,7 +1001,10 @@
       id="footer"
       class="flex flex-col-reverse md:flex-row items-center md:justify-around justify-center sm:py-10 lg:p-10 text-center mb-10"
     >
-      <div class="flex md:ml-20 mt-5 md:mb-0">
+      <div
+        class="flex md:ml-20 mt-5 md:mb-0 wow fadeInUp"
+        data-wow-offset="100"
+      >
         <a
           id="instagramLink"
           href="https://www.instagram.com/two_2tek"
@@ -1019,20 +1039,29 @@
           />
         </a>
       </div>
-      <div class="md:ml-20 text-sm mt-5 md:mb-0">
+      <div
+        class="md:ml-20 text-sm mt-5 md:mb-0 wow fadeInUp"
+        data-wow-offset="100"
+      >
         <h1 class="font-semibold" data-translate="FooterContact">
           Simțiți-vă liber să ne contactați oricînd
         </h1>
         <p class="text-xs underline">two2tek@gmail.com</p>
       </div>
 
-      <div class="md:ml-20 text-sm mt-5 md:mb-0">
+      <div
+        class="md:ml-20 text-sm mt-5 md:mb-0 wow fadeInUp"
+        data-wow-offset="100"
+      >
         <p>Tel: 060008857</p>
         <p class="underline">Str. Basarabia 2</p>
       </div>
     </div>
 
-    <div class="md:ml-20 text-sm flex justify-center items-center">
+    <div
+      class="md:ml-20 text-sm flex justify-center items-center wow fadeIn"
+      data-wow-delay="1s"
+    >
       <h1>
         <span data-translate="FooterRealized">Realizat de </span>
         <span class="font-semibold">2Tek. </span>
@@ -1043,6 +1072,11 @@
     </div>
 
     <script src="./js/script.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+
     <script>
       // Loading
       window.onload = function () {
@@ -1052,7 +1086,7 @@
             document.querySelector(".loading").style.display = "none";
 
             document.getElementById("content").style.display = "block";
-          }, 2700);
+          }, 2500);
         }
 
         simulateLoading();
@@ -1289,7 +1323,6 @@
       });
 
       //Animations
-      
     </script>
   </body>
 </html>
