@@ -528,6 +528,11 @@ lin>a {
   }
 }
 
+.language-option:hover{
+  background: #efefef;
+  border-radius: 10px;
+}
+
 .language-arrow {
   width: 10px;
   height: 10px;
