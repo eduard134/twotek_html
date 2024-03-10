@@ -161,8 +161,7 @@ body {
 }
 
 .text-focus-in {
-  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s
-    both;
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s both;
   animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s both;
 }
 
@@ -248,9 +247,9 @@ body {
   z-index: 21;
 }
 
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
   display: block;
   position: absolute;
   width: 100%;
@@ -259,11 +258,13 @@ body {
   background-color: #fdfdfd;
   transition: 0.3s;
 }
-.menu__btn > span::before {
+
+.menu__btn>span::before {
   content: "";
   top: -8px;
 }
-.menu__btn > span::after {
+
+.menu__btn>span::after {
   content: "";
   top: 8px;
 }
@@ -299,25 +300,26 @@ body {
   text-decoration: none;
   transition: background 0.3s;
 }
+
 .menu__item:hover {
   background-color: #cfd8dc;
 }
 
-#menu__toggle:checked ~ .menu__btn > span {
+#menu__toggle:checked~.menu__btn>span {
   transform: rotate(45deg);
 }
 
-#menu__toggle:checked ~ .menu__btn > span::before {
+#menu__toggle:checked~.menu__btn>span::before {
   top: 0;
   transform: rotate(0);
 }
 
-#menu__toggle:checked ~ .menu__btn > span::after {
+#menu__toggle:checked~.menu__btn>span::after {
   top: 0;
   transform: rotate(90deg);
 }
 
-#menu__toggle:checked ~ .menu__box {
+#menu__toggle:checked~.menu__box {
   visibility: visible;
   right: 0;
 }
@@ -341,10 +343,8 @@ body {
 }
 
 .tracking-in-expand-fwd-bottom {
-  -webkit-animation: tracking-in-expand-fwd-bottom 2s
-    cubic-bezier(0.215, 0.61, 0.355, 1) 3s both;
-  animation: tracking-in-expand-fwd-bottom 2s
-    cubic-bezier(0.215, 0.61, 0.355, 1) 3s both;
+  -webkit-animation: tracking-in-expand-fwd-bottom 2s cubic-bezier(0.215, 0.61, 0.355, 1) 3s both;
+  animation: tracking-in-expand-fwd-bottom 2s cubic-bezier(0.215, 0.61, 0.355, 1) 3s both;
 }
 
 @keyframes tracking-in-expand-fwd-bottom {
@@ -442,11 +442,11 @@ body {
   margin-right: 0.5rem;
 }
 
-lin > a {
+lin>a {
   position: relative;
 }
 
-.lin > a:before {
+.lin>a:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -459,7 +459,7 @@ lin > a {
   transition: all 0.3s ease-in-out 0s;
 }
 
-.lin > a:hover:before {
+.lin>a:hover:before {
   visibility: visible;
   transform: scaleX(1);
 }
@@ -488,4 +488,54 @@ lin > a {
 
 .semi-burger {
   gap: 8px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  z-index: 1;
+  top: 42px;
+  left: 0px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  animation: dropdownAnimation 0.5s ease forwards;
+  /* Animation added */
+  transform-origin: top;
+  /* Transform origin set to top */
+}
+
+.language-option {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+@keyframes dropdownAnimation {
+  from {
+    transform: scaleY(0);
+    /* Initially scale vertically to 0 */
+  }
+
+  to {
+    transform: scaleY(1);
+    /* Scale vertically to full size */
+  }
+}
+
+.language-arrow {
+  width: 10px;
+  height: 10px;
+  rotate: 90deg;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.language-arrow.rotate {
+  transform: rotate(180deg); /* Rotate the arrow */
 }
