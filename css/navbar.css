@@ -240,7 +240,7 @@ body {
   display: flex;
   position: relative;
   top: 0px;
-  right: -42vw;
+  right: -39vw;
   width: 26px;
   height: 26px;
   cursor: pointer;
@@ -537,5 +537,6 @@ lin>a {
 }
 
 .language-arrow.rotate {
-  transform: rotate(180deg); /* Rotate the arrow */
+  transform: rotate(180deg);
+  /* Rotate the arrow */
 }

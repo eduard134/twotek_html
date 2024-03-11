@@ -95,9 +95,9 @@ const translations = {
       "Suntem extrem de mulțumiți de experiența noastră de colaborare cu Two Tek pentru dezvoltarea site-ului nostru. Aceștia au livrat un produs de excepție, cu performanță remarcabilă, timp de încărcare rapid și comunicare eficientă, ceea ce îi recomandă cu încredere ca partener de încredere în dezvoltarea web.",
     ReviewSAText:
       "Echipa Two Tek a furnizat o colaborare de excepție pentru dezvoltarea site-ului Sanduta Art. Site-ul funcționează perfect, iar calitatea, viteza și transparența serviciului lor ne-au uimit. Recomandăm cu încredere serviciile Two Tek pentru oricine caută o echipă profesionistă de dezvoltare web.",
-    language: "Română",
-    language2: "Rusă",
-    language3: "Engleză",
+    language: "Ro",
+    language2: "Ru",
+    language3: "En",
     calendly: "Stabiliți o întâlnire",
     calendlyMobile: "Programați-vă",
     BlobsTitle1: "Ce vă oferim",
@@ -185,9 +185,9 @@ const translations = {
       "Мы очень довольны своим опытом работы с Two Tek при разработке нашего веб-сайта. Они предоставили исключительный продукт с выдающейся производительностью, быстрой загрузкой и эффективным общением, поэтому я настоятельно рекомендую их как надежного партнера по веб-разработке.",
     ReviewSAText:
       "Команда Two Tek оказала исключительную помощь при разработке веб-сайта Sanduta Art. Веб-сайт работает отлично, и мы были поражены качеством, скоростью и прозрачностью их обслуживания. Мы с уверенностью рекомендуем услуги Two Tek всем, кто ищет профессиональную команду веб-разработчиков.",
-    language: "Румынский ",
-    language2: "Русский",
-    language3: "Английский",
+    language: "Рум",
+    language2: "Рус",
+    language3: "Анг",
     calendly: "Назначить встречу",
     calendlyMobile: "Назначьте",
     BlobsTitle1: "Что мы предлагаем",
@@ -275,9 +275,9 @@ const translations = {
       "We are extremely satisfied with our experience working with Two Tek for our website development. They have delivered an exceptional product with outstanding performance, fast loading time and effective communication, which is why I highly recommend them as a trusted web development partner.",
     ReviewSAText:
       "The Two Tek team provided an exceptional collaboration for the development of the Sanduta Art website. The website is working perfectly and we were amazed by the quality, speed and transparency of their service. We confidently recommend the services of Two Tek to anyone looking for a professional web development team.",
-    language: "Romanian",
-    language2: "Russian",
-    language3: "English",
+    language: "Ro",
+    language2: "Ru",
+    language3: "En",
     calendly: "Set up a meeting",
     calendlyMobile: "Schedule",
     BlobsTitle1: "What we offer",
@@ -315,9 +315,9 @@ document.querySelectorAll(".language-option").forEach(option => {
   option.addEventListener("click", function () {
     const selectedLanguage = this.getAttribute("data-value");
     const selectedText = this.textContent;
-    const languageNumber = this.getAttribute("data-translate"); 
+    const languageNumber = this.getAttribute("data-translate");
     document.querySelector(".selected-language").textContent = selectedText;
-    document.querySelector(".selected-language").setAttribute("data-translate", languageNumber); 
+    document.querySelector(".selected-language").setAttribute("data-translate", languageNumber);
     translatePage(selectedLanguage);
   });
 });
@@ -338,7 +338,7 @@ document.querySelector(".language-btn").addEventListener("click", function () {
     arrow.classList.remove("rotate");
   } else {
     dropdown.style.display = "block";
-    arrow.classList.add("rotate"); 
+    arrow.classList.add("rotate");
   }
 });
 
