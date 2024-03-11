@@ -493,8 +493,8 @@ lin>a {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  background-color: var(--translate_bg);
+  border: 1px solid var(--translate_line);
   border-radius: 10px;
   z-index: 1;
   top: 42px;
@@ -529,7 +529,7 @@ lin>a {
 }
 
 .language-option:hover{
-  background: #efefef;
+  background: var(--container_bg);
   border-radius: 10px;
 }
 
