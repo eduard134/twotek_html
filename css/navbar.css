@@ -528,7 +528,7 @@ lin>a {
   }
 }
 
-.language-option:hover{
+.language-option:hover {
   background: var(--container_bg);
   border-radius: 10px;
 }
@@ -542,6 +542,74 @@ lin>a {
 }
 
 .language-arrow.rotate {
+  transform: rotate(180deg);
+  /* Rotate the arrow */
+}
+
+.vertical-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.nav-scrolled .navbar {
+  transform: translateY(-100%);
+}
+
+.nav-scrolled .vertical-nav {
+  transform: translateY(0%);
+}
+
+#languageSelector-vertical option {
+  background: var(--translate_bg);
+  color: var(--body_color);
+  text-align: left;
+  outline: none;
+}
+
+.dropdown-content-vertical {
+  display: none;
+  position: absolute;
+  background-color: var(--translate_bg);
+  border: 1px solid var(--translate_line);
+  border-radius: 10px;
+  z-index: 1;
+  top: 42px;
+  left: 0px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  animation: dropdownAnimation 0.5s ease forwards;
+  /* Animation added */
+  transform-origin: top;
+  /* Transform origin set to top */
+}
+
+.language-option-vertical {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.language-option-vertical:hover {
+  background: var(--container_bg);
+  border-radius: 10px;
+}
+
+.language-arrow-vertical {
+  width: 10px;
+  height: 10px;
+  rotate: 90deg;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.language-arrow-vertical.rotate {
   transform: rotate(180deg);
   /* Rotate the arrow */
 }
