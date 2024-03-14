@@ -20,6 +20,7 @@
     <link href="./css/review.css" rel="stylesheet" />
     <link href="./css/email.css" rel="stylesheet" />
     <link href="./css/footer.css" rel="stylesheet" />
+    <link href="./css/circle.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/animate.css" />
     <meta
       name="description"
@@ -73,6 +74,28 @@
         </h1>
       </div>
     </div>
+
+    <!-- Mouse -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
 
     <!--ScrollUp-->
     <div id="scrollToTopContainer" class="scroll-to-top-container">
@@ -240,7 +263,11 @@
                   <div class="selected-language" data-translate="language">
                     Ro
                   </div>
-                  <img id="arrowIcon" src="./images/arrow.png" class="language-arrow" />
+                  <img
+                    id="arrowIcon"
+                    src="./images/arrow.png"
+                    class="language-arrow"
+                  />
                 </div>
                 <div class="dropdown-content">
                   <div
@@ -687,7 +714,7 @@
           );
         "
       >
-        <div class="circle"><img src="./images/search.png" alt="search"></div>
+        <div class="search"><img src="./images/search.png" alt="search" /></div>
         <h1
           class="sm:text-3xl text-2xl text-start font-bold pl-6 sm:pl-6 pt-6 sm:leading-tight"
           data-translate="HowBoxTitle1"
@@ -717,7 +744,7 @@
           );
         "
       >
-        <div class="circle1"> <img src="./images/web.png" alt="web"></div>
+        <div class="circle1"><img src="./images/web.png" alt="web" /></div>
         <h1
           class="sm:text-3xl text-2xl text-start font-bold pt-6 pl-6 sm:pl-6 sm:leading-tight"
           data-translate="HowBoxTitlev2"
@@ -745,7 +772,9 @@
           );
         "
       >
-        <div class="circle2"><img src="./images/mobile.png" alt="mobile"></div>
+        <div class="circle2">
+          <img src="./images/mobile.png" alt="mobile" />
+        </div>
         <h1
           class="sm:text-3xl text-2xl text-start font-bold pt-3 pl-3 sm:pl-6 lg:pl-0 sm:leading-tight"
           data-translate="HowBoxTitlev3"
@@ -807,7 +836,11 @@
               <div class="footer">
                 <div class="connections">
                   <div class="connection twitter">
-                    <a href="https://www.instagram.com/loghindan/" target="_blank" class="icon">
+                    <a
+                      href="https://www.instagram.com/loghindan/"
+                      target="_blank"
+                      class="icon"
+                    >
                       <img
                         src="./images/instagram.png"
                         alt=""
@@ -816,7 +849,11 @@
                     </a>
                   </div>
                   <div class="connection behance">
-                    <a href="https://github.com/admin090609" target="_blank" class="icon">
+                    <a
+                      href="https://github.com/admin090609"
+                      target="_blank"
+                      class="icon"
+                    >
                       <img
                         src="./images/github.png"
                         alt=""
@@ -843,7 +880,11 @@
               <div class="footer">
                 <div class="connections">
                   <div class="connection twitter">
-                    <a href="https://www.instagram.com/i_edy_/" target="_blank" class="icon">
+                    <a
+                      href="https://www.instagram.com/i_edy_/"
+                      target="_blank"
+                      class="icon"
+                    >
                       <img
                         src="./images/instagram.png"
                         alt=""
@@ -852,7 +893,11 @@
                     </a>
                   </div>
                   <div class="connection behance">
-                    <a href="https://github.com/eduard134" target="_blank" class="icon">
+                    <a
+                      href="https://github.com/eduard134"
+                      target="_blank"
+                      class="icon"
+                    >
                       <img
                         src="./images/github.png"
                         alt=""
@@ -1330,6 +1375,52 @@
         });
       });
 
+      // Mouse
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      const colors = ["#cad8e2"];
+
+      circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        if (window.innerWidth < 1024) {
+          // Dacă fereastra este mai mică de 1024px, oprește animația cercului
+          return;
+        }
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = x - 8 + "px";
+          circle.style.top = y - 5 + "px";
+
+          circle.style.transform = `scale(${
+            (circles.length - index) / circles.length
+          })`;
+
+          circle.x = x;
+          circle.y = y;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          x += (nextCircle.x - x) * 0.2;
+          y += (nextCircle.y - y) * 0.2;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
     </script>
   </body>
 </html>

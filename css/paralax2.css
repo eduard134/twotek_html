@@ -153,7 +153,7 @@ body {
   shape-outside: circle();
 }
 
-.circle {
+.search {
   width: 200px;
   height: 200px;
   background-size: contain;
@@ -164,7 +164,7 @@ body {
 }
 
 @media (max-width: 767px) {
-  .circle {
+  .search {
     width: 150px;
     height: 150px;
     margin: 30px 10px 20px 0;
