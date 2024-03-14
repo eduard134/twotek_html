@@ -240,7 +240,7 @@
                   <div class="selected-language" data-translate="language">
                     Ro
                   </div>
-                  <img src="./images/arrow.png" class="language-arrow" />
+                  <img id="arrowIcon" src="./images/arrow.png" class="language-arrow" />
                 </div>
                 <div class="dropdown-content">
                   <div
@@ -1264,6 +1264,7 @@
         const buffyLogo = document.getElementById("buffyLogo");
         const instagramIcon = document.getElementById("instagramIcon");
         const tiktokIcon = document.getElementById("tiktokIcon");
+        const arrowIcon = document.getElementById("arrowIcon");
 
         if (typeof localStorage === "object") {
           const selectedTheme = localStorage.getItem("selectedTheme");
@@ -1275,6 +1276,7 @@
             buffyLogo.src = "./images/buffy-dark.png";
             instagramIcon.src = "./images/instagram-dark.png";
             tiktokIcon.src = "./images/tik-tok-dark_hover.png";
+            arrowIcon.src = "./images/arrow_dark.png";
             document.querySelector("body").setAttribute("data-theme", "dark");
           } else {
             switchInput.checked = false;
@@ -1284,6 +1286,7 @@
             buffyLogo.src = "./images/buffy.png";
             instagramIcon.src = "./images/instagram.png";
             tiktokIcon.src = "./images/tik-tok.png";
+            arrowIcon.src = "./images/arrow.png";
             document.querySelector("body").setAttribute("data-theme", "light");
           }
         }
@@ -1297,7 +1300,8 @@
             themeImage.src = "./images/image.jpg";
             buffyLogo.src = "./images/buffy-dark.png";
             instagramIcon.src = "./images/instagram-dark.png";
-            tiktokIcon.src = "./images/tik-tok.png";
+            tiktokIcon.src = "./images/tik-tok_dark_hover.png";
+            arrowIcon.src = "./images/arrow_dark.png";
           } else {
             document.querySelector("body").setAttribute("data-theme", "light");
             localStorage.setItem("selectedTheme", "light");
@@ -1307,6 +1311,7 @@
             buffyLogo.src = "./images/buffy.png";
             instagramIcon.src = "./images/instagram.png";
             tiktokIcon.src = "./images/tik-tok.png";
+            arrowIcon.src = "./images/arrow.png";
           }
         });
       });
@@ -1325,7 +1330,6 @@
         });
       });
 
-      //Animations
     </script>
   </body>
 </html>
