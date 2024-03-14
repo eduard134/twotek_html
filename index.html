@@ -1,60 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>2Tek</title>
+    <link rel="icon" href="./images/logo1.png" type="image/x-icon" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link href="./css/navbar.css" rel="stylesheet" />
+    <link href="./css/translate.css" rel="stylesheet" />
+    <link href="./css/color.css" rel="stylesheet" />
+    <link href="./css/info.css" rel="stylesheet" />
+    <link href="./css/loading.css" rel="stylesheet" />
+    <link href="./css/carousel.css" rel="stylesheet" />
+    <link href="./css/paralax1.css" rel="stylesheet" />
+    <link href="./css/paralax2.css" rel="stylesheet" />
+    <link href="./css/echipa.css" rel="stylesheet" />
+    <link href="./css/scrollup.css" rel="stylesheet" />
+    <link href="./css/imaginea.css" rel="stylesheet" />
+    <link href="./css/review.css" rel="stylesheet" />
+    <link href="./css/email.css" rel="stylesheet" />
+    <link href="./css/footer.css" rel="stylesheet" />
+    <link href="./css/circle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/animate.css" />
+    <meta
+      name="description"
+      content="Obține un site care nu doar atrage atenția, ci și transformă vizitatorii în clienți fideli. Înălțăm standardele digitale, iar succesul tău este misiunea noastră!"
+    />
+    <meta name="keywords" content="   2Tek,   tek,   2tek,  " />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>2Tek</title>
-  <link rel="icon" href="./images/logo1.png" type="image/x-icon" />
-  <link href="./dist/output.css" rel="stylesheet" />
-  <link href="./css/navbar.css" rel="stylesheet" />
-  <link href="./css/translate.css" rel="stylesheet" />
-  <link href="./css/color.css" rel="stylesheet" />
-  <link href="./css/info.css" rel="stylesheet" />
-  <link href="./css/loading.css" rel="stylesheet" />
-  <link href="./css/carousel.css" rel="stylesheet" />
-  <link href="./css/paralax1.css" rel="stylesheet" />
-  <link href="./css/paralax2.css" rel="stylesheet" />
-  <link href="./css/echipa.css" rel="stylesheet" />
-  <link href="./css/scrollup.css" rel="stylesheet" />
-  <link href="./css/imaginea.css" rel="stylesheet" />
-  <link href="./css/review.css" rel="stylesheet" />
-  <link href="./css/email.css" rel="stylesheet" />
-  <link href="./css/footer.css" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/animate.css" />
-  <meta name="description"
-    content="Obține un site care nu doar atrage atenția, ci și transformă vizitatorii în clienți fideli. Înălțăm standardele digitale, iar succesul tău este misiunea noastră!" />
-  <meta name="keywords" content="   2Tek,   tek,   2tek,  " />
-</head>
-
-<body>
-  <!-- Loading -->
-  <div class="absolute loading">
-    <div class="flex flex-col justify-center items-center loading-container w-[100vw] h-[100vh]">
-      <div class="blobs">
-        <div class="blob-center" style="background: var(--loading_blob)"></div>
-        <div class="blob" style="background: var(--loading_blob)"></div>
-        <div class="blob" style="background: var(--loading_blob)"></div>
-        <div class="blob" style="background: var(--loading_blob)"></div>
-        <div class="blob" style="background: var(--loading_blob)"></div>
-        <div class="blob" style="background: var(--loading_blob)"></div>
-        <div class="blob" style="background: var(--loading_blob)"></div>
+  <body>
+    <!-- Loading -->
+    <div class="absolute loading">
+      <div
+        class="flex flex-col justify-center items-center loading-container w-[100vw] h-[100vh]"
+      >
+        <div class="blobs">
+          <div
+            class="blob-center"
+            style="background: var(--loading_blob)"
+          ></div>
+          <div class="blob" style="background: var(--loading_blob)"></div>
+          <div class="blob" style="background: var(--loading_blob)"></div>
+          <div class="blob" style="background: var(--loading_blob)"></div>
+          <div class="blob" style="background: var(--loading_blob)"></div>
+          <div class="blob" style="background: var(--loading_blob)"></div>
+          <div class="blob" style="background: var(--loading_blob)"></div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="10"
+                result="blur"
+              ></feGaussianBlur>
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                result="goo"
+              ></feColorMatrix>
+              <feBlend in="SourceGraphic" in2="goo"></feBlend>
+            </filter>
+          </defs>
+        </svg>
+        <h1
+          class="text-lg flex items-center fade-in1"
+          style="color: var(--loading_text)"
+        >
+          Developed by<span style="margin-right: 5px"></span
+          ><span class="text-2xl font-bold">2Tek</span>
+        </h1>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <defs>
-          <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo">
-            </feColorMatrix>
-            <feBlend in="SourceGraphic" in2="goo"></feBlend>
-          </filter>
-        </defs>
-      </svg>
-      <h1 class="text-lg flex items-center fade-in1" style="color: var(--loading_text)">
-        Developed by<span style="margin-right: 5px"></span><span class="text-2xl font-bold">2Tek</span>
-      </h1>
     </div>
-  </div>
+
+    <!-- Mouse -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
 
   <!--ScrollUp-->
   <div id="scrollToTopContainer" class="scroll-to-top-container">
@@ -544,138 +585,211 @@
             var(--carousel_gradient1),
             var(--carousel_gradient2)
           );
-        ">
-      <div class="circle"><img src="./images/search.png" alt="search"></div>
-      <h1 class="sm:text-3xl text-2xl text-start font-bold pl-6 sm:pl-6 pt-6 sm:leading-tight"
-        data-translate="HowBoxTitle1">
-        Analiza produsului
-      </h1>
-      <p class="sm:text-xl sm:mb-0 mb-2 p-6 sm:max-w-[700px] lg:max-w-full sm:p-6 sm:leading-normal"
-        style="color: var(--paralax_p)" data-translate="HowBoxText">
-        Ne vom implica într-un dialog constructiv cu clientul nostru pentru a
-        discuta în detaliu despre produsul nostru, apoi preluăm
-        responsabilitatea de a elabora specificațiile tehnice, împărțindu-le
-        în grupuri mici printre colegii noștri.
-      </p>
-    </div>
-    <div class="lg:w-[34%] w-[full] sm:mt-8 lg:mt-0 mt-8 lg:ml-20 rounded-xl sm:p-4 element2 wow fadeInLeft"
-      data-wow-offset="100" data-wow-delay="1s" style="
+        "
+      >
+        <div class="search"><img src="./images/search.png" alt="search" /></div>
+        <h1
+          class="sm:text-3xl text-2xl text-start font-bold pl-6 sm:pl-6 pt-6 sm:leading-tight"
+          data-translate="HowBoxTitle1"
+        >
+          Analiza produsului
+        </h1>
+        <p
+          class="sm:text-xl sm:mb-0 mb-2 p-6 sm:max-w-[700px] lg:max-w-full sm:p-6 sm:leading-normal"
+          style="color: var(--paralax_p)"
+          data-translate="HowBoxText"
+        >
+          Ne vom implica într-un dialog constructiv cu clientul nostru pentru a
+          discuta în detaliu despre produsul nostru, apoi preluăm
+          responsabilitatea de a elabora specificațiile tehnice, împărțindu-le
+          în grupuri mici printre colegii noștri.
+        </p>
+      </div>
+      <div
+        class="lg:w-[34%] w-[full] sm:mt-8 lg:mt-0 mt-8 lg:ml-20 rounded-xl sm:p-4 element2 wow fadeInLeft"
+        data-wow-offset="100"
+        data-wow-delay="1s"
+        style="
           background: linear-gradient(
             120deg,
             var(--carousel_gradient1),
             var(--carousel_gradient2)
           );
-        ">
-      <div class="circle1"> <img src="./images/web.png" alt="web"></div>
-      <h1 class="sm:text-3xl text-2xl text-start font-bold pt-6 pl-6 sm:pl-6 sm:leading-tight"
-        data-translate="HowBoxTitlev2">
-        Împărțirea lucrării în etape
-      </h1>
-      <p class="sm:text-xl sm:mb-0 mb-2 p-6 sm:p-6 sm:max-w-[700px] lg:max-w-full sm:leading-normal"
-        style="color: var(--paralax_p)" data-translate="HowBoxTextv2">
-        Divizăm procesul în etape. În prima săptămână, ne concentrăm pe
-        crearea designului web și lucrăm la acest aspect până când sunteți
-        complet mulțumit cu produsul final.
-      </p>
-    </div>
-    <div class="lg:w-[34%] h-[full] mt-8 sm:mt-8 lg:mt-10 rounded-xl p-4 element3 wow fadeInUp" data-wow-offset="100"
-      style="
+        "
+      >
+        <div class="circle1"><img src="./images/web.png" alt="web" /></div>
+        <h1
+          class="sm:text-3xl text-2xl text-start font-bold pt-6 pl-6 sm:pl-6 sm:leading-tight"
+          data-translate="HowBoxTitlev2"
+        >
+          Împărțirea lucrării în etape
+        </h1>
+        <p
+          class="sm:text-xl sm:mb-0 mb-2 p-6 sm:p-6 sm:max-w-[700px] lg:max-w-full sm:leading-normal"
+          style="color: var(--paralax_p)"
+          data-translate="HowBoxTextv2"
+        >
+          Divizăm procesul în etape. În prima săptămână, ne concentrăm pe
+          crearea designului web și lucrăm la acest aspect până când sunteți
+          complet mulțumit cu produsul final.
+        </p>
+      </div>
+      <div
+        class="lg:w-[34%] h-[full] mt-8 sm:mt-8 lg:mt-10 rounded-xl p-4 element3 wow fadeInUp"
+        data-wow-offset="100"
+        style="
           background: linear-gradient(
             120deg,
             var(--carousel_gradient1),
             var(--carousel_gradient2)
           );
-        ">
-      <div class="circle2"><img src="./images/mobile.png" alt="mobile"></div>
-      <h1 class="sm:text-3xl text-2xl text-start font-bold pt-3 pl-3 sm:pl-6 lg:pl-0 sm:leading-tight"
-        data-translate="HowBoxTitlev3">
-        Dezvoltarea produsului
-      </h1>
-      <p class="sm:text-xl sm:mb-0 mb-2 p-3 sm:pl-6 sm:max-w-[700px] lg:max-w-full lg:pl-0 sm:leading-normal"
-        style="color: var(--paralax_p)" data-translate="HowBoxTextv3">
-        Dezvoltarea produsului, inclusiv toate aspectele legate de design,
-        producție, actualizări, și serviciile oferite pentru a asigura buna
-        funcționare a acestuia.
-      </p>
-      <div class="lg:w-[100vw] w-[23%] rounded-[50%] circle-shape sm:w-[7.5%] float-rigth text-center"></div>
-    </div>
-  </div>
-
-  <!--Echipa-->
-  <div id="echipa" class="flex flex-col lg:flex-row mt-24 sm:mt-44 justify-around items-center">
-    <div class="sm:max-w-lg mb-5 sm:mb-5 lg:mb-0">
-      <h1 class="sm:text-6xl text-center text-2xl lg:text-start font-bold mb-5 wow fadeInLeft" data-wow-offset="100"
-        style="color: var(--carousel_h1)">
-        <span data-translate="EchipaTitle1">Echipa</span>
-        <br class="hidden lg:inline-block" />
-        <span data-translate="EchipaTitle2">Noastră</span>
-      </h1>
-      <p class="sm:text-lg text-center px-3 lg:text-start wow fadeInLeft" data-wow-offset="100"
-        style="color: var(--carousel_p)" data-translate="EchipaText">
-        Echipa noastră are ca obiectiv să aducă inovație și să sporească
-        eficiența colaborării în colectiv, oferind suport clienților noștri
-        pentru a se dezvolta în mediul digital și a atinge rezultate pe care
-        nu le-au atins până acum. Suntem o companie în plină expansiune,
-        orientată către progres continuu.
-      </p>
-    </div>
-    <div class="flex justify-center items-center flex-col">
-      <div class="flex">
-        <div class="p-4 wow zoomIn" data-wow-offset="100">
-          <img src="./images/danu.jpeg" alt="" class="rounded-[20px] w-[250px]" />
-          <div id="curve" class="card">
-            <div class="footer">
-              <div class="connections">
-                <div class="connection twitter">
-                  <a href="https://www.instagram.com/loghindan/" target="_blank" class="icon">
-                    <img src="./images/instagram.png" alt=""
-                      class="w-[10px] h-[10px] sm:w-[20px] sm:h-[20px] mt-[7.85px] ml-[7.25px]" />
-                  </a>
-                </div>
-                <div class="connection behance">
-                  <a href="https://github.com/admin090609" target="_blank" class="icon">
-                    <img src="./images/github.png" alt=""
-                      class="w-[12.5px] h-[12.5px] sm:w-[22.5px] sm:h-[22.5px] mt-[3.5px] ml-[6px]" />
-                  </a>
-                </div>
-              </div>
-              <div class="info">
-                <div class="name" data-translate="NumeDan">Loghin Dan</div>
-                <div class="job" data-translate="Job">Developer</div>
-              </div>
-            </div>
-            <div class="card-blur"></div>
-          </div>
+        "
+      >
+        <div class="circle2">
+          <img src="./images/mobile.png" alt="mobile" />
         </div>
-        <div class="p-4 wow zoomIn" data-wow-offset="100">
-          <img src="./images/eduard.jpeg" alt="" class="rounded-[20px] w-[250px]" />
-          <div id="curve" class="card">
-            <div class="footer">
-              <div class="connections">
-                <div class="connection twitter">
-                  <a href="https://www.instagram.com/i_edy_/" target="_blank" class="icon">
-                    <img src="./images/instagram.png" alt=""
-                      class="w-[10px] h-[10px] sm:w-[20px] sm:h-[20px] mt-[7.85px] ml-[7.25px]" />
-                  </a>
+        <h1
+          class="sm:text-3xl text-2xl text-start font-bold pt-3 pl-3 sm:pl-6 lg:pl-0 sm:leading-tight"
+          data-translate="HowBoxTitlev3"
+        >
+          Dezvoltarea produsului
+        </h1>
+        <p
+          class="sm:text-xl sm:mb-0 mb-2 p-3 sm:pl-6 sm:max-w-[700px] lg:max-w-full lg:pl-0 sm:leading-normal"
+          style="color: var(--paralax_p)"
+          data-translate="HowBoxTextv3"
+        >
+          Dezvoltarea produsului, inclusiv toate aspectele legate de design,
+          producție, actualizări, și serviciile oferite pentru a asigura buna
+          funcționare a acestuia.
+        </p>
+        <div
+          class="lg:w-[100vw] w-[23%] rounded-[50%] circle-shape sm:w-[7.5%] float-rigth text-center"
+        ></div>
+      </div>
+    </div>
+
+    <!--Echipa-->
+    <div
+      id="echipa"
+      class="flex flex-col lg:flex-row mt-24 sm:mt-44 justify-around items-center"
+    >
+      <div class="sm:max-w-lg mb-5 sm:mb-5 lg:mb-0">
+        <h1
+          class="sm:text-6xl text-center text-2xl lg:text-start font-bold mb-5 wow fadeInLeft"
+          data-wow-offset="100"
+          style="color: var(--carousel_h1)"
+        >
+          <span data-translate="EchipaTitle1">Echipa</span>
+          <br class="hidden lg:inline-block" />
+          <span data-translate="EchipaTitle2">Noastră</span>
+        </h1>
+        <p
+          class="sm:text-lg text-center px-3 lg:text-start wow fadeInLeft"
+          data-wow-offset="100"
+          style="color: var(--carousel_p)"
+          data-translate="EchipaText"
+        >
+          Echipa noastră are ca obiectiv să aducă inovație și să sporească
+          eficiența colaborării în colectiv, oferind suport clienților noștri
+          pentru a se dezvolta în mediul digital și a atinge rezultate pe care
+          nu le-au atins până acum. Suntem o companie în plină expansiune,
+          orientată către progres continuu.
+        </p>
+      </div>
+      <div class="flex justify-center items-center flex-col">
+        <div class="flex">
+          <div class="p-4 wow zoomIn" data-wow-offset="100">
+            <img
+              src="./images/danu.jpeg"
+              alt=""
+              class="rounded-[20px] w-[250px]"
+            />
+            <div id="curve" class="card">
+              <div class="footer">
+                <div class="connections">
+                  <div class="connection twitter">
+                    <a
+                      href="https://www.instagram.com/loghindan/"
+                      target="_blank"
+                      class="icon"
+                    >
+                      <img
+                        src="./images/instagram.png"
+                        alt=""
+                        class="w-[10px] h-[10px] sm:w-[20px] sm:h-[20px] mt-[7.85px] ml-[7.25px]"
+                      />
+                    </a>
+                  </div>
+                  <div class="connection behance">
+                    <a
+                      href="https://github.com/admin090609"
+                      target="_blank"
+                      class="icon"
+                    >
+                      <img
+                        src="./images/github.png"
+                        alt=""
+                        class="w-[12.5px] h-[12.5px] sm:w-[22.5px] sm:h-[22.5px] mt-[3.5px] ml-[6px]"
+                      />
+                    </a>
+                  </div>
                 </div>
-                <div class="connection behance">
-                  <a href="https://github.com/eduard134" target="_blank" class="icon">
-                    <img src="./images/github.png" alt=""
-                      class="w-[12.5px] h-[12.5px] sm:w-[22.5px] sm:h-[22.5px] mt-[3.5px] ml-[6px]" />
-                  </a>
+                <div class="info">
+                  <div class="name" data-translate="NumeDan">Loghin Dan</div>
+                  <div class="job" data-translate="Job">Developer</div>
                 </div>
               </div>
-              <div class="info">
-                <div class="name" data-translate="NumeEdu">Ivanov Eduard</div>
-                <div class="job" data-translate="Job">Developer</div>
-              </div>
+              <div class="card-blur"></div>
             </div>
-            <div class="card-blur"></div>
+          </div>
+          <div class="p-4 wow zoomIn" data-wow-offset="100">
+            <img
+              src="./images/eduard.jpeg"
+              alt=""
+              class="rounded-[20px] w-[250px]"
+            />
+            <div id="curve" class="card">
+              <div class="footer">
+                <div class="connections">
+                  <div class="connection twitter">
+                    <a
+                      href="https://www.instagram.com/i_edy_/"
+                      target="_blank"
+                      class="icon"
+                    >
+                      <img
+                        src="./images/instagram.png"
+                        alt=""
+                        class="w-[10px] h-[10px] sm:w-[20px] sm:h-[20px] mt-[7.85px] ml-[7.25px]"
+                      />
+                    </a>
+                  </div>
+                  <div class="connection behance">
+                    <a
+                      href="https://github.com/eduard134"
+                      target="_blank"
+                      class="icon"
+                    >
+                      <img
+                        src="./images/github.png"
+                        alt=""
+                        class="w-[12.5px] h-[12.5px] sm:w-[22.5px] sm:h-[22.5px] mt-[3.5px] ml-[6px]"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="name" data-translate="NumeEdu">Ivanov Eduard</div>
+                  <div class="job" data-translate="Job">Developer</div>
+                </div>
+              </div>
+              <div class="card-blur"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
   <!-- Imaginea -->
   <div id="proiecte"
@@ -1056,7 +1170,53 @@
       });
     });
 
-  </script>
-</body>
+      // Mouse
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      const colors = ["#cad8e2"];
+
+      circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        if (window.innerWidth < 1024) {
+          return;
+        }
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = x - 8 + "px";
+          circle.style.top = y - 5 + "px";
+
+          circle.style.transform = `scale(${
+            (circles.length - index) / circles.length
+          })`;
+
+          circle.x = x;
+          circle.y = y;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          x += (nextCircle.x - x) * 0.2;
+          y += (nextCircle.y - y) * 0.2;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    </script>
+  </body>
+</html>
 
 </html>
