@@ -128,7 +128,7 @@ body {
   background-color: var(--body_background);
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  user-select: none; 
+  user-select: none;
   transition: all 0.3s;
 }
 
@@ -239,6 +239,7 @@ body {
 }
 
 @keyframes blob-grow_2 {
+
   0%,
   39% {
     transform: scale(0) translate(-50%, -50%);
@@ -330,7 +331,7 @@ body {
   }
 }
 
-.loading{
+.loading {
   z-index: 1000;
   width: 100vw;
   height: 110vh;
@@ -338,6 +339,6 @@ body {
   background-color: var(--body_background);
   display: flex;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
   position: fixed;
 }

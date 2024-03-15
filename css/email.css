@@ -128,7 +128,7 @@ body {
   background-color: var(--body_background);
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  user-select: none; 
+  user-select: none;
   transition: all 0.3s;
 }
 
@@ -150,8 +150,7 @@ body {
 }
 
 .fade-in-bottom {
-  -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) 2s
-    both;
+  -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) 2s both;
   animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) 2s both;
 }
 
@@ -188,4 +187,12 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+
+.form {
+  height: 320px;
+  margin-top: 20px;
+  overflow: hidden;
+  width: 480px;
 }

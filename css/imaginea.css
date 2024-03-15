@@ -503,3 +503,11 @@ body {
   background-color: var(--buttons_button_hover_background);
   color: var(--buttons_button_hover_color);
 }
+
+.prevBtn {
+  height: 50%;
+}
+
+.nextBtn {
+  height: 50%;
+}
