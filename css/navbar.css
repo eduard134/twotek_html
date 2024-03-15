@@ -543,16 +543,23 @@ lin>a {
 
 .language-arrow.rotate {
   transform: rotate(180deg);
-  /* Rotate the arrow */
 }
 
 .vertical-nav {
   position: fixed;
   top: 0;
   left: 0;
+  padding-top: 12.5vh;
+  padding-left: 10px;
   transform: translateY(-100%);
-  transition: all 0.3s ease;
+  transition: all .4s ease;
   z-index: 10000;
+}
+
+.innerNav{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  gap: 10px;
 }
 
 .nav-scrolled .navbar {

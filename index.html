@@ -97,489 +97,782 @@
     <div class="circle"></div>
     <div class="circle"></div>
 
-  <!--ScrollUp-->
-  <div id="scrollToTopContainer" class="scroll-to-top-container">
-    <div id="scrollButton" class="scroll-button">
-      <img id="scrollImage" class="md:w-[20px] md:h-[20px] w-[17.5px]" src="./images/scroll.png" alt="" />
+    <!--ScrollUp-->
+    <div id="scrollToTopContainer" class="scroll-to-top-container">
+      <div id="scrollButton" class="scroll-button">
+        <img
+          id="scrollImage"
+          class="md:w-[20px] md:h-[20px] w-[17.5px]"
+          src="./images/scroll.png"
+          alt=""
+        />
+      </div>
     </div>
-  </div>
 
-  <!--NavBar-->
-  <div
-    class="left-0 top-0 w-full text-focus-in mt-0 md:mt-5 text-black z-bug px-0 md:px-8 transition-all duration-3800 ease-in-out fixed "
-    id="navbar">
+    <!--NavBar-->
     <div
-      class="lg:max-w-[1305px] transition-all duration-300 max-w-[768px] sm:mt-4 sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
-      style="
-          background-image: linear-gradient(
-            to bottom,
-            var(--nav_bg1),
-            var(--nav_bg2),
-            var(--nav_bg3)
-          );
-        ">
-      <a href="/index.html" class="text-4xl font-bold text-focus-in flex items-center -ml-13 lg:ml-0">
-        <img src="./images/logo.png" alt="Logo" width="100" height="100" class="w-[16vh]" />
-      </a>
-
-      <div class="block lg:hidden">
-        <input id="menu__toggle" type="checkbox" />
-        <label class="menu__btn" for="menu__toggle">
-          <span></span>
-        </label>
-        <ul class="menu__box">
-          <li class="my-2 flex items-center">
-            <img src="./images/performance.png" alt="Icon" width="34" height="34" class="w-8 mr-2" />
-            <a href="#paralax1" onclick="scrollToSection('parallax1')" data-translate="Nav1">Performanță</a>
-          </li>
-          <li class="my-2 flex items-center">
-            <img src="./images/team.png" alt="Icon" width="34" height="34" class="w-8 mr-2" />
-            <a href="#echipa" onclick="scrollToSection('echipa')" data-translate="Nav2">Echipa</a>
-          </li>
-          <li class="my-2 flex items-center">
-            <img src="./images/projects.png" alt="Icon" width="34" height="34" class="w-8 mr-2" />
-            <a href="#proiecte" onclick="scrollToSection('proiecte')" data-translate="Nav3">Proiecte</a>
-          </li>
-          <li class="my-2 flex items-center">
-            <img src="./images/contact.png" alt="Icon" width="34" height="34" class="w-8 mr-2" />
-            <a href="#footer" onclick="scrollToSection('footer')" data-translate="Nav4">Contacte</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Navigation links for PC -->
-      <ul class="hidden lg:flex text-base font-semibold text-white" style="color: var(--link_color)">
-        <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-          <a href="#paralax1" class="cursor-pointer" onclick="scrollToSection('parallax1')"
-            data-translate="Nav1">Performanță</a>
-        </li>
-        <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-          <a href="#echipa" class="cursor-pointer" onclick="scrollToSection('echipa')" data-translate="Nav2">Echipa</a>
-        </li>
-        <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-          <a href="#proiecte" class="cursor-pointer" onclick="scrollToSection('proiecte')"
-            data-translate="Nav3">Proiecte</a>
-        </li>
-        <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
-          <a href="#footer" class="cursor-pointer" onclick="scrollToSection('footer')"
-            data-translate="Nav4">Contacte</a>
-        </li>
-      </ul>
-      <div class="flex items-center justify-center">
-        <div class="sm:mr-0 flex items-center justify-center semi-burger">
-          <div class="relative" id="translationContainer">
-            <div id="languageSelector"
-              class="language-css text-black flex items-center px-3 py-2 rounded-full cursor-pointer text-center" style="
-                  min-height: 40px;
-                  background: var(--translate_bg);
-                  color: var(--body_color);
-                ">
-              <div class="language-btn flex items-center">
-                <div class="selected-language" data-translate="language">
-                  Ro
-                </div>
-                <img id="arrowIcon" src="./images/arrow.png" class="language-arrow" />
-              </div>
-              <div class="dropdown-content">
-                <div class="language-option" data-value="ro" data-translate="language">
-                  Ro
-                </div>
-                <div class="language-option" data-value="en" data-translate="language3">
-                  En
-                </div>
-                <div class="language-option" data-value="ru" data-translate="language2">
-                  Ru
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="colorToggle">
-            <label class="toggle transition-all duration-3000" for="switch">
-              <input id="switch" class="input" type="checkbox" />
-              <div class="icon icon--moon">
-                <svg height="20" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path clip-rule="evenodd"
-                    d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-                    fill-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="icon icon--sun">
-                <svg height="20" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59-1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z">
-                  </path>
-                </svg>
-              </div>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="vertical-nav" id="vertical-nav">
-    <div class="w-[10vw]" style="
-          background-image: linear-gradient(
-            to bottom,
-            var(--nav_bg1),
-            var(--nav_bg2),
-            var(--nav_bg3)
-          );
-        ">
-      <a href="/index.html" class="text-4xl font-bold text-focus-in flex items-center -ml-13 lg:ml-0">
-        <img src="./images/logo1.png" alt="Logo" width="70" height="70" class="w-[6vh]" />
-      </a>
-
-      <div class="block lg:hidden">
-        <input id="menu__toggle" type="checkbox" />
-        <label class="menu__btn" for="menu__toggle">
-          <span></span>
-        </label>
-        <ul class="menu__box">
-          <li class="my-2 flex items-center">
-            <img src="./images/performance.png" alt="Icon" width="34" height="34" class="w-8 mr-2" />
-            <a href="#paralax1" onclick="scrollToSection('parallax1')" data-translate="Nav1">Performanță</a>
-          </li>
-          <li class="my-2 flex items-center">
-            <img src="./images/team.png" alt="Icon" width="34" height="34" class="w-8 mr-2" />
-            <a href="#echipa" onclick="scrollToSection('echipa')" data-translate="Nav2">Echipa</a>
-          </li>
-          <li class="my-2 flex items-center">
-            <img src="./images/projects.png" alt="Icon" width="34" height="34" class="w-8 mr-2" />
-            <a href="#proiecte" onclick="scrollToSection('proiecte')" data-translate="Nav3">Proiecte</a>
-          </li>
-          <li class="my-2 flex items-center">
-            <img src="./images/contact.png" alt="Icon" width="34" height="34" class="w-8 mr-2" />
-            <a href="#footer" onclick="scrollToSection('footer')" data-translate="Nav4">Contacte</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Navigation links for PC -->
-      <ul class="hidden lg:flex flex-row text-base font-semibold text-white" style="color: var(--link_color)">
-        <li class="p-4 relative group">
-          <a href="#paralax1" class="cursor-pointer" onclick="scrollToSection('parallax1')"
-            data-translate="Nav1">Performanță</a>
-        </li>
-        <li class="p-4 relative group">
-          <a href="#echipa" class="cursor-pointer" onclick="scrollToSection('echipa')" data-translate="Nav2">Echipa</a>
-        </li>
-        <li class="p-4 relative group">
-          <a href="#proiecte" class="cursor-pointer" onclick="scrollToSection('proiecte')"
-            data-translate="Nav3">Proiecte</a>
-        </li>
-        <li class="p-4 relative group">
-          <a href="#footer" class="cursor-pointer" onclick="scrollToSection('footer')"
-            data-translate="Nav4">Contacte</a>
-        </li>
-      </ul>
-      <div class="flex items-center justify-center">
-        <div class="sm:mr-0 flex items-center justify-center semi-burger">
-          <div class="relative" id="translationContainer">
-            <div id="languageSelector-vertical"
-              class="language-css text-black flex items-center px-3 py-2 rounded-full cursor-pointer text-center" style="
-                  min-height: 40px;
-                  background: var(--translate_bg);
-                  color: var(--body_color);
-                ">
-              <div class="language-btn-vertical flex items-center">
-                <div class="selected-language-vertical" data-translate="language">
-                  Ro
-                </div>
-                <img id="arrowIcon" src="./images/arrow.png" class="language-arrow-vertical" />
-              </div>
-              <div class="dropdown-content-vertical">
-                <div class="language-option-vertical" data-value="ro" data-translate="language">
-                  Ro
-                </div>
-                <div class="language-option-vertical" data-value="en" data-translate="language3">
-                  En
-                </div>
-                <div class="language-option-vertical" data-value="ru" data-translate="language2">
-                  Ru
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="colorToggle">
-            <label class="toggle-vertical transition-all duration-3000" for="switch">
-              <input id="switch-vertical" class="input-vertical" type="checkbox" />
-              <div class="icon-vertical icon--moon-vertical">
-                <svg height="20" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path clip-rule="evenodd"
-                    d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-                    fill-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="icon-vertical icon--sun-vertical">
-                <svg height="20" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59-1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z">
-                  </path>
-                </svg>
-              </div>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Info-->
-  <div class="lg:mt-22 mt-10 lg:mt-20 text-center relative px-4 md:px-8 lg:px-0 text-focus-in">
-    <div class="lg:w-[70vw] mx-2 sm:mx-auto relative">
-      <div class="object-cover overflow-hidden rounded-3xl">
-        <img id="themeImage" src="./images/slider.jpg" alt="" class="w-full md:h-full h-[450px]" />
-      </div>
+      class="left-0 top-0 w-full text-focus-in mt-0 md:mt-5 text-black z-bug px-0 md:px-8 transition-all duration-3800 ease-in-out fixed"
+      id="navbar"
+    >
       <div
-        class="absolute top-0 left-0 tracking-[.1em] right-0 bottom-0 px-5 sm:px-10 flex flex-col justify-center items-start text-white rounded-3xl text-start tracking-in-contract-bck">
-        <p class="sm:text-6xl text-[50px] font-semibold sm:mb-4 leading-[50px] sm:leading-[60px] py-3">
-          <span data-translate="LandingTitle1">Creăm</span> <br />
-          <span data-translate="landingTitle2">Profesional</span> <br />
-          <span
-            class="sm:tracking-wide text-[30px] sm:text-[45px] rounded-[50px] tracking-in-contract-bck px-3 font-light border-2 border-[#91A8B7]"
-            data-translate="LandingTitleCircle">WebSite-ul</span><br />
-          <span data-translate="LandingTitle3">Dvs</span>
-        </p>
-        <a href="tel:+37368548789" class="text-shadow-pop-left">
-          <button data-translate="LandingContacts"
-            class="sm:px-8 ml-[-8px] px-3 py-2 text-[14px] sm:text-lg sm:tracking-wider font-semibold mb-5 text-black bg-white rounded-[50px] hover:bg-opacity-70">
-            Contactează-ne la +373 685 487 89
-          </button>
+        class="lg:max-w-[1305px] transition-all duration-300 max-w-[768px] sm:mt-4 sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
+        style="
+          background-image: linear-gradient(
+            to bottom,
+            var(--nav_bg1),
+            var(--nav_bg2),
+            var(--nav_bg3)
+          );
+        "
+      >
+        <a
+          href="/index.html"
+          class="text-4xl font-bold text-focus-in flex items-center -ml-13 lg:ml-0"
+        >
+          <img
+            src="./images/logo.png"
+            alt="Logo"
+            width="100"
+            height="100"
+            class="w-[16vh]"
+          />
         </a>
+
+        <div class="block lg:hidden">
+          <input id="menu__toggle" type="checkbox" />
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+          <ul class="menu__box">
+            <li class="my-2 flex items-center">
+              <img
+                src="./images/performance.png"
+                alt="Icon"
+                width="34"
+                height="34"
+                class="w-8 mr-2"
+              />
+              <a
+                href="#paralax1"
+                onclick="scrollToSection('parallax1')"
+                data-translate="Nav1"
+                >Performanță</a
+              >
+            </li>
+            <li class="my-2 flex items-center">
+              <img
+                src="./images/team.png"
+                alt="Icon"
+                width="34"
+                height="34"
+                class="w-8 mr-2"
+              />
+              <a
+                href="#echipa"
+                onclick="scrollToSection('echipa')"
+                data-translate="Nav2"
+                >Echipa</a
+              >
+            </li>
+            <li class="my-2 flex items-center">
+              <img
+                src="./images/projects.png"
+                alt="Icon"
+                width="34"
+                height="34"
+                class="w-8 mr-2"
+              />
+              <a
+                href="#proiecte"
+                onclick="scrollToSection('proiecte')"
+                data-translate="Nav3"
+                >Proiecte</a
+              >
+            </li>
+            <li class="my-2 flex items-center">
+              <img
+                src="./images/contact.png"
+                alt="Icon"
+                width="34"
+                height="34"
+                class="w-8 mr-2"
+              />
+              <a
+                href="#footer"
+                onclick="scrollToSection('footer')"
+                data-translate="Nav4"
+                >Contacte</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Navigation links for PC -->
+        <ul
+          class="hidden lg:flex text-base font-semibold text-white"
+          style="color: var(--link_color)"
+        >
+          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+            <a
+              href="#paralax1"
+              class="cursor-pointer"
+              onclick="scrollToSection('parallax1')"
+              data-translate="Nav1"
+              >Performanță</a
+            >
+          </li>
+          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+            <a
+              href="#echipa"
+              class="cursor-pointer"
+              onclick="scrollToSection('echipa')"
+              data-translate="Nav2"
+              >Echipa</a
+            >
+          </li>
+          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+            <a
+              href="#proiecte"
+              class="cursor-pointer"
+              onclick="scrollToSection('proiecte')"
+              data-translate="Nav3"
+              >Proiecte</a
+            >
+          </li>
+          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+            <a
+              href="#footer"
+              class="cursor-pointer"
+              onclick="scrollToSection('footer')"
+              data-translate="Nav4"
+              >Contacte</a
+            >
+          </li>
+        </ul>
+        <div class="flex items-center justify-center pt-4">
+          <div class="sm:mr-0 flex items-center justify-center semi-burger">
+            <div class="relative" id="translationContainer">
+              <div
+                id="languageSelector"
+                class="language-css text-black flex items-center px-3 py-2 rounded-full cursor-pointer text-center"
+                style="
+                  min-height: 40px;
+                  background: var(--translate_bg);
+                  color: var(--body_color);
+                "
+              >
+                <div class="language-btn flex items-center">
+                  <div class="selected-language" data-translate="language">
+                    Ro
+                  </div>
+                  <img
+                    id="arrowIcon"
+                    src="./images/arrow.png"
+                    class="language-arrow"
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div
+                    class="language-option"
+                    data-value="ro"
+                    data-translate="language"
+                  >
+                    Ro
+                  </div>
+                  <div
+                    class="language-option"
+                    data-value="en"
+                    data-translate="language3"
+                  >
+                    En
+                  </div>
+                  <div
+                    class="language-option"
+                    data-value="ru"
+                    data-translate="language2"
+                  >
+                    Ru
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="colorToggle">
+              <label class="toggle transition-all duration-3000" for="switch">
+                <input id="switch" class="input" type="checkbox" />
+                <div class="icon icon--moon">
+                  <svg
+                    height="20"
+                    width="20"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="icon icon--sun">
+                  <svg
+                    height="20"
+                    width="20"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59-1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
+                    ></path>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!--Carousel-->
-  <div class="mt-24 sm:mt-44 lg:mt-32 mb-10 lg:mb-20 flex-col justify-evenly mx-2 lg:mx-32 items-center">
-    <h1 class="text-center text-2xl sm:text-5xl lg:text-4xl mb-5 sm:mb-7 font-semibold wow fadeInUp"
-      data-wow-offset="100" style="color: var(--carousel_h1)" data-translate="CarouselTitle">
-      Transformăm conceptele in realitate online
-    </h1>
-    <hr class="h-1 rounded-xl flex justify-center items-center mb-5 mx-[12vw] sm:mb-7 lg:mx-[25vw] wow fadeIn"
-      data-wow-offset="100" style="background: var(--carousel_hr)" />
-
-    <p class="sm:text-2xl lg:text-xl text-center sm:mx-[8vw] lg:mx-[19vw] wow fadeInLeft" data-wow-offset="100"
-      style="color: var(--carousel_h1)" data-translate="CarouselText1">
-      Oportunitatea de a beneficia de expertiza noastră și de a dezvolta
-      împreuna soluții de succes este baza
-      <span class="font-semibold" style="color: var(--carousel_hr)" data-translate="CarouselText2">
-        colaborării noastre
-      </span>
-    </p>
-  </div>
-  <div>
-    <div class="wow fadeIn" data-wow-offset="100">
-      <div class="sm:mt-12 logo-slider-container">
-        <div class="logo-slider">
-          <div class="logo-slide">
-            <a href="https://adfitness.vercel.app/" target="_blank">
-              <div class="w-100 h-100">
-                <img width="{100}" height="{100}" src="./images/a&d.png" alt="" class="object-contain" />
-              </div>
+    <div class="vertical-nav" id="vertical-nav">
+      <div
+        class="rounded-[20px] items-center flex flex-col innerNav"
+        style="
+          background-image: linear-gradient(
+            to bottom,
+            var(--nav_bg1),
+            var(--nav_bg2),
+            var(--nav_bg3)
+          );
+        "
+      >
+        <a
+          href="/index.html"
+          class="text-4xl font-bold flex items-center -ml-13 lg:ml-0"
+        >
+          <img
+            src="./images/logo1.png"
+            alt="Logo"
+            width="60"
+            height="60"
+            class="w-[6vh]"
+          />
+        </a>
+        <!-- Navigation links for PC -->
+        <ul
+          class="items-center flex flex-col text-sm font-semibold text-white"
+          style="color: var(--link_color)"
+        >
+          <li class="p-4 relative group lin">
+            <a
+              href="#paralax1"
+              class="cursor-pointer"
+              onclick="scrollToSection('parallax1')"
+              data-translate="Nav1"
+            >
+              Performanță
             </a>
-          </div>
-        </div>
-        <div class="logo-slider">
-          <div class="logo-slide">
-            <a href="https://sandutart.vercel.app/" target="_blank">
-              <div class="w-100 h-100">
-                <img width="{100}" height="{100}" src="./images/sanduta.png" alt="" class="object-contain" />
-              </div>
+          </li>
+          <li class="p-4 relative group lin">
+            <a
+              href="#echipa"
+              class="cursor-pointer"
+              onclick="scrollToSection('echipa')"
+              data-translate="Nav2"
+            >
+              Echipa
             </a>
-          </div>
-        </div>
-        <div class="logo-slider">
-          <div class="logo-slide">
-            <a href="https://admin090609.github.io/" target="_blank">
-              <div class="w-100 h-100">
-                <img id="buffyLogo" width="{100}" height="{100}" src="./images/buffy.png" alt=""
-                  class="object-contain" />
-              </div>
+          </li>
+          <li class="p-4 relative group lin">
+            <a
+              href="#proiecte"
+              class="cursor-pointer"
+              onclick="scrollToSection('proiecte')"
+              data-translate="Nav3"
+            >
+              Proiecte
             </a>
-          </div>
-        </div>
-        <div class="logo-slider">
-          <div class="logo-slide">
-            <a href="https://apisudex.store/" target="_blank">
-              <div class="w-100 h-100">
-                <img width="{100}" height="{100}" src="./images/apisudex.png" alt="" class="object-contain" />
-              </div>
+          </li>
+          <li class="p-4 relative group lin">
+            <a
+              href="#footer"
+              class="cursor-pointer"
+              onclick="scrollToSection('footer')"
+              data-translate="Nav4"
+            >
+              Contacte
             </a>
-          </div>
-        </div>
-        <div class="logo-slider">
-          <div class="logo-slide">
-            <a href="https://adfitness.vercel.app/" target="_blank">
-              <div class="w-100 h-100">
-                <img width="{100}" height="{100}" src="./images/a&d.png" alt="" class="object-contain" />
+          </li>
+        </ul>
+        <div class="flex items-center justify-center">
+          <div
+            class="sm:mr-0 flex flex-col items-center justify-center semi-burger"
+          >
+            <div class="relative" id="translationContainer">
+              <div
+                id="languageSelector-vertical"
+                class="language-css text-black flex items-center px-3 py-2 rounded-full cursor-pointer text-center"
+                style="
+                  min-height: 40px;
+                  background: var(--translate_bg);
+                  color: var(--body_color);
+                "
+              >
+                <div class="language-btn-vertical flex items-center">
+                  <div
+                    class="selected-language-vertical"
+                    data-translate="language"
+                  >
+                    Ro
+                  </div>
+                  <img
+                    id="arrowIcon"
+                    src="./images/arrow.png"
+                    class="language-arrow-vertical"
+                  />
+                </div>
+                <div class="dropdown-content-vertical">
+                  <div
+                    class="language-option-vertical"
+                    data-value="ro"
+                    data-translate="language"
+                  >
+                    Ro
+                  </div>
+                  <div
+                    class="language-option-vertical"
+                    data-value="en"
+                    data-translate="language3"
+                  >
+                    En
+                  </div>
+                  <div
+                    class="language-option-vertical"
+                    data-value="ru"
+                    data-translate="language2"
+                  >
+                    Ru
+                  </div>
+                </div>
               </div>
-            </a>
-          </div>
-        </div>
-        <div class="logo-slider">
-          <div class="logo-slide">
-            <a href="https://sandutart.vercel.app/" target="_blank">
-              <div class="w-100 h-100">
-                <img width="{100}" height="{100}" src="./images/sanduta.png" alt="" class="object-contain" />
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="logo-slider">
-          <div class="logo-slide">
-            <a href="https://admin090609.github.io/" target="_blank">
-              <div class="w-100 h-100">
-                <img id="buffyLogo" width="{100}" height="{100}" src="./images/buffy.png" alt=""
-                  class="object-contain" />
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="logo-slider">
-          <div class="logo-slide">
-            <a href="https://apisudex.store/" target="_blank">
-              <div class="w-100 h-100">
-                <img width="{100}" height="{100}" src="./images/apisudex.png" alt="" class="object-contain" />
-              </div>
-            </a>
+            </div>
+            <div id="colorToggle">
+              <label
+                class="toggle-vertical transition-all duration-3000"
+                for="switch"
+              >
+                <input
+                  id="switch-vertical"
+                  class="input-vertical"
+                  type="checkbox"
+                />
+                <div class="icon-vertical icon--moon-vertical">
+                  <svg
+                    height="20"
+                    width="20"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="icon-vertical icon--sun-vertical">
+                  <svg
+                    height="20"
+                    width="20"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59-1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
+                    ></path>
+                  </svg>
+                </div>
+              </label>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <!--Info-->
+    <div
+      class="lg:mt-22 mt-10 lg:mt-20 text-center relative px-4 md:px-8 lg:px-0 text-focus-in"
+    >
+      <div class="lg:w-[70vw] mx-2 sm:mx-auto relative">
+        <div class="object-cover overflow-hidden rounded-3xl">
+          <img
+            id="themeImage"
+            src="./images/slider.jpg"
+            alt=""
+            class="w-full md:h-full h-[450px]"
+          />
+        </div>
+        <div
+          class="absolute top-0 left-0 tracking-[.1em] right-0 bottom-0 px-5 sm:px-10 flex flex-col justify-center items-start text-white rounded-3xl text-start tracking-in-contract-bck"
+        >
+          <p
+            class="sm:text-6xl text-[50px] font-semibold sm:mb-4 leading-[50px] sm:leading-[60px] py-3"
+          >
+            <span data-translate="LandingTitle1">Creăm</span> <br />
+            <span data-translate="landingTitle2">Profesional</span> <br />
+            <span
+              class="sm:tracking-wide text-[30px] sm:text-[45px] rounded-[50px] tracking-in-contract-bck px-3 font-light border-2 border-[#91A8B7]"
+              data-translate="LandingTitleCircle"
+              >WebSite-ul</span
+            ><br />
+            <span data-translate="LandingTitle3">Dvs</span>
+          </p>
+          <a href="tel:+37368548789" class="text-shadow-pop-left">
+            <button
+              data-translate="LandingContacts"
+              class="sm:px-8 ml-[-8px] px-3 py-2 text-[14px] sm:text-lg sm:tracking-wider font-semibold mb-5 text-black bg-white rounded-[50px] hover:bg-opacity-70"
+            >
+              Contactează-ne la +373 685 487 89
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
 
-  <!--Paralax1-->
-  <section id="paralax1">
-    <div class="mb-20 sm:mb-20 mt-24 sm:mt-44 lg:mt-44 sm:flex justify-evenly mx-2 sm:mx-10 lg:mx-32 items-center">
+    <!--Carousel-->
+    <div
+      class="mt-24 sm:mt-44 lg:mt-32 mb-10 lg:mb-20 flex-col justify-evenly mx-2 lg:mx-32 items-center"
+    >
       <h1
-        class="wow fadeInLeft text-center text-2xl mb-5 lg:mb-3 sm:text-[43px] sm:leading-[50px] lg:text-5xl lg:max-w-[350px] lg:leading-[60px] font-semibold"
-        style="color: var(--carousel_h1)" data-wow-offset="100">
-        <span data-translate="BlobsTitle1">Ce vă oferim</span>
-        <span data-translate="BlobsTitle2">ca parteneri</span>
+        class="text-center text-2xl sm:text-5xl lg:text-4xl mb-5 sm:mb-7 font-semibold wow fadeInUp"
+        data-wow-offset="100"
+        style="color: var(--carousel_h1)"
+        data-translate="CarouselTitle"
+      >
+        Transformăm conceptele in realitate online
       </h1>
       <hr
-        class="wow fadeIn h-1 rounded-xl sm:rotate-90 flex justify-center items-center sm:block sm:mx-0 mx-[12vw] mb-5 sm:mb-0 sm:w-56 lg:w-24"
-        data-wow-offset="100" style="background: var(--carousel_hr)" />
-      <p class="wow fadeInUp sm:text-xl sm:text-start text-center" data-wow-offset="100"
-        style="color: var(--carousel_h1)">
-        <span data-translate="BlobsText1">Suntem parteneri de încredere, </span><br />
-        <span data-translate="BlobsText2">pregătiți să vă sprijinim cu soluții inovatoare</span>
-        <br />
-        <span class="text-[#008DFD] font-semibold" data-translate="BlobsText3">și servicii de înaltă calitate</span>
+        class="h-1 rounded-xl flex justify-center items-center mb-5 mx-[12vw] sm:mb-7 lg:mx-[25vw] wow fadeIn"
+        data-wow-offset="100"
+        style="background: var(--carousel_hr)"
+      />
+
+      <p
+        class="sm:text-2xl lg:text-xl text-center sm:mx-[8vw] lg:mx-[19vw] wow fadeInLeft"
+        data-wow-offset="100"
+        style="color: var(--carousel_h1)"
+        data-translate="CarouselText1"
+      >
+        Oportunitatea de a beneficia de expertiza noastră și de a dezvolta
+        împreuna soluții de succes este baza
+        <span
+          class="font-semibold"
+          style="color: var(--carousel_hr)"
+          data-translate="CarouselText2"
+        >
+          colaborării noastre
+        </span>
       </p>
     </div>
-
-    <div class="flex flex-col justify-between text-center items-center font-semibold text-white wow fadeIn"
-      data-wow-offset="100">
-      <div class="flex justify-between">
-        <div class="circle-box circle-box-1 shadow-md shadow-white border-[1px] mobile-circle-box" style="
-              background: linear-gradient(
-                to bottom,
-                var(--nav_bg1),
-                var(--nav_bg2),
-                var(--nav_bg3)
-              );
-            ">
-          <div class="circle-title" data-translate="CirclesTitle1">
-            Dominați cu noi
+    <div>
+      <div class="wow fadeIn" data-wow-offset="100">
+        <div class="sm:mt-12 logo-slider-container">
+          <div class="logo-slider">
+            <div class="logo-slide">
+              <a href="https://adfitness.vercel.app/" target="_blank">
+                <div class="w-100 h-100">
+                  <img
+                    width="{100}"
+                    height="{100}"
+                    src="./images/a&d.png"
+                    alt=""
+                    class="object-contain"
+                  />
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="circle-description" data-translate="CirclesText1">
-            Dezvoltăm website-uri captivante pentru a vă diferenția de
-            concurență și a atrage atenția publicului dvs.
+          <div class="logo-slider">
+            <div class="logo-slide">
+              <a href="https://sandutart.vercel.app/" target="_blank">
+                <div class="w-100 h-100">
+                  <img
+                    width="{100}"
+                    height="{100}"
+                    src="./images/sanduta.png"
+                    alt=""
+                    class="object-contain"
+                  />
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
-        <!-- Circle 2 -->
-        <div class="circle-box circle-box-2 shadow-md shadow-white border-[1px] mobile-circle-box" style="
-              background: linear-gradient(
-                to bottom,
-                var(--nav_bg1),
-                var(--nav_bg2),
-                var(--nav_bg3)
-              );
-            ">
-          <div class="circle-title" data-translate="CirclesTitle2">
-            Operăm cu rapiditate
+          <div class="logo-slider">
+            <div class="logo-slide">
+              <a href="https://admin090609.github.io/" target="_blank">
+                <div class="w-100 h-100">
+                  <img
+                    id="buffyLogo"
+                    width="{100}"
+                    height="{100}"
+                    src="./images/buffy.png"
+                    alt=""
+                    class="object-contain"
+                  />
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="circle-description" data-translate="CirclesText2">
-            Suntem alegerea perfectă pentru a vă construi cu viteză și
-            eficiență web-siteul dvs.
+          <div class="logo-slider">
+            <div class="logo-slide">
+              <a href="https://apisudex.store/" target="_blank">
+                <div class="w-100 h-100">
+                  <img
+                    width="{100}"
+                    height="{100}"
+                    src="./images/apisudex.png"
+                    alt=""
+                    class="object-contain"
+                  />
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
-        <!-- Circle 3 -->
-        <div class="circle-box circle-box-3 shadow-md shadow-white border-[1px] mobile-circle-box" style="
-              background: linear-gradient(
-                to bottom,
-                var(--nav_bg1),
-                var(--nav_bg2),
-                var(--nav_bg3)
-              );
-            ">
-          <div class="circle-title" data-translate="CirclesTitle3">
-            Experiență 2+ Ani
+          <div class="logo-slider">
+            <div class="logo-slide">
+              <a href="https://adfitness.vercel.app/" target="_blank">
+                <div class="w-100 h-100">
+                  <img
+                    width="{100}"
+                    height="{100}"
+                    src="./images/a&d.png"
+                    alt=""
+                    class="object-contain"
+                  />
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="circle-description" data-translate="CirclesText3">
-            Peste 2 ani experiență în dezvoltarea și design-ul web, creăm
-            site-uri personalizate și funcționale.
+          <div class="logo-slider">
+            <div class="logo-slide">
+              <a href="https://sandutart.vercel.app/" target="_blank">
+                <div class="w-100 h-100">
+                  <img
+                    width="{100}"
+                    height="{100}"
+                    src="./images/sanduta.png"
+                    alt=""
+                    class="object-contain"
+                  />
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="flex justify-between mb-10">
-        <!-- Circle 4 -->
-        <div class="circle-box circle-box-4 shadow-md shadow-white border-[1px] mobile-circle-box" style="
-              background: linear-gradient(
-                to bottom,
-                var(--nav_bg1),
-                var(--nav_bg2),
-                var(--nav_bg3)
-              );
-            ">
-          <div class="circle-title" data-translate="CirclesTitle4">
-            Plata în Rate
+          <div class="logo-slider">
+            <div class="logo-slide">
+              <a href="https://admin090609.github.io/" target="_blank">
+                <div class="w-100 h-100">
+                  <img
+                    id="buffyLogo"
+                    width="{100}"
+                    height="{100}"
+                    src="./images/buffy.png"
+                    alt=""
+                    class="object-contain"
+                  />
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="circle-description" data-translate="CirclesText4">
-            2Tek vă oferă servicii de top cu opțiuni de plată în rate pentru o
-            experiență financiară excelentă.
-          </div>
-        </div>
-        <!-- Circle 5 -->
-        <div class="circle-box circle-box-5 shadow-md shadow-white border-[1px] mobile-circle-box" style="
-              background: linear-gradient(
-                to bottom,
-                var(--nav_bg1),
-                var(--nav_bg2),
-                var(--nav_bg3)
-              );
-            ">
-          <div class="circle-title" data-translate="CirclesTitle5">
-            Întotdeauna Conectați
-          </div>
-          <div class="circle-description" data-translate="CirclesText5">
-            2Tek oferă conectivitate și performanță rapidă, cu un accent pe
-            răspuns eficient.
+          <div class="logo-slider">
+            <div class="logo-slide">
+              <a href="https://apisudex.store/" target="_blank">
+                <div class="w-100 h-100">
+                  <img
+                    width="{100}"
+                    height="{100}"
+                    src="./images/apisudex.png"
+                    alt=""
+                    class="object-contain"
+                  />
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!--Paralax2-->
-  <div class="mt-20 sm:mt-0 lg:mt-20 lg:mx-64 p-4 md:p-8 lg:p-0">
-    <h1 class="text-center text-2xl sm:text-5xl font-semibold wow fadeInUp" data-wow-offset="100"
-      style="color: var(--carousel_h1)">
-      <span data-translate="HowTitle1">Modul</span>
-      <span class="text-[#008DFD]" data-translate="HowTitle2">nostru</span>
-      <span data-translate="HowTitle3">de lucru</span>
-    </h1>
-    <p class="text-center sm:text-2xl mb-10 sm:mb-20 sm:mt-7 px-2 mt-5 sm:leading-[35px] wow fadeInLeft"
-      data-wow-offset="100" style="color: var(--carousel_p)" data-translate="HowText">
-      În cadrul metodei noastre de lucru, punem accent pe lucru în echipă și
-      comunicarea eficientă, astfel încât să atingem cu succes obiectivele
-      stabilite.
-    </p>
-  </div>
-  <div class="sm:flex sm:flex-wrap block justify-center">
-    <div class="lg:w-[34%] w-[full] rounded-xl sm:p-4 element1 wow fadeInLeft" data-wow-offset="100" style="
+    <!--Paralax1-->
+    <section id="paralax1">
+      <div
+        class="mb-20 sm:mb-20 mt-24 sm:mt-44 lg:mt-44 sm:flex justify-evenly mx-2 sm:mx-10 lg:mx-32 items-center"
+      >
+        <h1
+          class="wow fadeInLeft text-center text-2xl mb-5 lg:mb-3 sm:text-[43px] sm:leading-[50px] lg:text-5xl lg:max-w-[350px] lg:leading-[60px] font-semibold"
+          style="color: var(--carousel_h1)"
+          data-wow-offset="100"
+        >
+          <span data-translate="BlobsTitle1">Ce vă oferim</span>
+          <span data-translate="BlobsTitle2">ca parteneri</span>
+        </h1>
+        <hr
+          class="wow fadeIn h-1 rounded-xl sm:rotate-90 flex justify-center items-center sm:block sm:mx-0 mx-[12vw] mb-5 sm:mb-0 sm:w-56 lg:w-24"
+          data-wow-offset="100"
+          style="background: var(--carousel_hr)"
+        />
+        <p
+          class="wow fadeInUp sm:text-xl sm:text-start text-center"
+          data-wow-offset="100"
+          style="color: var(--carousel_h1)"
+        >
+          <span data-translate="BlobsText1"
+            >Suntem parteneri de încredere, </span
+          ><br />
+          <span data-translate="BlobsText2"
+            >pregătiți să vă sprijinim cu soluții inovatoare</span
+          >
+          <br />
+          <span class="text-[#008DFD] font-semibold" data-translate="BlobsText3"
+            >și servicii de înaltă calitate</span
+          >
+        </p>
+      </div>
+
+      <div
+        class="flex flex-col justify-between text-center items-center font-semibold text-white wow fadeIn"
+        data-wow-offset="100"
+      >
+        <div class="flex justify-between">
+          <div
+            class="circle-box circle-box-1 shadow-md shadow-white border-[1px] mobile-circle-box"
+            style="
+              background: linear-gradient(
+                to bottom,
+                var(--nav_bg1),
+                var(--nav_bg2),
+                var(--nav_bg3)
+              );
+            "
+          >
+            <div class="circle-title" data-translate="CirclesTitle1">
+              Dominați cu noi
+            </div>
+            <div class="circle-description" data-translate="CirclesText1">
+              Dezvoltăm website-uri captivante pentru a vă diferenția de
+              concurență și a atrage atenția publicului dvs.
+            </div>
+          </div>
+          <!-- Circle 2 -->
+          <div
+            class="circle-box circle-box-2 shadow-md shadow-white border-[1px] mobile-circle-box"
+            style="
+              background: linear-gradient(
+                to bottom,
+                var(--nav_bg1),
+                var(--nav_bg2),
+                var(--nav_bg3)
+              );
+            "
+          >
+            <div class="circle-title" data-translate="CirclesTitle2">
+              Operăm cu rapiditate
+            </div>
+            <div class="circle-description" data-translate="CirclesText2">
+              Suntem alegerea perfectă pentru a vă construi cu viteză și
+              eficiență web-siteul dvs.
+            </div>
+          </div>
+          <!-- Circle 3 -->
+          <div
+            class="circle-box circle-box-3 shadow-md shadow-white border-[1px] mobile-circle-box"
+            style="
+              background: linear-gradient(
+                to bottom,
+                var(--nav_bg1),
+                var(--nav_bg2),
+                var(--nav_bg3)
+              );
+            "
+          >
+            <div class="circle-title" data-translate="CirclesTitle3">
+              Experiență 2+ Ani
+            </div>
+            <div class="circle-description" data-translate="CirclesText3">
+              Peste 2 ani experiență în dezvoltarea și design-ul web, creăm
+              site-uri personalizate și funcționale.
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-between mb-10">
+          <!-- Circle 4 -->
+          <div
+            class="circle-box circle-box-4 shadow-md shadow-white border-[1px] mobile-circle-box"
+            style="
+              background: linear-gradient(
+                to bottom,
+                var(--nav_bg1),
+                var(--nav_bg2),
+                var(--nav_bg3)
+              );
+            "
+          >
+            <div class="circle-title" data-translate="CirclesTitle4">
+              Plata în Rate
+            </div>
+            <div class="circle-description" data-translate="CirclesText4">
+              2Tek vă oferă servicii de top cu opțiuni de plată în rate pentru o
+              experiență financiară excelentă.
+            </div>
+          </div>
+          <!-- Circle 5 -->
+          <div
+            class="circle-box circle-box-5 shadow-md shadow-white border-[1px] mobile-circle-box"
+            style="
+              background: linear-gradient(
+                to bottom,
+                var(--nav_bg1),
+                var(--nav_bg2),
+                var(--nav_bg3)
+              );
+            "
+          >
+            <div class="circle-title" data-translate="CirclesTitle5">
+              Întotdeauna Conectați
+            </div>
+            <div class="circle-description" data-translate="CirclesText5">
+              2Tek oferă conectivitate și performanță rapidă, cu un accent pe
+              răspuns eficient.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Paralax2-->
+    <div class="mt-20 sm:mt-0 lg:mt-20 lg:mx-64 p-4 md:p-8 lg:p-0">
+      <h1
+        class="text-center text-2xl sm:text-5xl font-semibold wow fadeInUp"
+        data-wow-offset="100"
+        style="color: var(--carousel_h1)"
+      >
+        <span data-translate="HowTitle1">Modul</span>
+        <span class="text-[#008DFD]" data-translate="HowTitle2">nostru</span>
+        <span data-translate="HowTitle3">de lucru</span>
+      </h1>
+      <p
+        class="text-center sm:text-2xl mb-10 sm:mb-20 sm:mt-7 px-2 mt-5 sm:leading-[35px] wow fadeInLeft"
+        data-wow-offset="100"
+        style="color: var(--carousel_p)"
+        data-translate="HowText"
+      >
+        În cadrul metodei noastre de lucru, punem accent pe lucru în echipă și
+        comunicarea eficientă, astfel încât să atingem cu succes obiectivele
+        stabilite.
+      </p>
+    </div>
+    <div class="sm:flex sm:flex-wrap block justify-center">
+      <div
+        class="lg:w-[34%] w-[full] rounded-xl sm:p-4 element1 wow fadeInLeft"
+        data-wow-offset="100"
+        style="
           background: linear-gradient(
             120deg,
             var(--carousel_gradient1),
@@ -672,7 +965,7 @@
     <!--Echipa-->
     <div
       id="echipa"
-      class="flex flex-col lg:flex-row mt-24 sm:mt-44 justify-around items-center"
+      class="flex flex-col lg:flex-row mt-24 sm:mt-44 justify-evenly items-center"
     >
       <div class="sm:max-w-lg mb-5 sm:mb-5 lg:mb-0">
         <h1
@@ -685,7 +978,7 @@
           <span data-translate="EchipaTitle2">Noastră</span>
         </h1>
         <p
-          class="sm:text-lg text-center px-3 lg:text-start wow fadeInLeft"
+          class="sm:text-lg text-center px-1 lg:text-start wow fadeInLeft"
           data-wow-offset="100"
           style="color: var(--carousel_p)"
           data-translate="EchipaText"
@@ -791,384 +1084,470 @@
       </div>
     </div>
 
-  <!-- Imaginea -->
-  <div id="proiecte"
-    class="mb-52 sm:mt-40 mt-20 sm:mb-0 flex-row flex flex-col justify-center items-center lg:justify-around">
-    <div class="lg:mt-16 mb-5 sm:mb-10">
-      <h1 id="h1Title"
-        class="sm:text-5xl text-3xl leading-tight text-center lg:text-start text-ellipsis font-bold wow fadeInUp"
-        data-wow-offset="100" style="color: var(--carousel_p)">
-        <span data-translate="SliderTitle1">Accesează</span>
-        <span data-translate="SliderTitle2">Proiectele Noastre</span>
-      </h1>
-    </div>
-    <div class="container wow fadeInUp" data-wow-offset="100">
-      <div id="slide">
-        <div class="item border-t-gray-300 border-[1px]" style="
+    <!-- Imaginea -->
+    <div
+      id="proiecte"
+      class="mb-52 sm:mt-40 mt-20 sm:mb-0 flex-row flex flex-col justify-center items-center lg:justify-around"
+    >
+      <div class="lg:mt-16 mb-5 sm:mb-10">
+        <h1
+          id="h1Title"
+          class="sm:text-5xl text-3xl leading-tight text-center lg:text-start text-ellipsis font-bold wow fadeInUp"
+          data-wow-offset="100"
+          style="color: var(--carousel_p)"
+        >
+          <span data-translate="SliderTitle1">Accesează</span>
+          <span data-translate="SliderTitle2">Proiectele Noastre</span>
+        </h1>
+      </div>
+      <div class="container wow fadeInUp" data-wow-offset="100">
+        <div id="slide">
+          <div
+            class="item border-t-gray-300 border-[1px]"
+            style="
               background-image: url(./images/ad-display.png);
               background-color: var(--cont_bg);
-            ">
-          <div class="content">
-            <div class="name1 mb-3" data-translate="WebsiteAD">A&D</div>
-            <a class="website mb-6" href="https://adfitness.vercel.app/" target="_blank">
-              <span class="shadow"></span>
-              <span class="edge"></span>
-              <span class="front text" data-translate="SliderButton">Vezi Website-ul</span>
-            </a>
+            "
+          >
+            <div class="content">
+              <div class="name1 mb-3" data-translate="WebsiteAD">A&D</div>
+              <a
+                class="website mb-6"
+                href="https://adfitness.vercel.app/"
+                target="_blank"
+              >
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front text" data-translate="SliderButton"
+                  >Vezi Website-ul</span
+                >
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="item border-t-gray-300 border-[1px]" style="
+          <div
+            class="item border-t-gray-300 border-[1px]"
+            style="
               background-image: url(./images/apisudex-display.png);
               background-color: var(--cont_bg);
-            ">
-          <div class="content">
-            <div class="name1 mb-3" data-translate="WebsiteApisudex">
-              APISUDEX
+            "
+          >
+            <div class="content">
+              <div class="name1 mb-3" data-translate="WebsiteApisudex">
+                APISUDEX
+              </div>
+              <a
+                class="website mb-6"
+                href="https://apisudex.store/"
+                target="_blank"
+              >
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front text" data-translate="SliderButton"
+                  >Vezi Website-ul</span
+                >
+              </a>
             </div>
-            <a class="website mb-6" href="https://apisudex.store/" target="_blank">
-              <span class="shadow"></span>
-              <span class="edge"></span>
-              <span class="front text" data-translate="SliderButton">Vezi Website-ul</span>
-            </a>
           </div>
-        </div>
-        <div class="item border-t-gray-300 border-[1px]" style="
+          <div
+            class="item border-t-gray-300 border-[1px]"
+            style="
               background-image: url(./images/buffy-display.png);
               background-color: var(--cont_bg);
-            ">
-          <div class="content">
-            <div class="name1 mb-3" data-translate="WebsiteBuffy">Buffy</div>
-            <a class="website mb-6" href="https://admin090609.github.io/" target="_blank">
-              <span class="shadow"></span>
-              <span class="edge"></span>
-              <span class="front text" data-translate="SliderButton">Vezi Website-ul</span>
-            </a>
+            "
+          >
+            <div class="content">
+              <div class="name1 mb-3" data-translate="WebsiteBuffy">Buffy</div>
+              <a
+                class="website mb-6"
+                href="https://admin090609.github.io/"
+                target="_blank"
+              >
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front text" data-translate="SliderButton"
+                  >Vezi Website-ul</span
+                >
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="item border-t-gray-300 border-[1px]" style="
+          <div
+            class="item border-t-gray-300 border-[1px]"
+            style="
               background-image: url(./images/sanduta-display.png);
               background-color: var(--cont_bg);
-            ">
-          <div class="content">
-            <div class="name1 mb-3" data-translate="WebsiteSA">
-              SĂNDUȚA ART
+            "
+          >
+            <div class="content">
+              <div class="name1 mb-3" data-translate="WebsiteSA">
+                SĂNDUȚA ART
+              </div>
+              <a
+                class="website mb-6"
+                href="https://sandutart.vercel.app/"
+                target="_blank"
+              >
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front text" data-translate="SliderButton"
+                  >Vezi Website-ul</span
+                >
+              </a>
             </div>
-            <a class="website mb-6" href="https://sandutart.vercel.app/" target="_blank">
-              <span class="shadow"></span>
-              <span class="edge"></span>
-              <span class="front text" data-translate="SliderButton">Vezi Website-ul</span>
-            </a>
           </div>
         </div>
-      </div>
-      <div class="buttons">
-        <button id="prev">
-          <span class="text-4xl">&#8249;</span>
-        </button>
-        <button id="next">
-          <span class="text-4xl">&#8250;</span>
-        </button>
+        <div class="buttons">
+          <button id="prev">
+            <span class="text-4xl">&#8249;</span>
+          </button>
+          <button id="next">
+            <span class="text-4xl">&#8250;</span>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Email -->
-  <div>
+    <!-- Email -->
     <div
       class="flex justify-center items-center mx-6 rounded-lg mt-20 lg:mx-[34vw] bg-[#191919] mb-16 gap-4 lg:gap-0 wow fadeInUp"
-      data-wow-offset="100">
+      data-wow-offset="100"
+    >
       <div class="flex mt-10">
-        <iframe id="emailForm" class="border-transparent w-[200%] h-[260px]"
-          src="https://noteforms.com/forms/mail-oakabe"></iframe>
+        <iframe
+          id="emailForm"
+          class="border-transparent w-[200%] h-[260px]"
+          src="https://noteforms.com/forms/mail-oakabe"
+        ></iframe>
       </div>
     </div>
-  </div>
 
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1361.9589014414814!2d28.77521083885535!3d46.943654592784206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97f5e64797ac9%3A0xdf77d1fefdc33fc1!2z0K_Qu9C-0LLQtdC90YssINCc0L7Qu9C00L7QstCw!5e0!3m2!1sru!2s!4v1708696280733!5m2!1sru!2s"
-    width="100%" height="250px" style="border: 0" allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1361.9589014414814!2d28.77521083885535!3d46.943654592784206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97f5e64797ac9%3A0xdf77d1fefdc33fc1!2z0K_Qu9C-0LLQtdC90YssINCc0L7Qu9C00L7QstCw!5e0!3m2!1sru!2s!4v1708696280733!5m2!1sru!2s"
+      width="100%"
+      height="250px"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
 
-  <!--Footer-->
-  <div id="footer"
-    class="flex flex-col-reverse md:flex-row items-center md:justify-around justify-center sm:py-10 lg:p-10 text-center mb-10">
-    <div class="flex md:ml-20 mt-5 md:mb-0 wow fadeInUp" data-wow-offset="100">
-      <a id="instagramLink" href="https://www.instagram.com/two_2tek" target="_blank"
-        class="hover:-translate-y-1 transition duration-500 ease-in-out">
-        <img id="instagramIcon" src="./images/instagram.png" alt="" width="30" height="10" class="mr-5"
-          onmouseover="hoverInstagram(this)" onmouseout="originalInstagram(this)" />
-      </a>
-      <a id="tiktokLink" href="https://www.tiktok.com/@_2.tek_" target="_blank"
-        class="hover:-translate-y-1 transition duration-500 ease-in-out">
-        <img id="tiktokIcon" src="./images/tik-tok.png" alt="" width="30" height="10" onmouseover="hoverTikTok(this)"
-          onmouseout="originalTikTok(this)" />
-      </a>
+    <!--Footer-->
+    <div
+      id="footer"
+      class="flex flex-col-reverse md:flex-row items-center md:justify-around justify-center sm:py-10 lg:p-10 text-center mb-10"
+    >
+      <div
+        class="flex md:ml-20 mt-5 md:mb-0 wow fadeInUp"
+        data-wow-offset="100"
+      >
+        <a
+          id="instagramLink"
+          href="https://www.instagram.com/two_2tek"
+          target="_blank"
+          class="hover:-translate-y-1 transition duration-500 ease-in-out"
+        >
+          <img
+            id="instagramIcon"
+            src="./images/instagram.png"
+            alt=""
+            width="30"
+            height="10"
+            class="mr-5"
+            onmouseover="hoverInstagram(this)"
+            onmouseout="originalInstagram(this)"
+          />
+        </a>
+        <a
+          id="tiktokLink"
+          href="https://www.tiktok.com/@_2.tek_"
+          target="_blank"
+          class="hover:-translate-y-1 transition duration-500 ease-in-out"
+        >
+          <img
+            id="tiktokIcon"
+            src="./images/tik-tok.png"
+            alt=""
+            width="30"
+            height="10"
+            onmouseover="hoverTikTok(this)"
+            onmouseout="originalTikTok(this)"
+          />
+        </a>
+      </div>
+      <div
+        class="md:ml-20 text-sm mt-5 md:mb-0 wow fadeInUp"
+        data-wow-offset="100"
+      >
+        <h1 class="font-semibold" data-translate="FooterContact">
+          Simțiți-vă liber să ne contactați oricînd
+        </h1>
+        <p class="text-xs underline">two2tek@gmail.com</p>
+      </div>
+
+      <div
+        class="md:ml-20 text-sm mt-5 md:mb-0 wow fadeInUp"
+        data-wow-offset="100"
+      >
+        <p>Tel: 060008857</p>
+        <p class="underline">Str. Basarabia 2</p>
+      </div>
     </div>
-    <div class="md:ml-20 text-sm mt-5 md:mb-0 wow fadeInUp" data-wow-offset="100">
-      <h1 class="font-semibold" data-translate="FooterContact">
-        Simțiți-vă liber să ne contactați oricînd
+
+    <div
+      class="md:ml-20 text-sm flex justify-center items-center wow fadeIn"
+      data-wow-delay="1s"
+    >
+      <h1>
+        <span data-translate="FooterRealized">Realizat de </span>
+        <span class="font-semibold">2Tek. </span>
       </h1>
-      <p class="text-xs underline">two2tek@gmail.com</p>
+      <p data-translate="FooterRights" class="ml-[6px]">
+        Toate drepturile rezervate
+      </p>
     </div>
 
-    <div class="md:ml-20 text-sm mt-5 md:mb-0 wow fadeInUp" data-wow-offset="100">
-      <p>Tel: 060008857</p>
-      <p class="underline">Str. Basarabia 2</p>
-    </div>
-  </div>
+    <script src="./js/script.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
 
-  <div class="md:ml-20 text-sm flex justify-center items-center wow fadeIn" data-wow-delay="1s">
-    <h1>
-      <span data-translate="FooterRealized">Realizat de </span>
-      <span class="font-semibold">2Tek. </span>
-    </h1>
-    <p data-translate="FooterRights" class="ml-[6px]">
-      Toate drepturile rezervate
-    </p>
-  </div>
+    <script>
+      // Loading
+      window.onload = function () {
+        function simulateLoading() {
+          setTimeout(function () {
+            document.querySelector(".loading-container").style.display = "none";
+            document.querySelector(".loading").style.display = "none";
 
-  <script src="./js/script.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script>
-    new WOW().init();
-  </script>
+            document.getElementById("content").style.display = "block";
+          }, 1000);
+        }
 
-  <script>
-    // Loading
-    window.onload = function () {
-      function simulateLoading() {
-        setTimeout(function () {
-          document.querySelector(".loading-container").style.display = "none";
-          document.querySelector(".loading").style.display = "none";
+        simulateLoading();
+      };
 
-          document.getElementById("content").style.display = "block";
-        }, 1000);
-      }
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
 
-      simulateLoading();
-    };
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
 
-    document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute("href").substring(1);
-          const targetElement = document.getElementById(targetId);
-
-          if (targetElement) {
-            const offset = 50;
-            window.scrollTo({
-              top: targetElement.offsetTop - offset,
-              behavior: "smooth",
-            });
-          }
+            if (targetElement) {
+              const offset = 50;
+              window.scrollTo({
+                top: targetElement.offsetTop - offset,
+                behavior: "smooth",
+              });
+            }
+          });
         });
       });
-    });
 
-    // Carousel
-    document.addEventListener("DOMContentLoaded", function () {
-      const logoSliderContainer = document.querySelector(
-        ".logo-slider-container"
-      );
-      const logoSlides = document.querySelectorAll(".logo-slider");
+      // Carousel
+      document.addEventListener("DOMContentLoaded", function () {
+        const logoSliderContainer = document.querySelector(
+          ".logo-slider-container"
+        );
+        const logoSlides = document.querySelectorAll(".logo-slider");
 
-      let isPaused = false;
+        let isPaused = false;
 
-      function pauseAnimation() {
-        isPaused = true;
-        logoSlides.forEach((logoSlide) => {
-          logoSlide.style.animationPlayState = "paused";
-        });
-      }
+        function pauseAnimation() {
+          isPaused = true;
+          logoSlides.forEach((logoSlide) => {
+            logoSlide.style.animationPlayState = "paused";
+          });
+        }
 
-      function resumeAnimation() {
-        isPaused = false;
-        logoSlides.forEach((logoSlide) => {
-          logoSlide.style.animation = `slideRightToLeft ${window.innerWidth > 768 ? 17.5 : 10
+        function resumeAnimation() {
+          isPaused = false;
+          logoSlides.forEach((logoSlide) => {
+            logoSlide.style.animation = `slideRightToLeft ${
+              window.innerWidth > 768 ? 17.5 : 10
             }s linear infinite`;
-          logoSlide.style.animationPlayState = "running";
-        });
+            logoSlide.style.animationPlayState = "running";
+          });
+        }
+
+        logoSliderContainer.addEventListener("mouseover", pauseAnimation);
+        logoSliderContainer.addEventListener("mouseout", resumeAnimation);
+      });
+
+      // Imaginea
+      document.addEventListener("DOMContentLoaded", function () {
+        const h1Title = document.getElementById("h1Title");
+        const slide = document.getElementById("slide");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+
+        if (h1Title && slide && prevButton && nextButton) {
+          let isVisible1 = false;
+
+          const h1Observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (entry.isIntersecting) {
+              isVisible1 = true;
+              h1Observer.unobserve(h1Title);
+            }
+          });
+
+          h1Observer.observe(h1Title);
+
+          nextButton.addEventListener("click", function () {
+            const firstSlide = slide.querySelector(".item");
+            if (firstSlide) {
+              slide.removeChild(firstSlide);
+              slide.appendChild(firstSlide);
+            }
+          });
+
+          prevButton.addEventListener("click", function () {
+            const slides = slide.querySelectorAll(".item");
+            const lastSlide = slides[slides.length - 1];
+            if (lastSlide) {
+              slide.removeChild(lastSlide);
+              slide.prepend(lastSlide);
+            }
+          });
+        } else {
+          console.error("Error: One or more elements not found.");
+        }
+      });
+
+      function changeReview(index) {
+        document.getElementById("reviewTitle").innerText = reviews[index].title;
+        document.getElementById("reviewDescription").innerText =
+          reviews[index].description;
+        document.getElementById("mainImage").src = reviews[index].image;
       }
 
-      logoSliderContainer.addEventListener("mouseover", pauseAnimation);
-      logoSliderContainer.addEventListener("mouseout", resumeAnimation);
-    });
-
-    // Imaginea
-    document.addEventListener("DOMContentLoaded", function () {
-      const h1Title = document.getElementById("h1Title");
-      const slide = document.getElementById("slide");
-      const prevButton = document.getElementById("prev");
-      const nextButton = document.getElementById("next");
-
-      if (h1Title && slide && prevButton && nextButton) {
-        let isVisible1 = false;
-
-        const h1Observer = new IntersectionObserver((entries) => {
-          const entry = entries[0];
-          if (entry.isIntersecting) {
-            isVisible1 = true;
-            h1Observer.unobserve(h1Title);
-          }
-        });
-
-        h1Observer.observe(h1Title);
-
-        nextButton.addEventListener("click", function () {
-          const firstSlide = slide.querySelector(".item");
-          if (firstSlide) {
-            slide.removeChild(firstSlide);
-            slide.appendChild(firstSlide);
-          }
-        });
-
-        prevButton.addEventListener("click", function () {
-          const slides = slide.querySelectorAll(".item");
-          const lastSlide = slides[slides.length - 1];
-          if (lastSlide) {
-            slide.removeChild(lastSlide);
-            slide.prepend(lastSlide);
-          }
-        });
-      } else {
-        console.error("Error: One or more elements not found.");
-      }
-    });
-
-    function changeReview(index) {
-      document.getElementById("reviewTitle").innerText = reviews[index].title;
-      document.getElementById("reviewDescription").innerText =
-        reviews[index].description;
-      document.getElementById("mainImage").src = reviews[index].image;
-    }
-
-    // Footer
-    function hoverInstagram(element) {
-      const selectedTheme = localStorage.getItem("selectedTheme");
-
-      if (selectedTheme === "dark") {
-        element.src = "./images/instagram_hover.png";
-      } else {
-        element.src = "./images/instagram_hover.png";
-      }
-    }
-
-    function originalInstagram(element) {
-      const selectedTheme = localStorage.getItem("selectedTheme");
-
-      if (selectedTheme === "dark") {
-        element.src = "./images/instagram-dark.png";
-      } else {
-        element.src = "./images/instagram.png";
-      }
-    }
-
-    function hoverTikTok(element) {
-      const selectedTheme = localStorage.getItem("selectedTheme");
-
-      if (selectedTheme === "dark") {
-        element.src = "./images/tik-tok_hover.png";
-      } else {
-        element.src = "./images/tik-tok_hover.png";
-      }
-    }
-
-    function originalTikTok(element) {
-      const selectedTheme = localStorage.getItem("selectedTheme");
-
-      if (selectedTheme === "dark") {
-        element.src = "./images/tik-tok-dark_hover.png";
-      } else {
-        element.src = "./images/tik-tok.png";
-      }
-    }
-
-    // Color
-    document.addEventListener("DOMContentLoaded", function () {
-      const switchInput = document.getElementById("switch");
-      const moonIcon = document.querySelector(".icon--moon");
-      const sunIcon = document.querySelector(".icon--sun");
-      const moonIconVertical = document.querySelector(".icon--moon-vertical");
-      const sunIconVertical = document.querySelector(".icon--sun-vertical");
-      const themeImage = document.getElementById("themeImage");
-      const buffyLogo = document.getElementById("buffyLogo");
-      const instagramIcon = document.getElementById("instagramIcon");
-      const tiktokIcon = document.getElementById("tiktokIcon");
-      const arrowIcon = document.getElementById("arrowIcon");
-
-      if (typeof localStorage === "object") {
+      // Footer
+      function hoverInstagram(element) {
         const selectedTheme = localStorage.getItem("selectedTheme");
+
         if (selectedTheme === "dark") {
-          switchInput.checked = true;
-          moonIcon.style.fill = "white";
-          sunIcon.style.fill = "white";
-          moonIconVertical.style.fill = "white";
-          sunIconVertical.style.fill = "white";
-          themeImage.src = "./images/image.jpg";
-          buffyLogo.src = "./images/buffy-dark.png";
-          instagramIcon.src = "./images/instagram-dark.png";
-          tiktokIcon.src = "./images/tik-tok-dark_hover.png";
-          arrowIcon.src = "./images/arrow_dark.png";
-          document.querySelector("body").setAttribute("data-theme", "dark");
+          element.src = "./images/instagram_hover.png";
         } else {
-          switchInput.checked = false;
-          moonIcon.style.fill = "black";
-          sunIcon.style.fill = "white";
-          moonIconVertical.style.fill = "black";
-          sunIconVertical.style.fill = "white";
-          themeImage.src = "./images/slider.jpg";
-          buffyLogo.src = "./images/buffy.png";
-          instagramIcon.src = "./images/instagram.png";
-          tiktokIcon.src = "./images/tik-tok.png";
-          arrowIcon.src = "./images/arrow.png";
-          document.querySelector("body").setAttribute("data-theme", "light");
+          element.src = "./images/instagram_hover.png";
         }
       }
 
-      switchInput.addEventListener("change", function () {
-        if (this.checked) {
-          document.querySelector("body").setAttribute("data-theme", "dark");
-          localStorage.setItem("selectedTheme", "dark");
-          moonIcon.style.fill = "white";
-          sunIcon.style.fill = "white";
-          moonIconVertical.style.fill = "black";
-          sunIconVertical.style.fill = "white";
-          themeImage.src = "./images/image.jpg";
-          buffyLogo.src = "./images/buffy-dark.png";
-          instagramIcon.src = "./images/instagram-dark.png";
-          tiktokIcon.src = "./images/tik-tok_dark_hover.png";
-          arrowIcon.src = "./images/arrow_dark.png";
+      function originalInstagram(element) {
+        const selectedTheme = localStorage.getItem("selectedTheme");
+
+        if (selectedTheme === "dark") {
+          element.src = "./images/instagram-dark.png";
         } else {
-          document.querySelector("body").setAttribute("data-theme", "light");
-          localStorage.setItem("selectedTheme", "light");
-          moonIcon.style.fill = "black";
-          sunIcon.style.fill = "white";
-          moonIconVertical.style.fill = "black";
-          sunIconVertical.style.fill = "black";
-          themeImage.src = "./images/slider.jpg";
-          buffyLogo.src = "./images/buffy.png";
-          instagramIcon.src = "./images/instagram.png";
-          tiktokIcon.src = "./images/tik-tok.png";
-          arrowIcon.src = "./images/arrow.png";
+          element.src = "./images/instagram.png";
         }
-      });
-    });
-
-    function closeMenu() {
-      var menuToggle = document.getElementById("menu__toggle");
-      if (menuToggle.checked) {
-        menuToggle.checked = false;
       }
-    }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      var menuLinks = document.querySelectorAll(".menu__box li");
-      menuLinks.forEach(function (link) {
-        link.addEventListener("click", closeMenu);
+      function hoverTikTok(element) {
+        const selectedTheme = localStorage.getItem("selectedTheme");
+
+        if (selectedTheme === "dark") {
+          element.src = "./images/tik-tok_hover.png";
+        } else {
+          element.src = "./images/tik-tok_hover.png";
+        }
+      }
+
+      function originalTikTok(element) {
+        const selectedTheme = localStorage.getItem("selectedTheme");
+
+        if (selectedTheme === "dark") {
+          element.src = "./images/tik-tok-dark_hover.png";
+        } else {
+          element.src = "./images/tik-tok.png";
+        }
+      }
+
+      // Color
+      document.addEventListener("DOMContentLoaded", function () {
+        const switchInput = document.getElementById("switch");
+        const moonIcon = document.querySelector(".icon--moon");
+        const sunIcon = document.querySelector(".icon--sun");
+        const moonIconVertical = document.querySelector(".icon--moon-vertical");
+        const sunIconVertical = document.querySelector(".icon--sun-vertical");
+        const themeImage = document.getElementById("themeImage");
+        const buffyLogo = document.getElementById("buffyLogo");
+        const instagramIcon = document.getElementById("instagramIcon");
+        const tiktokIcon = document.getElementById("tiktokIcon");
+        const arrowIcon = document.getElementById("arrowIcon");
+
+        if (typeof localStorage === "object") {
+          const selectedTheme = localStorage.getItem("selectedTheme");
+          if (selectedTheme === "dark") {
+            switchInput.checked = true;
+            moonIcon.style.fill = "white";
+            sunIcon.style.fill = "white";
+            moonIconVertical.style.fill = "white";
+            sunIconVertical.style.fill = "white";
+            themeImage.src = "./images/image.jpg";
+            buffyLogo.src = "./images/buffy-dark.png";
+            instagramIcon.src = "./images/instagram-dark.png";
+            tiktokIcon.src = "./images/tik-tok-dark_hover.png";
+            arrowIcon.src = "./images/arrow_dark.png";
+            document.querySelector("body").setAttribute("data-theme", "dark");
+          } else {
+            switchInput.checked = false;
+            moonIcon.style.fill = "black";
+            sunIcon.style.fill = "white";
+            moonIconVertical.style.fill = "black";
+            sunIconVertical.style.fill = "white";
+            themeImage.src = "./images/slider.jpg";
+            buffyLogo.src = "./images/buffy.png";
+            instagramIcon.src = "./images/instagram.png";
+            tiktokIcon.src = "./images/tik-tok.png";
+            arrowIcon.src = "./images/arrow.png";
+            document.querySelector("body").setAttribute("data-theme", "light");
+          }
+        }
+
+        switchInput.addEventListener("change", function () {
+          if (this.checked) {
+            document.querySelector("body").setAttribute("data-theme", "dark");
+            localStorage.setItem("selectedTheme", "dark");
+            moonIcon.style.fill = "white";
+            sunIcon.style.fill = "white";
+            moonIconVertical.style.fill = "black";
+            sunIconVertical.style.fill = "white";
+            themeImage.src = "./images/image.jpg";
+            buffyLogo.src = "./images/buffy-dark.png";
+            instagramIcon.src = "./images/instagram-dark.png";
+            tiktokIcon.src = "./images/tik-tok_dark_hover.png";
+            arrowIcon.src = "./images/arrow_dark.png";
+          } else {
+            document.querySelector("body").setAttribute("data-theme", "light");
+            localStorage.setItem("selectedTheme", "light");
+            moonIcon.style.fill = "black";
+            sunIcon.style.fill = "white";
+            moonIconVertical.style.fill = "black";
+            sunIconVertical.style.fill = "black";
+            themeImage.src = "./images/slider.jpg";
+            buffyLogo.src = "./images/buffy.png";
+            instagramIcon.src = "./images/instagram.png";
+            tiktokIcon.src = "./images/tik-tok.png";
+            arrowIcon.src = "./images/arrow.png";
+          }
+        });
       });
-    });
+
+      function closeMenu() {
+        var menuToggle = document.getElementById("menu__toggle");
+        if (menuToggle.checked) {
+          menuToggle.checked = false;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var menuLinks = document.querySelectorAll(".menu__box li");
+        menuLinks.forEach(function (link) {
+          link.addEventListener("click", closeMenu);
+        });
+      });
 
       // Mouse
       const coords = { x: 0, y: 0 };
@@ -1217,6 +1596,4 @@
       animateCircles();
     </script>
   </body>
-</html>
-
 </html>
