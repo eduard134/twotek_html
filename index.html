@@ -276,7 +276,7 @@
           <!-- Color Btn -->
           <div id="colorToggle">
             <label class="toggle-vertical transition-all duration-3000" for="switch">
-              <input id="switch-vertical" class="input-vertical" type="checkbox" />
+              <input id="switchV" class="input-vertical" type="checkbox" />
               <div class="icon-vertical icon--moon-vertical">
                 <svg height="20" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path clip-rule="evenodd"
@@ -852,7 +852,7 @@
       simulateLoading();
     };
 
-    // S
+    // Scroll up btn
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
@@ -942,6 +942,8 @@
       }
     });
 
+
+    // Review
     function changeReview(index) {
       document.getElementById("reviewTitle").innerText = reviews[index].title;
       document.getElementById("reviewDescription").innerText =
@@ -993,6 +995,7 @@
     // Color
     document.addEventListener("DOMContentLoaded", function () {
       const switchInput = document.getElementById("switch");
+      const switchInputVertical = document.getElementById("switchV");
       const moonIcon = document.querySelector(".icon--moon");
       const sunIcon = document.querySelector(".icon--sun");
       const moonIconVertical = document.querySelector(".icon--moon-vertical");
@@ -1009,9 +1012,10 @@
         const selectedTheme = localStorage.getItem("selectedTheme");
         if (selectedTheme === "dark") {
           switchInput.checked = true;
+          switchInputVertical.checked = true;
           moonIcon.style.fill = "white";
           sunIcon.style.fill = "white";
-          moonIconVertical.style.fill = "white";
+          moonIconVertical.style.fill = "black";
           sunIconVertical.style.fill = "white";
           themeImage.src = "./images/image.jpg";
           buffyLogo.src = "./images/buffy-dark.png";
@@ -1022,6 +1026,7 @@
           document.querySelector("body").setAttribute("data-theme", "dark");
         } else {
           switchInput.checked = false;
+          switchInputVertical.checked = false;
           moonIcon.style.fill = "black";
           sunIcon.style.fill = "white";
           moonIconVertical.style.fill = "black";
@@ -1042,7 +1047,38 @@
           localStorage.setItem("selectedTheme", "dark");
           moonIcon.style.fill = "white";
           sunIcon.style.fill = "white";
+          moonIconVertical.style.fill = "white";
+          sunIconVertical.style.fill = "white";
+          themeImage.src = "./images/image.jpg";
+          buffyLogo.src = "./images/buffy-dark.png";
+          instagramIcon.src = "./images/instagram-dark.png";
+          tiktokIcon.src = "./images/tik-tok_dark_hover.png";
+          arrowIcon.src = "./images/arrow_dark.png";
+          arrowIconVertical.src = "./images/arrow_dark.png";
+        } else {
+          document.querySelector("body").setAttribute("data-theme", "light");
+          localStorage.setItem("selectedTheme", "light");
+          moonIcon.style.fill = "black";
+          sunIcon.style.fill = "white";
           moonIconVertical.style.fill = "black";
+          sunIconVertical.style.fill = "black";
+          themeImage.src = "./images/slider.jpg";
+          buffyLogo.src = "./images/buffy.png";
+          instagramIcon.src = "./images/instagram.png";
+          tiktokIcon.src = "./images/tik-tok.png";
+          arrowIcon.src = "./images/arrow.png";
+          arrowIconVertical.src = "./images/arrow.png";
+
+        }
+      });
+
+      switchInputVertical.addEventListener("change", function () {
+        if (this.checked) {
+          document.querySelector("body").setAttribute("data-theme", "dark");
+          localStorage.setItem("selectedTheme", "dark");
+          moonIcon.style.fill = "white";
+          sunIcon.style.fill = "white";
+          moonIconVertical.style.fill = "white";
           sunIconVertical.style.fill = "white";
           themeImage.src = "./images/image.jpg";
           buffyLogo.src = "./images/buffy-dark.png";

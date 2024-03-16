@@ -236,11 +236,11 @@ body {
   transform: scale(0);
 }
 
-#switch-vertical:checked+.icon--moon-vertical {
+#switchV:checked~.icon--moon-vertical {
   transform: rotate(360deg) scale(0);
 }
 
-#switch-vertical:checked~.icon--sun-vertical {
+#switchV:checked~.icon--sun-vertical {
   transition-delay: 200ms;
   transform: scale(1) rotate(360deg);
 }
