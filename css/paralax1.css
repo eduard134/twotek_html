@@ -150,8 +150,8 @@ body {
 }
 
 .circle-box {
-  width: 210px;
-  height: 210px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   margin-right: 4rem;
   animation: moveAround 5s linear infinite alternate;
@@ -161,7 +161,7 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: all 0.2s ease-in;
+  transition: all .5s ease-in-out;
   margin-bottom: 20px;
   padding: 0 20px;
 }

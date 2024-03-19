@@ -58,14 +58,16 @@
   --review_bg: black;
   --arrow: black;
   --loading_text: black;
+  --cont_shadow: #a2a1a1;
 }
 
 [data-theme="dark"] {
+  --cont_shadow: #747474;
   --loading_text: white;
   --body_background: black;
   --body_color: white;
   --container_bg: #222;
-  --container_shadow: #111;
+  --container_shadow: #ffffff;
   --item_shadow: #333;
   --item_content: white;
   --buttons_button_boder: #777;
@@ -160,7 +162,7 @@ body {
   background-repeat: no-repeat;
   float: right;
   shape-outside: circle();
-  margin: 60px 20px 50px 0;
+  margin: 80px 15px 50px 10px;
 }
 
 @media (max-width: 767px) {
@@ -178,7 +180,7 @@ body {
   background-repeat: no-repeat;
   float: right;
   shape-outside: circle();
-  margin: 60px 20px 40px 0;
+  margin: 80px 10px 50px 10px;
 }
 
 @media (max-width: 767px) {
@@ -196,7 +198,7 @@ body {
   background-repeat: no-repeat;
   float: right;
   shape-outside: circle();
-  margin: 60px 20px 50px 10px;
+  margin: 80px 10px 50px 10px;
 }
 
 @media (max-width: 767px) {

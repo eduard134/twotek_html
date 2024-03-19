@@ -31,7 +31,7 @@
 
   <body>
     <!-- Loading -->
-    <div class="absolute loading">
+    <!-- <div class="absolute loading">
       <div
         class="flex flex-col justify-center items-center loading-container w-[100vw] h-[100vh]"
       >
@@ -73,7 +73,7 @@
           ><span class="text-2xl font-bold">2Tek</span>
         </h1>
       </div>
-    </div>
+    </div>   -->
 
     <!-- Mouse Trace -->
     <div class="circle"></div>
@@ -111,7 +111,9 @@
 
     <!--Basic NavBar-->
     <div
-      class="left-0 top-0 w-full text-focus-in mt-0 md:mt-5 text-black z-bug px-0 md:px-8 transition-all duration-3800 ease-in-out fixed"
+      class="left-0 top-0 w-full wow fadeIn mt-0 md:mt-5 text-black z-bug px-0 md:px-8 fixed"
+      data-wow-duration="2s"
+      data-wow-delay="1s"
       id="navbar"
     >
       <div
@@ -128,7 +130,7 @@
         <!-- Logo -->
         <a
           href="/index.html"
-          class="text-4xl font-bold text-focus-in flex items-center -ml-13 lg:ml-0"
+          class="text-4xl font-bold flex items-center -ml-13 lg:ml-0"
         >
           <img
             src="./images/logo.png"
@@ -211,10 +213,10 @@
 
         <!-- Navigation links - PC -->
         <ul
-          class="hidden lg:flex text-base font-semibold text-white"
+          class="hidden lg:flex text-base font-medium text-white tracking-in-contract-bck"
           style="color: var(--link_color)"
         >
-          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+          <li class="p-4 relative group lin">
             <a
               href="#paralax1"
               class="cursor-pointer"
@@ -223,7 +225,7 @@
               >Despre Noi</a
             >
           </li>
-          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+          <li class="p-4 relative group lin">
             <a
               href="#echipa"
               class="cursor-pointer"
@@ -232,7 +234,7 @@
               >Echipa</a
             >
           </li>
-          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+          <li class="p-4 relative group lin">
             <a
               href="#proiecte"
               class="cursor-pointer"
@@ -241,7 +243,7 @@
               >Proiecte</a
             >
           </li>
-          <li class="p-4 relative group tracking-in-expand-fwd-bottom lin">
+          <li class="p-4 relative group lin">
             <a
               href="#footer"
               class="cursor-pointer"
@@ -366,7 +368,7 @@
 
         <!-- Navigation links - PC -->
         <ul
-          class="items-center flex flex-col text-sm font-semibold text-white"
+          class="items-center flex flex-col text-sm font-medium text-white"
           style="color: var(--link_color)"
         >
           <li class="p-4 relative group lin">
@@ -418,7 +420,7 @@
             <div class="relative" id="translationContainer">
               <!-- Translate Dropdown -->
               <div
-                id="languageSelector-vertical"
+                id=" languageSelector-vertical"
                 class="language-css text-black flex items-center px-3 py-2 rounded-full cursor-pointer text-center"
                 style="
                   min-height: 40px;
@@ -507,17 +509,17 @@
 
     <!--Info (Main Section)-->
     <div
-      class="lg:mt-22 mt-10 lg:mt-20 text-center relative px-4 md:px-8 lg:px-0 text-focus-in"
+      class="mt-10 lg:mt-20 text-center relative px-4 md:px-8 lg:px-0 wow fadeIn"
+      data-wow-duration="2s"
+      data-wow-delay="1s"
     >
       <div class="lg:w-[70vw] mx-2 sm:mx-auto relative">
-        <div class="object-cover overflow-hidden rounded-3xl">
-          <img
-            id="themeImage"
-            src="./images/slider.jpg"
-            alt=""
-            class="w-full md:h-full h-[450px]"
-          />
-        </div>
+        <img
+          id="themeImage"
+          src="./images/slider.jpg"
+          alt=""
+          class="w-full md:h-full h-[450px] object-cover overflow-hidden rounded-3xl"
+        />
         <div
           class="absolute top-0 left-0 tracking-[.1em] right-0 bottom-0 px-5 sm:px-10 flex flex-col justify-center items-start text-white rounded-3xl text-start tracking-in-contract-bck"
         >
@@ -536,7 +538,7 @@
           <a href="tel:+37368548789" class="text-shadow-pop-left">
             <button
               data-translate="LandingContacts"
-              class="sm:px-8 ml-[-8px] px-3 py-2 text-[14px] sm:text-lg sm:tracking-wider font-semibold mb-5 text-black bg-white rounded-[50px] hover:bg-opacity-70"
+              class="sm:px-8 ml-[-8px] px-3 py-2 text-[14px] sm:text-lg sm:tracking-wider font-semibold mb-5 text-black bg-white rounded-[50px] but_hov"
             >
               Contactează-ne la +373 685 487 89
             </button>
@@ -547,7 +549,7 @@
 
     <!--Logo Carousel-->
     <div
-      class="mt-24 sm:mt-44 lg:mt-32 mb-10 lg:mb-20 flex-col justify-evenly mx-2 lg:mx-32 items-center"
+      class="mt-24 sm:mt-44 mat mb-10 lg:mb-20 flex-col justify-evenly mx-2 lg:mx-32 items-center"
     >
       <h1
         class="text-center text-2xl sm:text-5xl lg:text-4xl mb-5 sm:mb-7 font-semibold wow fadeInUp"
@@ -713,7 +715,7 @@
     <!--Paralax1 (Despre Noi)-->
     <section id="paralax1">
       <div
-        class="mb-20 sm:mb-20 mt-24 sm:mt-44 lg:mt-44 sm:flex justify-evenly mx-2 sm:mx-10 lg:mx-32 items-center"
+        class="mb-20 sm:mb-20 mat sm:flex justify-evenly mx-2 sm:mx-10 lg:mx-32 items-center"
       >
         <h1
           class="wow fadeInLeft text-center text-2xl mb-5 lg:mb-3 sm:text-[43px] sm:leading-[50px] lg:text-5xl lg:max-w-[350px] lg:leading-[60px] font-semibold"
@@ -858,7 +860,7 @@
     </section>
 
     <!--Paralax2 (Succesful Website - Steps)-->
-    <div class="mt-20 sm:mt-0 lg:mt-20 lg:mx-64 p-4 md:p-8 lg:p-0">
+    <div class="mt-20 sm:mt-0 lg:mt-44 lg:mx-64 p-4 md:p-8 lg:p-0">
       <h1
         class="text-center text-2xl sm:text-5xl font-semibold wow fadeInUp"
         data-wow-offset="100"
@@ -885,10 +887,12 @@
         data-wow-offset="100"
         style="
           background: linear-gradient(
-            120deg,
-            var(--carousel_gradient1),
-            var(--carousel_gradient2)
+            to bottom,
+            var(--nav_bg1),
+            var(--nav_bg2),
+            var(--nav_bg3)
           );
+          box-shadow: 0 15px 15px var(--cont_shadow);
         "
       >
         <div class="search"><img src="./images/search.png" alt="search" /></div>
@@ -915,10 +919,12 @@
         data-wow-delay="1s"
         style="
           background: linear-gradient(
-            120deg,
-            var(--carousel_gradient1),
-            var(--carousel_gradient2)
+            to bottom,
+            var(--nav_bg1),
+            var(--nav_bg2),
+            var(--nav_bg3)
           );
+          box-shadow: 0 15px 15px var(--cont_shadow);
         "
       >
         <div class="circle1"><img src="./images/web.png" alt="web" /></div>
@@ -939,27 +945,29 @@
         </p>
       </div>
       <div
-        class="lg:w-[34%] h-[full] mt-8 sm:mt-8 lg:mt-10 rounded-xl p-4 element3 wow fadeInUp"
+        class="lg:w-[34%] h-[full] mt-8 sm:mt-8 lg:mt-20 rounded-xl p-4 element3 wow fadeInUp"
         data-wow-offset="100"
         style="
           background: linear-gradient(
-            120deg,
-            var(--carousel_gradient1),
-            var(--carousel_gradient2)
+            to bottom,
+            var(--nav_bg1),
+            var(--nav_bg2),
+            var(--nav_bg3)
           );
+          box-shadow: 0 15px 15px var(--cont_shadow);
         "
       >
         <div class="circle2">
           <img src="./images/mobile.png" alt="mobile" />
         </div>
         <h1
-          class="sm:text-3xl text-2xl text-start font-bold pt-3 pl-3 sm:pl-6 lg:pl-0 sm:leading-tight"
+          class="sm:text-3xl text-2xl text-start font-bold pt-3 pl-3 sm:pl-6 sm:leading-tight"
           data-translate="HowBoxTitlev3"
         >
           Dezvoltarea produsului
         </h1>
         <p
-          class="sm:text-xl sm:mb-0 mb-2 p-3 sm:pl-6 sm:max-w-[700px] lg:max-w-full lg:pl-0 sm:leading-normal"
+          class="sm:text-xl sm:mb-0 mb-2 p-6 sm:pl-6 sm:max-w-[700px] lg:max-w-full sm:leading-normal"
           style="color: var(--paralax_p)"
           data-translate="HowBoxTextv3"
         >
@@ -976,7 +984,7 @@
     <!--Echipa-->
     <div
       id="echipa"
-      class="flex flex-col lg:flex-row mt-24 sm:mt-44 justify-evenly items-center"
+      class="flex flex-col lg:flex-row mt-24 mat justify-evenly items-center"
     >
       <div class="sm:max-w-lg mb-5 sm:mb-5 lg:mb-0">
         <h1
@@ -1003,7 +1011,7 @@
       </div>
       <div class="flex justify-center items-center flex-col">
         <div class="flex">
-          <div class="p-4 wow zoomIn" data-wow-offset="100">
+          <div class="p-4 mar wow zoomIn" data-wow-offset="100">
             <img
               src="./images/danu.jpeg"
               alt=""
@@ -1098,12 +1106,12 @@
     <!-- Imaginea - Slider -->
     <div
       id="proiecte"
-      class="mb-52 sm:mt-40 mt-20 sm:mb-0 flex-row flex flex-col justify-center items-center lg:justify-around"
+      class="mb-52 mat sm:mb-0 flex-row flex flex-col justify-center items-center lg:justify-around"
     >
-      <div class="lg:mt-16 mb-5 sm:mb-10">
+      <div class="lg:mt-16 mb-5 sm:mb-20">
         <h1
           id="h1Title"
-          class="sm:text-5xl text-3xl leading-tight text-center lg:text-start text-ellipsis font-bold wow fadeInUp"
+          class="sm:text-6xl text-3xl leading-tight text-center lg:text-start text-ellipsis font-bold wow fadeInUp"
           data-wow-offset="100"
           style="color: var(--carousel_p)"
         >
@@ -1114,7 +1122,7 @@
       <div class="container wow fadeInUp" data-wow-offset="100">
         <div id="slide">
           <div
-            class="item border-t-gray-300 border-[1px]"
+            class="item"
             style="
               background-image: url(./images/ad-display.png);
               background-color: var(--cont_bg);
@@ -1136,7 +1144,7 @@
             </div>
           </div>
           <div
-            class="item border-t-gray-300 border-[1px]"
+            class="item"
             style="
               background-image: url(./images/apisudex-display.png);
               background-color: var(--cont_bg);
@@ -1160,7 +1168,7 @@
             </div>
           </div>
           <div
-            class="item border-t-gray-300 border-[1px]"
+            class="item"
             style="
               background-image: url(./images/buffy-display.png);
               background-color: var(--cont_bg);
@@ -1182,7 +1190,7 @@
             </div>
           </div>
           <div
-            class="item border-t-gray-300 border-[1px]"
+            class="item"
             style="
               background-image: url(./images/sanduta-display.png);
               background-color: var(--cont_bg);
@@ -1223,7 +1231,7 @@
 
     <!-- Email Form -->
     <div
-      class="flex justify-center items-center mx-6 rounded-lg mt-20 lg:mx-[34vw] bg-[#191919] mb-16 gap-4 wow fadeInUp"
+      class="flex justify-center items-center mx-6 rounded-lg mat2 lg:mx-[34vw] bg-[#191919] mb-16 gap-4 wow fadeInUp"
       data-wow-offset="100"
     >
       <iframe
@@ -1241,6 +1249,7 @@
       style="border: 0"
       allowfullscreen=""
       loading="lazy"
+      class="mat2"
       referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
 
@@ -1307,7 +1316,7 @@
     </div>
 
     <div
-      class="md:ml-20 text-sm flex justify-center items-center wow fadeIn"
+      class="md:ml-20 mb-2 text-sm flex justify-center items-center wow fadeIn"
       data-wow-delay="1s"
     >
       <h1>
@@ -1335,7 +1344,7 @@
             document.querySelector(".loading").style.display = "none";
 
             document.getElementById("content").style.display = "block";
-          }, 1000);
+          }, 400);
         }
 
         simulateLoading();
