@@ -160,7 +160,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: 0 0 50px -10px var(--card_shadow);
+  box-shadow: 0 0 30px -10px var(--card_shadow);
   overflow: hidden;
   color: var(--card_color);
 }
@@ -320,3 +320,14 @@ body {
   background-size: cover;
 }
 
+.mar {
+  margin-right: 40px;
+}
+
+.mat{
+  margin-top: 35vh;
+}
+
+.mat2{
+  margin-top: 25vh;
+}
