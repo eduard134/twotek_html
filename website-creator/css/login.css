@@ -23,16 +23,40 @@
 
 .logInBox{
     width: 35vw;
+    background-color: rgb(42, 42, 42);
+    padding: 20px;
+    padding-left: 28px;
+    padding-right: 28px;
+    border-radius: 6px;
+}
+
+input{
+    width: 95%;
+    padding: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 6px;
+    border: 0;
+    font-size: 16px;
 }
 
 .nextBtn{
     background-color: #4356FA;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 4px;
     font-size: 16px;
     font-weight: 400;
     border: 0;
+    float: right;
+}
+
+.inputDiv{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 16px;
 }
