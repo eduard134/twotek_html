@@ -253,3 +253,37 @@ body {
   transform: scale(1.01);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
+
+.lead1{
+  line-height: 10vh;
+}
+
+@media screen and (max-width: 768px) {
+  .lead1{
+  line-height: 9vh;
+  }
+}
+
+.heig{
+  height: 70vh;
+}
+
+@media screen and (max-width: 768px) {
+  .heig{
+    height: 80vh;
+  }
+}
+
+.wid{
+  width: 76vw;
+}
+
+@media screen and (max-width: 768px) {
+  .wid{
+    width: 88vw;
+  }
+}
+
+.wid1{
+  width: 100%;
+}

@@ -126,6 +126,11 @@ const translations = {
     WebsiteBuffy: "BUFFY",
     SliderTitle1: "Accesează",
     SliderTitle2: "Proiectele Noastre:",
+    FormularP: "Contactează-ne",
+    FormularNume: "Nume",
+    FormularEmail: "Email",
+    FormularButon: "Trimite",
+    FormularError: "Te rugăm să completezi corect toate câmpurile!",
   },
   ru: {
     Nav1: "О Нас",
@@ -216,6 +221,11 @@ const translations = {
     WebsiteBuffy: "BUFFY",
     SliderTitle1: "Посетите наши",
     SliderTitle2: "веб-страницы:",
+    FormularP: "Свяжитесь с нами",
+    FormularNume: "Имя",
+    FormularEmail: "Электронная почта",
+    FormularButon: "Отправить",
+    FormularError: "Пожалуйста, заполните все поля правильно!",
   },
   en: {
     Nav1: "About Us",
@@ -306,6 +316,11 @@ const translations = {
     WebsiteBuffy: "BUFFY",
     SliderTitle1: "Access our ",
     SliderTitle2: "web pages:",
+    FormularP: "Contact us",
+    FormularNume: "Name",
+    FormularEmail: "Email",
+    FormularButon: "Send",
+    FormularError: "Please fill in all fields correctly!",
   },
 };
 

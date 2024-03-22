@@ -160,7 +160,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: 0 0 30px -10px var(--card_shadow);
+  box-shadow: 0 10px 15px var(--cont_shadow);
   overflow: hidden;
   color: var(--card_color);
 }
@@ -326,6 +326,13 @@ body {
 
 .mat{
   margin-top: 35vh;
+}
+
+
+@media screen and (max-width: 768px) {
+  .mat{
+    margin-top: 22vh;
+  }
 }
 
 .mat2{
