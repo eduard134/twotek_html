@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/website-creator/css/nav.css">
     <link rel="stylesheet" href="/website-creator/css/main.css">
     <link rel="stylesheet" href="/website-creator/css/login.css">
-    <link href="./dist/output.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -34,20 +33,21 @@
             <div class="inputDiv">
                 <div>
                     <div>Firstname</div>
-                    <input type="text" placeholder="Enter your firstname...">
+                    <input type="text" placeholder="Enter your firstname..." id="firstName">
                 </div>
                 <div>
                     <div>Lastname</div>
-                    <input type="text" placeholder="Enter your lastname...">
+                    <input type="text" placeholder="Enter your lastname..." id="lastName">
                 </div>
                 <div>
                     <div>Email</div>
-                    <input type="text" placeholder="Enter your email address...">
+                    <input type="text" placeholder="Enter your email address..." id="mail">
                 </div>
             </div>
-            <button class="nextBtn">Next</button>
+            <button class="nextBtn" onclick="credentials()">Next</button>
         </div>
     </div>
+    <script src="/website-creator/scripts/login.js"></script>
 </body>
 
 </html>
