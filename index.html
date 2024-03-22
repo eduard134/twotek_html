@@ -1680,54 +1680,49 @@
           var errorMessage = document.getElementById("error-message");
           var submitButton = document.querySelector("#contact-form button");
 
-          if (nameInput.value.trim() === "") {
-            // Verifică dacă numele este necompletat
-            nameInput.style.borderBottom = "2px solid red"; // Adaugă bordură roșie pentru input necompletat
-            document.querySelector("label[for='name']").style.color = "red"; // Schimbă culoarea labelului la roșu
+          if (nameInput.value === "") {
+            nameInput.style.borderBottom = "2px solid red"; 
+            document.querySelector("label[for='name']").style.color = "red"; 
           } else {
-            nameInput.style.borderBottom = ""; // Elimină bordura roșie pentru input completat corect
+            nameInput.style.borderBottom = ""; 
             document.querySelector("label[for='name']").style.color =
-              "var(--paralax_p)"; // Resetare culoare label
+              "var(--paralax_p)";
           }
 
           if (
-            emailInput.value.trim() === "" ||
+            emailInput.value === "" ||
             !isValidEmail(emailInput.value.trim())
           ) {
-            // Verifică dacă emailul este necompletat sau invalid
-            emailInput.style.borderBottom = "2px solid red"; // Adaugă bordură roșie pentru input necompletat sau invalid
-            document.querySelector("label[for='email']").style.color = "red"; // Schimbă culoarea labelului la roșu
+            emailInput.style.borderBottom = "2px solid red"; 
+            document.querySelector("label[for='email']").style.color = "red"; 
           } else {
-            emailInput.style.borderBottom = ""; // Elimină bordura roșie pentru input completat corect
+            emailInput.style.borderBottom = ""; 
             document.querySelector("label[for='email']").style.color =
-              "var(--paralax_p)"; // Resetare culoare label
+              "var(--paralax_p)";
           }
 
           if (
-            nameInput.value.trim() === "" ||
-            emailInput.value.trim() === "" ||
-            !isValidEmail(emailInput.value.trim())
+            nameInput.value === "" ||
+            emailInput.value === "" ||
+            !isValidEmail(emailInput.value)
           ) {
-            // Dacă unul dintre câmpuri este necompletat sau emailul este invalid
             submitButton.classList.add("shake-animation");
             setTimeout(function () {
               submitButton.classList.remove("shake-animation");
             }, 500);
             errorMessage.style.display = "block";
             errorMessage.style.color = "red";
-            errorMessage.style.fontWeight = "normal"; // Resetare greutate font pentru mesaj de eroare
+            errorMessage.style.fontWeight = "normal"; 
             errorMessage.innerText = data;
           } else {
             errorMessage.style.display = "block";
             errorMessage.style.color = "green";
             errorMessage.style.fontWeight = "600";
-            errorMessage.innerText = "Formularul a fost trimis cu succes!";
-            // Aici poți adăuga codul pentru a trimite formularul prin AJAX
+            errorMessage.innerText = data;
           }
         });
 
       function isValidEmail(email) {
-        // Verifică dacă emailul este valid folosind o expresie regulată simplă
         return /\S+@\S+\.\S+/.test(email);
       }
     </script>

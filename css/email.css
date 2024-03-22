@@ -215,7 +215,7 @@ body {
   }
   padding-bottom: 7px;
   border-width: 3px;
-  border-image: linear-gradient(to left, #9e9e9e, #747474);
+  border-image: red;
   border-image-slice: 1;
 }
 
