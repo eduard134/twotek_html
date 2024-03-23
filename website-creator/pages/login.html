@@ -30,10 +30,10 @@
                 </div>
             </div>
             <hr>
-            <div class="inputDiv">
+            <form id="loginForm" class="inputDiv" method="post" action="/">
                 <div>
                     <div>Firstname</div>
-                    <input type="text" placeholder="Enter your firstname..." id="firstName">
+                    <input type="text" placeholder="Enter your firstname..." id="firstName" name="name">
                 </div>
                 <div>
                     <div>Lastname</div>
@@ -41,13 +41,13 @@
                 </div>
                 <div>
                     <div>Email</div>
-                    <input type="text" placeholder="Enter your email address..." id="mail">
+                    <input type="text" placeholder="Enter your email address..." id="mail" name="mail">
                 </div>
-            </div>
-            <button class="nextBtn" onclick="credentials()">Next</button>
+            <button class="nextBtn" type="submit">Next</button>
+
+            </form>
         </div>
     </div>
-    <script src="/website-creator/scripts/login.js"></script>
 </body>
 
 </html>
