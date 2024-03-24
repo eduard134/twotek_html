@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwoTek - Website Builder</title>
+    <link rel="icon" href="/images/logo1.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/website-creator/css/nav.css">
+    <link rel="stylesheet" href="/website-creator/css/save.css">
+
+</head>
+
+<body>
+    <!-- Nav -->
+    <div class="nav">
+        <div class="left">
+            <a href="/website-creator/index.html">
+                <img class="logoSave" src="/images/logo1.png" alt="">
+            </a>
+            <select>
+                <option>Shop 1</option>
+                <option>Shop 2</option>
+                <option>Shop 3</option>
+            </select>
+        </div>
+        <div class="navBtnsDiv">
+            <a href="" class="interfaceLinks">Build</a>
+            <a href="" class="interfaceLinks">Templates</a>
+            <a href="" class="interfaceLinks">Settings</a>
+            <a href="" class="interfaceLinks">Help</a>
+        </div>
+        <div class="right">
+            <div>
+                <button class="controls"><img src="/website-creator/images/undo.png" class="undo" alt=""></button>
+                <button class="controls"><img src="/website-creator/images/redo.png" class="redo" alt=""></button>
+            </div>
+            <button class="display"><img src="/website-creator/images/phoneIcon.png" class="phoneIcon" alt=""></button>
+            <div><a href="./saved.html" class="saveBtn">Save</a></div>
+        </div>
+    </div>
+
+    <!-- Build Nav -->
+    <section>
+        <div class="buildStruct">
+            <div class="build">
+                <div class="basic">
+                    <div class="title">Basic</div>
+                    <div class="boxes">
+                        <button class="box" id="title">Title</button>
+                        <button class="box" id="text">Text</button>
+                        <button class="box" id="image">Image</button>
+                        <button class="box" id="form">Form</button>
+                        <button class="box" id="button">Button</button>
+                        <button class="box" id="list">List</button>
+                    </div>
+                </div>
+                <div class="structure">
+                    <div class="title">Structure</div>
+                    <div class="boxes">
+                        <button class="box" id="spacer">Spacer</button>
+                        <button class="box" id="divider">Divider</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="new">
+
+        </div>
+    </section>
+    <script src="/website-creator/scripts/new.js"></script>
+</body>
+
+</html>
