@@ -3,6 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
+  --par:white;
+  --par1:white;
+  --par2:white;
   --body_background: white;
   --body_color: black;
   --container_bg: #f5f5f5;
@@ -61,6 +64,9 @@
 }
 
 [data-theme="dark"] {
+  --par:#181818;
+  --par1:#0b0b0b;
+  --par2:#161616;
   --loading_text: white;
   --body_background: black;
   --body_color: white;
@@ -157,13 +163,13 @@ body {
   white-space: nowrap;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .logo-slider-container {
-    width: 90%;
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1025px) {
   .logo-slider-container {
     width: 60%;
   }
@@ -198,7 +204,7 @@ body {
 .logo-slider img {
   width: 100px;
   height: auto;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
   margin-right: 200px;
   margin-left: 100px;
