@@ -16,6 +16,11 @@
     color: white;
 }
 
+.back{
+    background-color: #4356FA;
+
+}
+
 .main{
     display: flex;
     justify-content: center;
