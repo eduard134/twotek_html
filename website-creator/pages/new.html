@@ -8,7 +8,7 @@
     <link rel="icon" href="/images/logo1.png" type="image/x-icon" />
     <link rel="stylesheet" href="/website-creator/css/nav.css">
     <link rel="stylesheet" href="/website-creator/css/save.css">
-
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -25,24 +25,22 @@
             </select>
         </div>
         <div class="navBtnsDiv">
-            <a href="" class="interfaceLinks">Build</a>
-            <a href="" class="interfaceLinks">Templates</a>
+            <a href="#" class="interfaceLinks" id="buildLink">Build</a>
+            <a href="#" class="interfaceLinks" id="templatesLink">Templates</a>
             <a href="" class="interfaceLinks">Settings</a>
             <a href="" class="interfaceLinks">Help</a>
         </div>
         <div class="right">
             <div>
-                <button class="controls"><img src="/website-creator/images/undo.png" class="undo" alt=""></button>
-                <button class="controls"><img src="/website-creator/images/redo.png" class="redo" alt=""></button>
+                <button class="controls"><img src="/website-creator/images/undo.png" class="undo" id="undo" alt=""></button>
             </div>
             <button class="display"><img src="/website-creator/images/phoneIcon.png" class="phoneIcon" alt=""></button>
             <div><a href="./saved.html" class="saveBtn">Save</a></div>
         </div>
     </div>
 
-    <!-- Build Nav -->
     <section>
-        <div class="buildStruct">
+        <div class="buildStruct" id="buildMenu">
             <div class="build">
                 <div class="basic">
                     <div class="title">Basic</div>
@@ -64,9 +62,25 @@
                 </div>
             </div>
         </div>
-        <div id="new">
 
+        <!-- Templates Menu -->
+        <div class="templates" id="templatesMenu">
+            <div class="build">
+                <div class="basic">
+                    <div class="title">Templates</div>
+                    <div class="boxes">
+                        <button class="temp-boxes" id="template1"><img class="temp-img" src="/website-creator/images/nav.png" alt="">Header</button>
+                        <button class="temp-boxes" id="template2"><img class="temp-img" src="/website-creator/images/main.png" alt="">Hero</button>
+                        <button class="temp-boxes" id="template3"><img class="temp-img" src="/website-creator/images/blog.png" alt="">Blog</button>
+                        <button class="temp-boxes" id="template4"><img class="temp-img" src="/website-creator/images/product.png" alt="">Product</button>
+                        <button class="temp-boxes" id="template5"><img class="temp-img" src="/website-creator/images/map-form.png" alt="">Contact</button>
+                        <button class="temp-boxes" id="template6"><img class="temp-img" src="/website-creator/images/footer.png" alt="">Footer</button>
+                    </div>
+                </div>
+            </div>
         </div>
+    <div id="new"></div>
+
     </section>
     <script src="/website-creator/scripts/new.js"></script>
 </body>
