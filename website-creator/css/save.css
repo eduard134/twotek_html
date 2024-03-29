@@ -49,6 +49,7 @@
     background-color: #616467;
     width: 240px;
     height: 90vh;
+    display: none;
 }
 
 .build{
@@ -75,6 +76,23 @@
     border: 0;
 }
 
+.temp-boxes{
+    border-radius: 4px;
+    width: 210px;
+    border: 0;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.temp-img{
+    width: 200px; 
+    border-radius: 4px;
+
+}
+
 .title{ 
     font-size: 14px;
     font-weight: 600;
@@ -93,4 +111,11 @@
 
 section{
     display: flex;
+}
+
+
+.templates {
+    background-color: #616467;
+    width: 240px;
+    display: none;
 }
