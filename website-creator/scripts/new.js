@@ -1,10 +1,10 @@
 // Change between "Build" and "Templates" menu
-document.getElementById('buildLink').addEventListener('click', function() {
+document.getElementById('buildLink').addEventListener('click', function () {
     document.getElementById('buildMenu').style.display = 'block';
     document.getElementById('templatesMenu').style.display = 'none';
 });
 
-document.getElementById('templatesLink').addEventListener('click', function() {
+document.getElementById('templatesLink').addEventListener('click', function () {
     document.getElementById('templatesMenu').style.display = 'block';
     document.getElementById('buildMenu').style.display = 'none';
 });
@@ -23,6 +23,13 @@ main = document.getElementById("new")
 
 nav = document.getElementById("template1")
 hero = document.getElementById("template2")
+blog = document.getElementById("template3")
+contact = document.getElementById("template5")
+
+product = document.getElementById("template4")
+footer = document.getElementById("template6")
+
+
 
 // Adding events
 title.addEventListener("click", addTitle);
@@ -36,6 +43,10 @@ divider.addEventListener("click", addDivider)
 
 nav.addEventListener("click", addNav)
 hero.addEventListener("click", addHero)
+blog.addEventListener("click", addBlog)
+product.addEventListener("click", addProduct)
+contact.addEventListener("click", addContact)
+footer.addEventListener("click", addFooter)
 
 
 let addedElements = [];
@@ -43,23 +54,40 @@ let addedElements = [];
 
 // Functions for the build menu
 function addTitle() {
-    const titleId = "title_" + addedElements.length; 
+    const titleId = "title_" + addedElements.length;
     main.innerHTML += `<h1  contenteditable="true" id="${titleId}">Title</h1>`;
-    addedElements.push({ type: 'title', id: titleId }); 
+    addedElements.push({ type: 'title', id: titleId });
 }
 
 function addText() {
-    const textId = "text_" + addedElements.length; 
+    const textId = "text_" + addedElements.length;
     main.innerHTML += `<div contenteditable="true" id="${textId}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula mi sit amet neque facilisis porta. Nullam tristique, neque rhoncus ullamcorper rutrum, mi nisl varius eros, eleifend fermentum diam nulla a orci. Phasellus finibus, massa quis interdum sagittis, dolor turpis rhoncus leo, a cursus dolor felis eget nisl. Sed dapibus hendrerit est. Quisque erat ipsum, mollis sit amet molestie non, semper sit amet risus. In lacus ipsum, commodo sit amet massa vitae, ullamcorper auctor nibh.</div>`;
-    addedElements.push({ type: 'text', id: textId }); 
+    addedElements.push({ type: 'text', id: textId });
 }
 
 function addImage() {
     const imageId = "image_" + addedElements.length;
     main.innerHTML += `
-    <img id="${imageId}" src="/website-creator/images/notLoaded.jpg" width="300px" >
+    <div class="image-container">
+        <input type="file" id="fileInput_${imageId}"  style="display: none;">
+        <button onclick='document.getElementById("fileInput_${imageId}").click()' class="border-2 border-black rounded-lg">Upload Image</button>
+    </div>
     `;
-    addedElements.push({type: "image", id: imageId})
+    addedElements.push({ type: "image", id: imageId })
+}
+
+function uploadImage() {
+    const input = event.target;
+    const imageId = input.id.split("_")[1]; 
+    const file = input.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const imgElement = document.getElementById(imageId);
+            imgElement.src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+    }
 }
 
 function addForm() {
@@ -73,7 +101,7 @@ function addForm() {
   <button contenteditable="true">Submit</button>
   </div> 
     `;
-    addedElements.push({type: "form", id: formId})
+    addedElements.push({ type: "form", id: formId })
 }
 
 function addButton() {
@@ -81,7 +109,7 @@ function addButton() {
     main.innerHTML += `
     <button id="${buttonId}" contenteditable="true">Click Me!</button>
     `;
-    addedElements.push({type: "button", id: buttonId})
+    addedElements.push({ type: "button", id: buttonId })
 }
 
 function addList() {
@@ -93,7 +121,7 @@ function addList() {
   <li>Milk</li>
 </ul>  
     `;
-    addedElements.push({type: "list", id: listId})
+    addedElements.push({ type: "list", id: listId })
 }
 
 function addSpacer() {
@@ -101,7 +129,7 @@ function addSpacer() {
     main.innerHTML += `
     <div id="${spacerId}" style="height: 150px;"></div>
     `;
-    addedElements.push({type: "spacer", id: spacerId})
+    addedElements.push({ type: "spacer", id: spacerId })
 }
 
 function addDivider() {
@@ -110,22 +138,22 @@ function addDivider() {
     main.innerHTML += `
     <hr id="${dividerId}"/>
     `;
-    addedElements.push({type: "divider", id: dividerId})
+    addedElements.push({ type: "divider", id: dividerId })
 }
 
 
 // Function for removing the last element added
 function undo() {
     if (addedElements.length > 0) {
-        const lastElement = addedElements.pop(); 
-        const elementToRemove = document.getElementById(lastElement.id); 
+        const lastElement = addedElements.pop();
+        const elementToRemove = document.getElementById(lastElement.id);
         if (elementToRemove) {
-            elementToRemove.remove(); 
+            elementToRemove.remove();
         } else {
             console.error("Element not found to remove:", lastElement);
         }
     } else {
-        alert("Nothing to undo."); 
+        alert("Nothing to undo.");
     }
 }
 
@@ -134,7 +162,7 @@ document.getElementById("undo").addEventListener("click", undo);
 
 // Functions for the templates 
 
-function addNav(){
+function addNav() {
     const navId = "nav_" + addedElements.length;
     main.innerHTML += `
     <header id="${navId}" class="text-gray-600 body-font">
@@ -146,10 +174,10 @@ function addNav(){
         <span class="ml-3 text-xl " contenteditable="true">LOGO</span>
       </a>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-        <a class="mr-5 hover:text-white" contenteditable="true">First Link</a>
-        <a class="mr-5 hover:text-white" contenteditable="true">Second Link</a>
-        <a class="mr-5 hover:text-white" contenteditable="true">Third Link</a>
-        <a class="mr-5 hover:text-white" contenteditable="true">Fourth Link</a>
+        <a class="mr-5 hover:text-gray-400" contenteditable="true">First Link</a>
+        <a class="mr-5 hover:text-gray-400" contenteditable="true">Second Link</a>
+        <a class="mr-5 hover:text-gray-400" contenteditable="true">Third Link</a>
+        <a class="mr-5 hover:text-gray-400" contenteditable="true">Fourth Link</a>
       </nav>
       <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" contenteditable="true">Button
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
@@ -159,25 +187,25 @@ function addNav(){
     </div>
   </header>
     `;
-    addedElements.push({type: "nav", id: navId})
+    addedElements.push({ type: "nav", id: navId })
 }
 
 
-function addHero(){
+function addHero() {
     const heroId = "hero_" + addedElements.length;
-    main.innerHTML+=`<section id="${heroId}" class="text-gray-600 body-font">
+    main.innerHTML += `<section id="${heroId}" class="text-gray-600 body-font">
     <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
       <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Knausgaard typewriter readymade marfa</h1>
-        <p class="mb-8 leading-relaxed">Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.</p>
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900" contenteditable="true">Lorem ipsum dolor sit amet</h1>
+        <p class="mb-8 leading-relaxed" contenteditable="true">Cras viverra odio faucibus hendrerit fringilla. Vivamus auctor dolor ex, fringilla dapibus velit luctus quis. Etiam feugiat at dolor eu dapibus.</p>
         <div class="flex w-full md:justify-start justify-center items-end">
           <div class="relative mr-4 md:w-full lg:w-full xl:w-1/2 w-2/4">
-            <label for="hero-field" class="leading-7 text-sm text-gray-600">Placeholder</label>
+            <label for="hero-field" class="leading-7 text-sm text-gray-600" contenteditable="true">Placeholder</label>
             <input type="text" id="hero-field" name="hero-field" class="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-blue-200 focus:bg-transparent focus:border-blue-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
           </div>
-          <button class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Button</button>
+          <button class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg" contenteditable="true">Button</button>
         </div>
-        <p class="text-sm mt-2 text-gray-500 mb-8 w-full">Neutra shabby chic ramps, viral fixie.</p>
+        <p class="text-sm mt-2 text-gray-500 mb-8 w-full" contenteditable="true"> Etiam feugiat at dolor eu dapibus.</p>
         <div class="flex lg:flex-row md:flex-col">
           <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
@@ -205,5 +233,350 @@ function addHero(){
       </div>
     </div>
   </section>`;
-  addedElements.push({type: "hero", id: heroId})
+    addedElements.push({ type: "hero", id: heroId })
+}
+
+function addBlog() {
+    const blogId = "blog_" + addedElements.length;
+    main.innerHTML += `<section id="${blogId}" class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 md:w-1/3">
+          <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
+            <div class="p-6">
+              <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" contenteditable="true">CATEGORY</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3" contenteditable="true">Lorem Ipsum</h1>
+              <p class="leading-relaxed mb-3" contenteditable="true">Cras est mauris, semper at odio ac, pellentesque tristique massa. Sed pharetra malesuada dictum.</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0" contenteditable="true">Learn More
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>1.2K
+                </span>
+                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                  </svg>6
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3">
+          <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
+            <div class="p-6">
+              <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" contenteditable="true">CATEGORY</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3" contenteditable="true">Lorem Ipsum</h1>
+              <p class="leading-relaxed mb-3" contenteditable="true">Cras est mauris, semper at odio ac, pellentesque tristique massa. Sed pharetra malesuada dictum.</p>
+              <div class="flex items-center flex-wrap">
+                <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0" contenteditable="true">Learn More
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>1.2K
+                </span>
+                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                  </svg>6
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3">
+          <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
+            <div class="p-6">
+              <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" contenteditable="true">CATEGORY</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3" contenteditable="true">Lorem Ipsum</h1>
+              <p class="leading-relaxed mb-3" contenteditable="true">Cras est mauris, semper at odio ac, pellentesque tristique massa. Sed pharetra malesuada dictum.</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0" contenteditable="true">Learn More
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>1.2K
+                </span>
+                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                  </svg>6
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+    addedElements.push({ type: "blog", id: blogId })
+}
+
+function addProduct() {
+    const productId = "product_" + addedElements.length;
+    main.innerHTML += `<section id="${productId}" class="text-gray-600 body-font overflow-hidden">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="lg:w-4/5 mx-auto flex flex-wrap">
+        <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400">
+        <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+          <h2 class="text-sm title-font text-gray-500 tracking-widest" contenteditable="true">BRAND NAME</h2>
+          <h1 class="text-gray-900 text-3xl title-font font-medium mb-1" contenteditable="true">Lorem ipsum dolor sit</h1>
+          <div class="flex mb-4">
+            <span class="flex items-center">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-blue-500" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-blue-500" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-blue-500" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-blue-500" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-blue-500" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+              <span class="text-gray-600 ml-3">4 Reviews</span>
+            </span>
+            <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
+              <a class="text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a class="text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                </svg>
+              </a>
+            </span>
+          </div>
+          <p class="leading-relaxed" contenteditable="true">Curabitur hendrerit vulputate sapien, quis vehicula ligula iaculis non. Cras in eros eget urna varius sagittis pellentesque at mauris. Ut rhoncus magna vestibulum enim placerat euismod. Duis purus urna, bibendum a lacus id, faucibus dapibus ipsum. Morbi malesuada velit tortor, volutpat rutrum neque dignissim quis.</p>
+          <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
+            <div class="flex">
+              <span class="mr-3">Color</span>
+              <button class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
+              <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
+              <button class="border-2 border-gray-300 ml-1 bg-blue-500 rounded-full w-6 h-6 focus:outline-none"></button>
+            </div>
+            <div class="flex ml-6 items-center">
+              <span class="mr-3">Size</span>
+              <div class="relative">
+                <select class="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base pl-3 pr-10">
+                  <option>SM</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                </select>
+                <span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4" viewBox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="flex">
+            <span class="title-font font-medium text-2xl text-gray-900" contenteditable="true">199.00 Lei</span>
+            <button class="flex ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded" contenteditable="true">Button</button>
+            <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+    addedElements.push({ type: "product", id: productId })
+}
+
+function addContact() {
+    const contactId = "contact_" + addedElements.length;
+    main.innerHTML += `<section id="${contactId}" class="text-gray-600 body-font relative">
+    <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+      <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+        <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22047932.36293794!2d1.0166928591093078!3d47.57950036308214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ed8886cfadda85%3A0x72ef99e6b3fcf079!2sEurope!5e0!3m2!1sen!2s!4v1711547975055!5m2!1sen!2s" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
+        <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+          <div class="lg:w-1/2 px-6">
+            <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs" contenteditable="true">ADDRESS</h2>
+            <p class="mt-1" contenteditable="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
+            <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs" contenteditable="true">EMAIL</h2>
+            <a class="text-blue-500 leading-relaxed" contenteditable="true">example@email.com</a>
+            <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4" contenteditable="true">PHONE</h2>
+            <p class="leading-relaxed" contenteditable="true">123-456-7890</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font" contenteditable="true">Feedback</h2>
+        <p class="leading-relaxed mb-5 text-gray-600" contenteditable="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="relative mb-4">
+          <label for="name" class="leading-7 text-sm text-gray-600" contenteditable="true">Name</label>
+          <input type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-4">
+          <label for="email" class="leading-7 text-sm text-gray-600" contenteditable="true">Email</label>
+          <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-4">
+          <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+          <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+        </div>
+        <button class="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg" contenteditable="true">Button</button>
+        <p class="text-xs text-gray-500 mt-3" contenteditable="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </section>`;
+    addedElements.push({ type: "contact", id: contactId })
+}
+
+function addFooter() {
+    const footerId = "footer_" + addedElements.length;
+    main.innerHTML += `<footer id="${footerId}" class="text-gray-600 body-font">
+    <div class="w-[83.5vw] container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl" contenteditable="true">Logo</span>
+        </a>
+        <p class="mt-2 text-sm text-gray-500" contenteditable="true">Lorem ipsum dolor sit amet</p>
+      </div>
+      <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3" contenteditable="true">CATEGORIES</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">First Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Second Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Third Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Fourth Link</a>
+            </li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3" contenteditable="true">CATEGORIES</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">First Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Second Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Third Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Fourth Link</a>
+            </li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3" contenteditable="true">CATEGORIES</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">First Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Second Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Third Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Fourth Link</a>
+            </li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3" contenteditable="true">CATEGORIES</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">First Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Second Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Third Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" contenteditable="true">Fourth Link</a>
+            </li>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-100">
+      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+        <p class="text-gray-500 text-sm text-center sm:text-left" contenteditable="true">© 2024 TwoTek 
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+          <a class="text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </footer>`;
+    addedElements.push({ type: "footer", id: footerId })
 }
