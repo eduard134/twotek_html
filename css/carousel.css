@@ -163,15 +163,9 @@ body {
   white-space: nowrap;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .logo-slider-container {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1025px) {
-  .logo-slider-container {
-    width: 60%;
+    width:85%;
   }
 }
 
@@ -212,9 +206,9 @@ body {
 
 @media screen and (max-width: 768px) {
   .logo-slider img {
-    width: 50px;
-    margin-right: 55px;
-    margin-left: 55px;
+    width: 65px;
+    margin-right: 65px;
+    margin-left: 65px;
   }
 }
 
