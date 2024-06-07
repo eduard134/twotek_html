@@ -25,6 +25,17 @@
     border-radius: 6px;
 }
 
+@media only screen and (max-width: 768px) {
+    .logInBox {
+       width: 80vw;
+    max-height: 96vh;
+    }
+
+    .logIn {
+        height: 98vh;
+    }
+  }
+
 .box {
     display: flex;
     align-items: center;

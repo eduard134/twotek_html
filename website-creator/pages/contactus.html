@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/loading.css">
     <link rel="stylesheet" href="/css/info.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/website-creator/css/nav.css">
 </head>
 
 <body>
@@ -56,9 +57,9 @@
             ><span class="text-2xl font-bold">2Tek</span>
           </h1>
         </div>
-      </div>  
+      </div>
 
-    <div class="z-[100] left-0 top-0 w-full wow fadeIn mt-0 md:mt-5 text-black z-bug px-0 md:px-8"
+    <div class="z-[100] left-0 top-0 w-full wow fadeIn mt-0 md:mt-5 text-black z-bug px-0 md:px-8 navbar"
         data-wow-duration="2s" data-wow-delay="1s" id="navbar">
         <div class="lg:max-w-[1180px]  transition-all duration-300 max-w-[768px] sm:mt-4 text-white sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
             style="
@@ -70,25 +71,42 @@
           );
         ">
             <!-- Logo -->
-            <a href="/index.html" class="text-4xl font-bold flex items-center -ml-13 lg:ml-0">
+            <a href="/index.html" class="text-4xl font-bold flex items-center -ml-20 lg:ml-0">
                 <img src="/images/logo.png" alt="Logo" width="100" height="100" class="w-[16vh]" />
             </a>
 
-            <div class="flex gap-6">
+            <div class="links flex gap-6">
                 <a href="./pricing.html">Planuri</a>
                 <a href="./updates.html">Update-uri</a>
                 <a href="./contactus.html">Contacte</a>
             </div>
 
-            <div class="flex items-center justify-center gap-4">
+            <div class="buttons flex items-center justify-center gap-4">
                 <a class="sm:px-6 px-3 py-2 text-[14px] text-black border-2 border-white text-white rounded-[14px]"
-                    href="/website-creator/index.html">Înapoi</a>
-                <a class="sm:px-6 px-3 py-2 text-[14px] text-black bg-white rounded-[14px]"
-                    href="./login.html">Conectează-te</a>
+                href="/website-creator/index.html">Înapoi</a>
+            <a class="sm:px-6 px-3 py-2 text-[14px] text-black bg-white rounded-[14px]"
+                href="./login.html">Conectează-te</a>
+            </div>
+
+            <div class="burger -mr-20 lg:mr-0" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
     </div>
+
+    <div class="mobile-menu" id="mobileMenu" style="display: none;">
+        <a href="./pricing.html">Planuri</a>
+        <a href="./updates.html">Update-uri</a>
+        <a href="./contactus.html">Contacte</a>
+        <a class="sm:px-6 px-3 py-2 text-[14px] text-black border-2 border-white text-white rounded-[14px]"
+            href="/website-creator/index.html">Înapoi</a>
+        <a class="sm:px-6 px-3 py-2 text-[14px] text-black bg-white rounded-[14px] login"
+            href="./login.html">Conectează-te</a>
     </div>
+
+
 
     <div class="flex flex-col justify-center text-center align-center mt-10">
         <section class="py-24">
@@ -262,6 +280,11 @@
             simulateLoading();
         };
 
+
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
     </script>
 </body>
 

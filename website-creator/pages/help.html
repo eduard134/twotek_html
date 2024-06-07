@@ -41,31 +41,49 @@
             </h1>
         </div>
     </div>
+
+
     <!-- Nav -->
-    <div class="lg:max-w-[1180px]  transition-all duration-300 max-w-[768px] sm:mt-4 text-white sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
-        style="
-          background-image: linear-gradient(
-            to bottom,
-            var(--nav_bg1),
-            var(--nav_bg2),
-            var(--nav_bg3)
-          );
-        ">
-        <div class="left">
-            <a href="/website-creator/index.html">
-                <img class="logoSave" src="/images/logo1.png" alt="">
+    <div class="z-[100] left-0 top-0 w-full wow fadeIn mt-0 md:mt-5 text-black z-bug px-0 md:px-8 navbar"
+        data-wow-duration="2s" data-wow-delay="1s" id="navbar">
+        <div class="lg:max-w-[1180px]  transition-all duration-300 max-w-[768px] sm:mt-4 text-white sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
+            style="
+  background-image: linear-gradient(
+    to bottom,
+    var(--nav_bg1),
+    var(--nav_bg2),
+    var(--nav_bg3)
+  );
+">
+            <!-- Logo -->
+            <a href="/index.html" class="text-4xl font-bold flex items-center -ml-20 lg:ml-0">
+                <img src="/images/logo.png" alt="Logo" width="100" height="100" class="w-[16vh]" />
             </a>
 
-        </div>
-        <div class="navBtnsDiv">
-            <a href="./new.html" class="interfaceLinks" id="buildLink">Construiește</a>
-            <a href="./new.html" class="interfaceLinks" id="templatesLink">Șabloane</a>
-            <a href="./help.html" class="interfaceLinks">Ajutor</a>
-        </div>
-        <div class="right">
+            <div class="links flex gap-6">
+                <a href="./new.html" class="interfaceLinks" id="buildLink">Construiește</a>
+                <a href="./new.html" class="interfaceLinks" id="templatesLink">Șabloane</a>
+                <a href="./help.html" class="interfaceLinks">Ajutor</a>
+            </div>
 
-            <div><a href="./new.html" class="saveBtn">Înapoi</a></div>
+            <div class="buttons flex items-center justify-center gap-4">
+                <a class="sm:px-6 px-3 py-2 text-[14px] text-black border-2 border-white text-white rounded-[14px]"
+                    href="/website-creator/index.html">Înapoi</a>
+            </div>
+
+            <div class="burger -mr-20 lg:mr-0" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
+    </div>
+
+
+    <div class="mobile-menu" id="mobileMenu" style="display: none;">
+        <a href="./help.html" class="interfaceLinks">Ajutor</a>
+        <a class="sm:px-6 px-3 py-2 text-[14px] text-black border-2 border-white text-white rounded-[14px]"
+            href="/website-creator/index.html">Înapoi</a>
     </div>
 
     <section>
@@ -120,8 +138,8 @@
 
     </section>
 
-        <!--Footer-->
-        <div id="footer"
+    <!--Footer-->
+    <div id="footer"
         class="flex flex-col-reverse md:flex-row items-center md:justify-around justify-center sm:py-10 lg:p-10 text-center mb-10">
         <div class="flex md:ml-20 mt-5 md:mb-0 wow fadeInUp" data-wow-offset="100">
             <a id="instagramLink" href="https://www.instagram.com/two_2tek" target="_blank"
@@ -161,22 +179,27 @@
 
 
 
-        <script src="/website-creator/scripts/new.js">
-        </script>
-        <script>
-            window.onload = function () {
-                function simulateLoading() {
-                    setTimeout(function () {
-                        document.querySelector(".loading-container").style.display = "none";
-                        document.querySelector(".loading").style.display = "none";
+    <script src="/website-creator/scripts/new.js">
+    </script>
+    <script>
+        window.onload = function () {
+            function simulateLoading() {
+                setTimeout(function () {
+                    document.querySelector(".loading-container").style.display = "none";
+                    document.querySelector(".loading").style.display = "none";
 
-                        document.getElementById("content").style.display = "block";
-                    }, 1000);
-                }
+                    document.getElementById("content").style.display = "block";
+                }, 1000);
+            }
 
-                simulateLoading();
-            };
-        </script>
+            simulateLoading();
+        };
+
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 
 </html>
