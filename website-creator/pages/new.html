@@ -7,35 +7,44 @@
     <title>TwoTek - Website Builder</title>
     <link rel="icon" href="/images/logo1.png" type="image/x-icon" />
     <link rel="stylesheet" href="/website-creator/css/nav.css">
-    <link rel="stylesheet" href="/website-creator/css/save.css">
+    <link rel="stylesheet" href="/website-creator/css/main.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/loading.css">
+    <link rel="stylesheet" href="/website-creator/css/save.css">
 </head>
 
 <body>
     <!-- Nav -->
-    <div class="nav">
+    <div class="lg:max-w-[1180px]  transition-all duration-300 max-w-[768px] sm:mt-4 text-white sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
+            style="
+          background-image: linear-gradient(
+            to bottom,
+            var(--nav_bg1),
+            var(--nav_bg2),
+            var(--nav_bg3)
+          );
+        ">
         <div class="left">
             <a href="/website-creator/index.html">
                 <img class="logoSave" src="/images/logo1.png" alt="">
             </a>
-            <select>
-                <option>Shop 1</option>
-                <option>Shop 2</option>
-                <option>Shop 3</option>
+            <select class="text-black ">
+                <option>Pagina 1</option>
+                <option>Pagina 2</option>
+                <option>Pagina 3</option>
             </select>
         </div>
         <div class="navBtnsDiv">
-            <a href="#" class="interfaceLinks" id="buildLink">Build</a>
-            <a href="#" class="interfaceLinks" id="templatesLink">Templates</a>
-            <a href="" class="interfaceLinks">Settings</a>
-            <a href="" class="interfaceLinks">Help</a>
+            <a href="#" class="interfaceLinks" id="buildLink">Construiește</a>
+            <a href="#" class="interfaceLinks" id="templatesLink">Șabloane</a>
+            <a href="./help.html" class="interfaceLinks">Ajutor</a>
         </div>
         <div class="right">
             <div>
-                <button class="controls"><img src="/website-creator/images/undo.png" class="undo" id="undo" alt=""></button>
+                <button class="controls"><img src="/website-creator/images/undo.png" class="undo" id="undo"
+                        alt=""></button>
             </div>
-            <button class="display"><img src="/website-creator/images/phoneIcon.png" class="phoneIcon" alt=""></button>
-            <div><a href="./saved.html" class="saveBtn">Save</a></div>
+            <div><a href="./saved.html" class="saveBtn">Salvează</a></div>
         </div>
     </div>
 
@@ -43,21 +52,21 @@
         <div class="buildStruct" id="buildMenu">
             <div class="build">
                 <div class="basic">
-                    <div class="title">Basic</div>
+                    <div class="title">Esențiale</div>
                     <div class="boxes">
-                        <button class="box" id="title">Title</button>
+                        <button class="box" id="title">Titlu</button>
                         <button class="box" id="text">Text</button>
-                        <button class="box" id="image">Image</button>
-                        <button class="box" id="form">Form</button>
-                        <button class="box" id="button">Button</button>
-                        <button class="box" id="list">List</button>
+                        <button class="box" id="image">Imagine</button>
+                        <button class="box" id="form">Formular</button>
+                        <button class="box" id="button">Buton</button>
+                        <button class="box" id="list">Listă</button>
                     </div>
                 </div>
                 <div class="structure">
-                    <div class="title">Structure</div>
+                    <div class="title">Structură</div>
                     <div class="boxes">
-                        <button class="box" id="spacer">Spacer</button>
-                        <button class="box" id="divider">Divider</button>
+                        <button class="box" id="spacer">Spațiu</button>
+                        <button class="box" id="divider">Separator</button>
                     </div>
                 </div>
             </div>
@@ -67,19 +76,41 @@
         <div class="templates" id="templatesMenu">
             <div class="build">
                 <div class="basic">
-                    <div class="title">Templates</div>
+                    <div class="title">Șabloane</div>
                     <div class="boxes">
-                        <button class="temp-boxes" id="template1"><img class="temp-img" src="/website-creator/images/nav.png" alt="">Header</button>
-                        <button class="temp-boxes" id="template2"><img class="temp-img" src="/website-creator/images/main.png" alt="">Hero</button>
-                        <button class="temp-boxes" id="template3"><img class="temp-img" src="/website-creator/images/blog.png" alt="">Blog</button>
-                        <button class="temp-boxes" id="template4"><img class="temp-img" src="/website-creator/images/product.png" alt="">Product</button>
-                        <button class="temp-boxes" id="template5"><img class="temp-img" src="/website-creator/images/map-form.png" alt="">Contact</button>
-                        <button class="temp-boxes" id="template6"><img class="temp-img" src="/website-creator/images/footer.png" alt="">Footer</button>
+                        <button class="temp-boxes" id="template1"><img class="temp-img"
+                                src="/website-creator/images/nav.png" alt="">Antet</button>
+                        <button class="temp-boxes" id="template2"><img class="temp-img"
+                                src="/website-creator/images/main.png" alt="">Secțiune Principală</button>
+                        <button class="temp-boxes" id="template3"><img class="temp-img"
+                                src="/website-creator/images/blog.png" alt="">Blog</button>
+                        <button class="temp-boxes" id="template4"><img class="temp-img"
+                                src="/website-creator/images/product.png" alt="">Produs</button>
+                        <button class="temp-boxes" id="template5"><img class="temp-img"
+                                src="/website-creator/images/map-form.png" alt="">Contacte</button>
+                        <button class="temp-boxes" id="template6"><img class="temp-img"
+                                src="/website-creator/images/footer.png" alt="">Subsol</button>
                     </div>
                 </div>
             </div>
         </div>
-    <div id="new"></div>
+
+        <div class="editStruct" id="editMenu">
+            <div class="edit">
+                <div class="align">
+                    <div class="title">Aliniază</div>
+                    <div class="boxes">
+                        <button class="edit-box" id="align-left">Stânga</button>
+                        <button class="edit-box" id="align-center">Centru</button>
+                        <button class="edit-box" id="align-right">Dreapta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="new" class="new"></div>
+
 
     </section>
     <script src="/website-creator/scripts/new.js"></script>

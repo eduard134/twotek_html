@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwoTek - Website Builder</title>
+    <link rel="icon" href="/images/logo1.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/website-creator/css/nav.css">
+    <link rel="stylesheet" href="/website-creator/css/save.css">
+    <link rel="stylesheet" href="/website-creator/css/help.css">
+    <link rel="stylesheet" href="/css/loading.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="absolute loading">
+        <div class="flex flex-col justify-center items-center loading-container w-[100vw] h-[100vh]">
+            <div class="blobs">
+                <div class="blob-center" style="background: var(--loading_blob)"></div>
+                <div class="blob" style="background: var(--loading_blob)"></div>
+                <div class="blob" style="background: var(--loading_blob)"></div>
+                <div class="blob" style="background: var(--loading_blob)"></div>
+                <div class="blob" style="background: var(--loading_blob)"></div>
+                <div class="blob" style="background: var(--loading_blob)"></div>
+                <div class="blob" style="background: var(--loading_blob)"></div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                            result="goo"></feColorMatrix>
+                        <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                    </filter>
+                </defs>
+            </svg>
+            <h1 class="text-lg flex items-center fade-in1" style="color: var(--loading_text)">
+                Developed by<span style="margin-right: 5px"></span><span class="text-2xl font-bold">2Tek</span>
+            </h1>
+        </div>
+    </div>
+    <!-- Nav -->
+    <div class="lg:max-w-[1180px]  transition-all duration-300 max-w-[768px] sm:mt-4 text-white sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
+        style="
+          background-image: linear-gradient(
+            to bottom,
+            var(--nav_bg1),
+            var(--nav_bg2),
+            var(--nav_bg3)
+          );
+        ">
+        <div class="left">
+            <a href="/website-creator/index.html">
+                <img class="logoSave" src="/images/logo1.png" alt="">
+            </a>
+
+        </div>
+        <div class="navBtnsDiv">
+            <a href="./new.html" class="interfaceLinks" id="buildLink">Construiește</a>
+            <a href="./new.html" class="interfaceLinks" id="templatesLink">Șabloane</a>
+            <a href="./help.html" class="interfaceLinks">Ajutor</a>
+        </div>
+        <div class="right">
+
+            <div><a href="./new.html" class="saveBtn">Înapoi</a></div>
+        </div>
+    </div>
+
+    <section>
+        <div class="buildStruct" id="buildMenu">
+            <div class="build">
+                <div class="basic">
+                    <div class="title">Esențiale</div>
+                    <div class="boxes">
+                        <button class="box" id="title">Titlu</button>
+                        <button class="box" id="text">Text</button>
+                        <button class="box" id="image">Imagine</button>
+                        <button class="box" id="form">Formular</button>
+                        <button class="box" id="button">Buton</button>
+                        <button class="box" id="list">Listă</button>
+                    </div>
+                </div>
+                <div class="structure">
+                    <div class="title">Structură</div>
+                    <div class="boxes">
+                        <button class="box" id="spacer">Spațiu</button>
+                        <button class="box" id="divider">Separator</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="formArea mt-40 mb-40" style="
+    background-image: linear-gradient(
+      to bottom,
+      var(--nav_bg1),
+      var(--nav_bg2),
+      var(--nav_bg3)
+    );
+  ">
+            <h2 class="helpTitle text-2xl font-semibold text-white ">Pagina Dumneavoastră a fost salvată.</h2>
+            
+        </div>
+
+
+    </section>
+
+        <!--Footer-->
+        <div id="footer"
+        class="flex flex-col-reverse md:flex-row items-center md:justify-around justify-center sm:py-10 lg:p-10 text-center mb-10">
+        <div class="flex md:ml-20 mt-5 md:mb-0 wow fadeInUp" data-wow-offset="100">
+            <a id="instagramLink" href="https://www.instagram.com/two_2tek" target="_blank"
+                class="hover:-translate-y-1 transition duration-500 ease-in-out">
+                <img id="instagramIcon" src="/images/instagram.png" alt="" width="30" height="10" class="mr-5" />
+            </a>
+            <a id="tiktokLink" href="https://www.tiktok.com/@_2.tek_" target="_blank"
+                class="hover:-translate-y-1 transition duration-500 ease-in-out">
+                <img id="tiktokIcon" src="/images/tik-tok.png" alt="" width="30" height="10" />
+            </a>
+        </div>
+
+
+        <div class="md:ml-20 text-sm mt-5 md:mb-0" data-wow-offset="100">
+            <h1 class="font-semibold" data-translate="FooterContact">
+                Simțiți-vă liber să ne contactați oricînd
+            </h1>
+            <p class="text-xs underline">two2tek@gmail.com</p>
+        </div>
+
+        <div class="md:ml-20 text-sm mt-5 md:mb-0 wow fadeInUp" data-wow-offset="100">
+            <p>Tel: 060008857</p>
+            <p class="underline">Str. Basarabia 2</p>
+        </div>
+    </div>
+
+    <div class="md:ml-10 mb-2 text-sm flex justify-center items-center wow fadeIn" data-wow-delay="1s">
+        <h1>
+            <span data-translate="FooterRealized">Realizat de </span>
+            <span class="font-semibold">2Tek. </span>
+        </h1>
+        <p data-translate="FooterRights" class="ml-[6px]">
+            Toate drepturile rezervate
+        </p>
+    </div>
+
+
+
+
+        <script src="/website-creator/scripts/new.js">
+        </script>
+        <script>
+            window.onload = function () {
+                function simulateLoading() {
+                    setTimeout(function () {
+                        document.querySelector(".loading-container").style.display = "none";
+                        document.querySelector(".loading").style.display = "none";
+
+                        document.getElementById("content").style.display = "block";
+                    }, 1000);
+                }
+
+                simulateLoading();
+            };
+        </script>
+</body>
+
+</html>

@@ -182,11 +182,12 @@ body {
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
+
   &::placeholder {
     color: transparent;
   }
 
-  &:placeholder-shown ~ .form__label {
+  &:placeholder-shown~.form__label {
     font-size: 1rem;
     cursor: text;
     top: 20px;
@@ -204,7 +205,7 @@ body {
 }
 
 .form__field:focus {
-  ~ .form__label {
+  ~.form__label {
     position: absolute;
     top: 0;
     display: block;
@@ -213,6 +214,7 @@ body {
     color: var(--arrow);
     font-weight: 700;
   }
+
   padding-bottom: 7px;
   border-width: 3px;
   border-image: red;
@@ -220,14 +222,20 @@ body {
 }
 
 .bit {
-  border: 2px solid #9b9b9b;
   font-size: 20px;
   font-weight: 700;
-  border-radius: 50px;
-  padding: 4px 9px;
   box-shadow: 0 4px 8px var(--cont_shadow);
-  color: #9b9b9b;
   transition: all 0.3s ease-in-out;
+  background-color: var(--nav_bg3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 999;
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
 }
 
 .bit:hover {
@@ -252,15 +260,19 @@ body {
   0% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(-1px);
   }
+
   50% {
     transform: translateX(1px);
   }
+
   75% {
     transform: translateX(-1px);
   }
+
   100% {
     transform: translateX(0);
   }

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwoTek - Website Builder</title>
+    <link rel="icon" href="/images/logo1.png" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/loading.css">
+    <link rel="stylesheet" href="/css/info.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/website-creator/css/updates.css">
+</head>
+
+<body>
+    <div class="absolute loading">
+        <div
+          class="flex flex-col justify-center items-center loading-container w-[100vw] h-[100vh]"
+        >
+          <div class="blobs">
+            <div
+              class="blob-center"
+              style="background: var(--loading_blob)"
+            ></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter id="goo">
+                <feGaussianBlur
+                  in="SourceGraphic"
+                  stdDeviation="10"
+                  result="blur"
+                ></feGaussianBlur>
+                <feColorMatrix
+                  in="blur"
+                  mode="matrix"
+                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                  result="goo"
+                ></feColorMatrix>
+                <feBlend in="SourceGraphic" in2="goo"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+          <h1
+            class="text-lg flex items-center fade-in1"
+            style="color: var(--loading_text)"
+          >
+            Developed by<span style="margin-right: 5px"></span
+            ><span class="text-2xl font-bold">2Tek</span>
+          </h1>
+        </div>
+      </div>  
+
+    <div class="z-[100] left-0 top-0 w-full wow fadeIn mt-0 md:mt-5 text-black z-bug px-0 md:px-8"
+        data-wow-duration="2s" data-wow-delay="1s" id="navbar">
+        <div class="lg:max-w-[1180px]  transition-all duration-300 max-w-[768px] sm:mt-4 text-white sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
+            style="
+          background-image: linear-gradient(
+            to bottom,
+            var(--nav_bg1),
+            var(--nav_bg2),
+            var(--nav_bg3)
+          );
+        ">
+            <a href="/index.html" class="text-4xl font-bold flex items-center -ml-13 lg:ml-0">
+                <img src="/images/logo.png" alt="Logo" width="100" height="100" class="w-[16vh]" />
+            </a>
+
+            <div class="flex gap-6">
+                <a href="./pricing.html">Planuri</a>
+                <a href="#">Update-uri</a>
+                <a href="./contactus.html">Contacte</a>
+            </div>
+
+            <div class="flex items-center justify-center gap-4">
+                <a class="sm:px-6 px-3 py-2 text-[14px] text-black border-2 border-white text-white rounded-[14px]"
+                    href="/website-creator/index.html">Înapoi</a>
+                <a class="sm:px-6 px-3 py-2 text-[14px] text-black bg-white rounded-[14px]"
+                    href="./login.html">Conectează-te</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="flex flex-col justify-center text-center align-center mt-20">
+        <div class="text-4xl font-bold">Update-uri</div>
+        <div class="container">
+            <div class="accordion__wrapper">
+
+                <div class="accordion">
+                    <div class="accordion__header">
+                        <h2 class="accordion__question">Update 1.1 - Noi Șabloane!</h2>
+                        <span class="accordion__icon">
+                        </span>
+                    </div>
+                    <div class="accordion__content">
+                        <p class="accordion__answer">Bucură-te de colecția noastră nouă de șabloane profesionale! 🎨 Cu
+                            designuri moderne și flexibile, acum e mai ușor ca niciodată să creezi un site web care să
+                            atragă atenția și să reflecte personalitatea brandului tău. Explorează-le și alege-l pe cel
+                            care ți se potrivește cel mai bine!</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion__header">
+                        <h2 class="accordion__question">Update 1.2 - Editor de Text Îmbunătățit</h2>
+                        <span class="accordion__icon">
+                        </span>
+                    </div>
+                    <div class="accordion__content">
+                        <p class="accordion__answer">Noul nostru editor de text este aici! ✍️ Am adăugat opțiuni
+                            avansate de formatare și o interfață mai prietenoasă. Acum
+                            poți crea conținut mai atractiv și profesionist pentru site-ul tău, fără eforturi
+                            suplimentare.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion__header">
+                        <h2 class="accordion__question">Update 1.3 - Gestionarea Pozelor</h2>
+                        <span class="accordion__icon">
+                        </span>
+                    </div>
+                    <div class="accordion__content">
+                        <p class="accordion__answer">Suntem bucuroși să vă anunțăm că gestionarea pozelor în website
+                            builder-ul nostru a devenit și mai simplă! Acum aveți la dispoziție un nou editor de imagini
+                            integrat care vă permite să ajustați dimensiunea și să faceți modificări
+                            direct în platformă. </p>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <div class="accordion__header">
+                        <h2 class="accordion__question">Viitoarele Actualizări</h2>
+                        <span class="accordion__icon">
+                        </span>
+                    </div>
+                    <div class="accordion__content">
+                        <p class="accordion__answer">Rămâi pe fază pentru mai multe surprize! 🚀 Lucrăm intens la noi
+                            funcționalități care să îți simplifice și mai mult viața digitală. În curând, vei putea
+                            beneficia de un generator de conținut bazat pe inteligență artificială, optimizări SEO
+                            automate și multe altele. Rămâi aproape pentru a descoperi toate aceste noutăți!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--Footer-->
+    <div id="footer"
+        class="flex flex-col-reverse md:flex-row items-center md:justify-around justify-center sm:py-10 lg:p-10 text-center mb-10">
+        <div class="flex md:ml-20 mt-5 md:mb-0 wow fadeInUp" data-wow-offset="100">
+            <a id="instagramLink" href="https://www.instagram.com/two_2tek" target="_blank"
+                class="hover:-translate-y-1 transition duration-500 ease-in-out">
+                <img id="instagramIcon" src="/images/instagram.png" alt="" width="30" height="10" class="mr-5" />
+            </a>
+            <a id="tiktokLink" href="https://www.tiktok.com/@_2.tek_" target="_blank"
+                class="hover:-translate-y-1 transition duration-500 ease-in-out">
+                <img id="tiktokIcon" src="/images/tik-tok.png" alt="" width="30" height="10" />
+            </a>
+        </div>
+
+
+        <div class="md:ml-20 text-sm mt-5 md:mb-0" data-wow-offset="100">
+            <h1 class="font-semibold" data-translate="FooterContact">
+                Simțiți-vă liber să ne contactați oricînd
+            </h1>
+            <p class="text-xs underline">two2tek@gmail.com</p>
+        </div>
+
+        <div class="md:ml-20 text-sm mt-5 md:mb-0 wow fadeInUp" data-wow-offset="100">
+            <p>Tel: 060008857</p>
+            <p class="underline">Str. Basarabia 2</p>
+        </div>
+    </div>
+
+    <div class="md:ml-10 mb-2 text-sm flex justify-center items-center wow fadeIn" data-wow-delay="1s">
+        <h1>
+            <span data-translate="FooterRealized">Realizat de </span>
+            <span class="font-semibold">2Tek. </span>
+        </h1>
+        <p data-translate="FooterRights" class="ml-[6px]">
+            Toate drepturile rezervate
+        </p>
+    </div>
+
+
+    <script>
+        window.onload = function () {
+            function simulateLoading() {
+                setTimeout(function () {
+                    document.querySelector(".loading-container").style.display = "none";
+                    document.querySelector(".loading").style.display = "none";
+
+                    document.getElementById("content").style.display = "block";
+                }, 1000);
+            }
+
+            simulateLoading();
+        };
+
+
+        const accordions = document.querySelectorAll(".accordion");
+
+        accordions.forEach((accordion, index) => {
+            const header = accordion.querySelector(".accordion__header");
+            const content = accordion.querySelector(".accordion__content");
+            const icon = accordion.querySelector(".accordion__icon");
+
+            header.addEventListener("click", () => {
+                const isOpen = content.style.height === `${content.scrollHeight}px`;
+
+                accordions.forEach((a, i) => {
+                    const c = a.querySelector(".accordion__content");
+                    const ic = a.querySelector(".accordion__icon");
+
+                    if (i === index && !isOpen) {
+                        c.style.height = `${c.scrollHeight}px`;
+                        ic.classList.add("open");
+                    } else {
+                        c.style.height = "0px";
+                        ic.classList.remove("open");
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

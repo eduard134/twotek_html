@@ -9,45 +9,294 @@
     <link rel="stylesheet" href="/website-creator/css/nav.css">
     <link rel="stylesheet" href="/website-creator/css/main.css">
     <link rel="stylesheet" href="/website-creator/css/login.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/loading.css">
+    <link rel="stylesheet" href="/css/info.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 
 <body>
-    <div class="nav">
-        <a href="/website-creator/index.html"><img class="logo" src="/images/logo.png" alt=""></a>
-        <div class="navBtnsDiv">
+    <div class="absolute loading">
+        <div
+          class="flex flex-col justify-center items-center loading-container w-[100vw] h-[100vh]"
+        >
+          <div class="blobs">
+            <div
+              class="blob-center"
+              style="background: var(--loading_blob)"
+            ></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+            <div class="blob" style="background: var(--loading_blob)"></div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter id="goo">
+                <feGaussianBlur
+                  in="SourceGraphic"
+                  stdDeviation="10"
+                  result="blur"
+                ></feGaussianBlur>
+                <feColorMatrix
+                  in="blur"
+                  mode="matrix"
+                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                  result="goo"
+                ></feColorMatrix>
+                <feBlend in="SourceGraphic" in2="goo"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+          <h1
+            class="text-lg flex items-center fade-in1"
+            style="color: var(--loading_text)"
+          >
+            Developed by<span style="margin-right: 5px"></span
+            ><span class="text-2xl font-bold">2Tek</span>
+          </h1>
+        </div>
+      </div>  
+
+    <div class="z-[100] left-0 top-0 w-full wow fadeIn mt-0 md:mt-5 text-black z-bug px-0 md:px-8"
+        data-wow-duration="2s" data-wow-delay="1s" id="navbar">
+        <div class="lg:max-w-[1180px]  transition-all duration-300 max-w-[768px] sm:mt-4 text-white sm:w-full flex sm:justify-around justify-evenly lg:justify-around items-center md:p-5 p-0 h-[70px] md:rounded-[70px] rounded-0 m-auto"
+            style="
+        background-image: linear-gradient(
+          to bottom,
+          var(--nav_bg1),
+          var(--nav_bg2),
+          var(--nav_bg3)
+        );
+      ">
+            <!-- Logo -->
+            <a href="/index.html" class="text-4xl font-bold flex items-center -ml-13 lg:ml-0">
+                <img src="/images/logo.png" alt="Logo" width="100" height="100" class="w-[16vh]" />
+            </a>
+
+            <div class="flex gap-6">
+                <a href="./pricing.html">Planuri</a>
+                <a href="./updates.html">Update-uri</a>
+                <a href="./contactus.html">Contacte</a>
+            </div>
+
+            <div class="flex items-center justify-center gap-4">
+                <a class="sm:px-6 px-3 py-2 text-[14px] text-black border-2 border-white text-white rounded-[14px]"
+                    href="/website-creator/index.html">Înapoi</a>
+            </div>
         </div>
     </div>
-    <img class="bg" src="/website-creator/images/bg.jpg">
+    </div>
     <div class="logIn">
         <div class="logInBox">
             <div class="box">
                 <div class="leftPart">
-                    <div>Step: 1 OF 3</div>
-                    <div>Create your profile</div>
+                    <div id="stepTitle">Pasul: 1 DIN 3</div>
+                    <div id="stepDescription">Creează Profilul</div>
                 </div>
                 <div class="rightPart">
-                    (progress bar) 33%
+                    <div class="progress-bar">
+                        <div class="progress" id="progress" style="width: 33%;"></div>
+                    </div>
                 </div>
             </div>
             <hr>
-            <form id="loginForm" class="inputDiv" method="post" action="./login.html">
-                <div>
-                    <div>Firstname</div>
-                    <input type="text" placeholder="Enter your firstname..." id="firstName" name="name">
+            <form id="multiStepForm">
+                <div class="step" id="step1">
+                    <div>
+                        <div>Prenume</div>
+                        <input type="text" placeholder="Ion" id="firstName" name="firstname" required>
+                        <div class="error" id="firstNameError"></div>
+                    </div>
+                    <div>
+                        <div>Nume</div>
+                        <input type="text" placeholder="Popescu" id="lastName" name="lastname" required>
+                        <div class="error" id="lastNameError"></div>
+                    </div>
+                    <div>
+                        <div>Email</div>
+                        <input type="email" placeholder="ionpopescu@gmail.com" id="mail" name="mail" required>
+                        <div class="error" id="mailError"></div>
+                    </div>
                 </div>
-                <div>
-                    <div>Lastname</div>
-                    <input type="text" placeholder="Enter your lastname..." id="lastName">
+                <div class="step" id="step2" style="display:none;">
+                    <div>
+                        <div>Localitate</div>
+                        <input type="text" placeholder="or.Chișinău" id="location" name="location" required>
+                        <div class="error" id="locationError"></div>
+                    </div>
+                    <div>
+                        <div>Vârstă</div>
+                        <input type="number" placeholder="99" id="age" name="age" required>
+                        <div class="error" id="ageError"></div>
+                    </div>
                 </div>
-                <div>
-                    <div>Email</div>
-                    <input type="text" placeholder="Enter your email address..." id="mail" name="mail">
+                <div class="step" id="step3" style="display:none;">
+                    <div>
+                        <div class="mt-2">
+                            Aceșt termeni și condiții conturează regulile și reglementările pentru utilizarea
+                            serviciului nostru.
+                            <br>
+                            1. Acceptarea Termenilor Prin crearea unui cont, sunteți de acord cu toți termenii și
+                            condițiile stabilite aici. Dacă nu sunteți de acord cu oricare dintre acești termeni, vă
+                            rugăm să nu creați un cont și să nu utilizați serviciile noastre.
+                            <br>
+                            2. Eligibilitate Trebuie să aveți cel puțin 18 ani pentru a crea un cont. Prin crearea unui
+                            cont, confirmați că aveți cel puțin 18 ani.
+                            <br>
+                            3. Utilizarea Serviciilor Conținut Interzis: Nu aveți voie să publicați sau să distribuiți
+                            conținut care este ilegal, ofensator, sau care încalcă drepturile altor persoane.
+                            <br>
+                            4. Modificări ale Termenilor Ne rezervăm dreptul de a modifica acești termeni în orice
+                            moment. Vă vom notifica despre modificări prin email sau printr-o notificare pe website-ul
+                            nostru.
+                        </div>
+                        <br>
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Sunt de acord cu acești termeni și condiții.</label>
+                        <div class="error" id="termsError"></div>
+                    </div>
                 </div>
-            <a class="nextBtn" type="submit" href="./new.html">Next</a>
-
+                <div class="navigation-buttons">
+                    <button class="logInBtn" type="button" id="prevBtn" onclick="prevStep()">Înapoi</button>
+                    <button class="logInBtn" type="button" id="nextBtn" onclick="nextStep()">Următorul</button>
+                    <button class="logInBtn" type="submit" id="submitBtn" style="display:none;">Finisează</button>
+                </div>
             </form>
         </div>
+
     </div>
+
+     <!--Footer-->
+     <div id="footer"
+     class="flex flex-col-reverse md:flex-row items-center md:justify-around justify-center sm:py-10 lg:p-10 text-center mb-10">
+     <div class="flex md:ml-20 mt-5 md:mb-0 wow fadeInUp" data-wow-offset="100">
+         <a id="instagramLink" href="https://www.instagram.com/two_2tek" target="_blank"
+             class="hover:-translate-y-1 transition duration-500 ease-in-out">
+             <img id="instagramIcon" src="/images/instagram.png" alt="" width="30" height="10" class="mr-5" />
+         </a>
+         <a id="tiktokLink" href="https://www.tiktok.com/@_2.tek_" target="_blank"
+             class="hover:-translate-y-1 transition duration-500 ease-in-out">
+             <img id="tiktokIcon" src="/images/tik-tok.png" alt="" width="30" height="10" />
+         </a>
+     </div>
+
+
+     <div class="md:ml-20 text-sm mt-5 md:mb-0" data-wow-offset="100">
+         <h1 class="font-semibold" data-translate="FooterContact">
+             Simțiți-vă liber să ne contactați oricînd
+         </h1>
+         <p class="text-xs underline">two2tek@gmail.com</p>
+     </div>
+
+     <div class="md:ml-20 text-sm mt-5 md:mb-0 wow fadeInUp" data-wow-offset="100">
+         <p>Tel: 060008857</p>
+         <p class="underline">Str. Basarabia 2</p>
+     </div>
+ </div>
+
+ <div class="md:ml-10 mb-2 text-sm flex justify-center items-center wow fadeIn" data-wow-delay="1s">
+     <h1>
+         <span data-translate="FooterRealized">Realizat de </span>
+         <span class="font-semibold">2Tek. </span>
+     </h1>
+     <p data-translate="FooterRights" class="ml-[6px]">
+         Toate drepturile rezervate
+     </p>
+ </div>
+
+    <script>
+        let currentStep = 1;
+
+        function showStep(step) {
+            const steps = document.querySelectorAll('.step');
+            steps.forEach((stepElement, index) => {
+                stepElement.style.display = (index + 1 === step) ? 'block' : 'none';
+            });
+
+            const progress = document.getElementById('progress');
+            progress.style.width = `${(step - 1) * 33}%`;
+
+            const stepTitle = document.getElementById('stepTitle');
+            stepTitle.textContent = `Pasul: ${step} DIN 3`;
+
+            const stepDescription = document.getElementById('stepDescription');
+            stepDescription.textContent = step === 1 ? 'Creează Profilul' : step === 2 ? 'Completează Detalii' : 'Termeni și Condiții';
+
+            document.getElementById('prevBtn').style.display = (step === 1) ? 'none' : 'inline-block';
+            document.getElementById('nextBtn').style.display = (step === 3) ? 'none' : 'inline-block';
+            document.getElementById('submitBtn').style.display = (step === 3) ? 'inline-block' : 'none';
+        }
+
+        function nextStep() {
+            if (validateStep(currentStep)) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function prevStep() {
+            currentStep--;
+            showStep(currentStep);
+        }
+
+        function validateStep(step) {
+            let isValid = true;
+            const stepElement = document.getElementById(`step${step}`);
+            const inputs = stepElement.querySelectorAll('input');
+
+            inputs.forEach(input => {
+                const errorElement = document.getElementById(`${input.id}Error`);
+                if (!input.checkValidity()) {
+                    input.classList.add('error-input');
+                    errorElement.textContent = 'Acest câmp este obligatoriu.';
+                    isValid = false;
+                } else {
+                    input.classList.remove('error-input');
+                    errorElement.textContent = '';
+                }
+
+                if (input.id === 'age' && input.value < 18) {
+                    input.classList.add('error-input');
+                    errorElement.textContent = 'Trebuie să aveți cel puțin 18 ani.';
+                    isValid = false;
+                }
+            });
+
+            return isValid;
+        }
+
+        document.getElementById('multiStepForm').addEventListener('submit', function (event) {
+            if (!validateStep(currentStep)) {
+                event.preventDefault();
+            } else {
+                event.preventDefault();
+
+                window.location.href = "./new.html"; 
+            }
+        });
+
+        showStep(currentStep);
+
+
+        window.onload = function () {
+            function simulateLoading() {
+                setTimeout(function () {
+                    document.querySelector(".loading-container").style.display = "none";
+                    document.querySelector(".loading").style.display = "none";
+
+                    document.getElementById("content").style.display = "block";
+                }, 1000);
+            }
+
+            simulateLoading();
+        };
+    </script>
+
 </body>
 
 </html>

@@ -1,18 +1,24 @@
+.new{
+    position: absolute;
+    right: 0;
+    margin-top: 30px;
+    width: calc(100vw - 240px);
+}
+
 .logoSave {
     width: 90px;
 }
 
 .saveBtn {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 2px;
-    background-color: #4356FA;
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-
+    padding-left: 0.75rem;
+    padding-right: 0.75rem; 
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
+    font-size: 16px;
+    font-weight: 500; 
+    color: black; 
+    background-color: white; 
+    border-radius: 14px; 
 }
 
 .phoneIcon {
@@ -37,46 +43,73 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .interfaceLinks {
-    color: rgb(163, 163, 163);
     text-decoration: none;
-    font-weight: 600;
 }
-
-.buildStruct {
-    background-color: #616467;
-    width: 240px;
-    height: 90vh;
+  
+  .buildStruct {
+    margin-top: 30px;
+    border-radius: 0 15px;
+    position: fixed; 
+    left: 0; 
     display: none;
-}
+    width: 240px; 
+    height: 100%; 
+    background: rgb(106, 106, 106); 
+    z-index: 100;
+    opacity: 0; 
+    transform: translateX(-100%); 
+    transition: transform 0.5s, opacity 0.5s; 
+    background-image: linear-gradient(
+            to bottom,
+            var(--nav_bg1),
+            var(--nav_bg2),
+            var(--nav_bg3)
+          );
+  }
+ 
+  .buildStruct.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .buildStruct.hide {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  
 
-.build{
-    padding: 16px;
+.build {
+    padding: 24px;
     width: 300px;
-    gap: 24px;
     display: flex;
     flex-direction: column;
 }
 
-.boxes{
+.boxes {
     display: flex;
     flex-wrap: wrap;
     max-width: 300px;
     gap: 6px;
 }
 
-.box{
-    width: 100px;
-    padding: 6px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 4px;
-    border: 0;
+.structure{
+    margin-top: 40px;
 }
 
-.temp-boxes{
+.box {
+    width: 100px;
+    padding: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 16px;
+    border: 2px white solid;
+}
+
+.temp-boxes {
     border-radius: 4px;
     width: 210px;
     border: 0;
@@ -87,35 +120,156 @@
     flex-direction: column;
 }
 
-.temp-img{
-    width: 200px; 
+.temp-img {
+    width: 200px;
     border-radius: 4px;
 
 }
 
-.title{ 
+.title {
     font-size: 14px;
     font-weight: 600;
     color: white;
     margin-bottom: 6px;
 }
 
-.undo, .redo{
+.undo{
+    margin-top: 6px;
     width: 25px;
 }
 
-.controls{
+.controls {
     background-color: transparent;
     border: 0;
 }
 
-section{
+section {
     display: flex;
 }
 
 
 .templates {
+    margin-top: 30px;
+    border-radius: 0 15px;
+    left: 0; 
+    width: 240px; 
+    background: rgb(106, 106, 106); 
+    z-index: 100;
+    opacity: 0; 
+    display: none;
+    transform: translateX(-100%); 
+    transition: transform 0.5s, opacity 0.5s; 
+    background-image: linear-gradient(
+            to bottom,
+            var(--nav_bg1),
+            var(--nav_bg2),
+            var(--nav_bg3)
+          );
+}
+
+
+.templates.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .templateshide {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+.img-resize {
+    resize: both;
+    max-width: 82.5vw;
+    border: 2px black solid;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+
+.resizedImg {
+    width: 100%;
+    height: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+.resizedImg:hover {
+    filter: brightness(70%);
+}
+
+.img-resize:hover .btn-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.btn-container {
+    padding: 10px;
+    display: none;
+}
+
+.btn-container button {
+    margin: 3px;
+    border: 2px solid black;
+    padding: 4px;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.editStruct {
     background-color: #616467;
     width: 240px;
+    height: 90vh;
     display: none;
+}
+
+.edit {
+    padding: 16px;
+    width: 300px;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#img-center {
+    display: flex;
+}
+
+
+
+.buildTitle {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.padding {
+    padding: 20px;
+}
+
+.buildForm {
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.buildFormBtn {
+    padding: 6px;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    margin-top: 6px;
+}
+
+.buildBtn {
+    padding: 6px;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    margin-top: 6px;
+}
+
+hr{
+    height: 1px;
 }

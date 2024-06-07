@@ -1,65 +1,91 @@
-*{
-    color: white;
+* {
     margin: 0;
     padding: 0;
 }
 
-.logIn{
-    justify-content: center;
+.logIn {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 80vh;
 }
 
-.box{
+.logInBox {
+    width: 50vw;
+    height: auto;
+    max-height: 70vh;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    background-image: linear-gradient(to bottom,
+            var(--nav_bg1),
+            var(--nav_bg2),
+            var(--nav_bg3));
+    border-radius: 6px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.leftPart {
+    flex: 2;
+}
+
+.rightPart {
+    flex: 1;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #626262;
+    border-radius: 25px 0 0 25px;
+    transition: width 0.3s ease;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.navigation-buttons {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
-.leftPart{
-    display: flex;
-    flex-direction: column;
-}
-
-.logInBox{
-    width: 35vw;
-    background-color: rgb(42, 42, 42);
-    padding: 20px;
-    padding-left: 28px;
-    padding-right: 28px;
-    border-radius: 6px;
-}
-
-input{
-    width: 95%;
-    padding: 12px;
-    padding-left: 14px;
-    padding-right: 14px;
-    border-radius: 6px;
-    border: 0;
+.logInBtn {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem; 
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
     font-size: 16px;
-    color: black;
+    font-weight: 500; 
+    color: black; 
+    background-color: white; 
+    border-radius: 14px; 
 }
 
-.nextBtn{
-    background-color: #4356FA;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 400;
-    border: 0;
-    float: right;
-}
-
-
-
-.inputDiv{
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 16px;
+.error {
+    color: red;
+    font-size: 14px;
 }

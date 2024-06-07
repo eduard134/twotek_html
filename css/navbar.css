@@ -451,9 +451,7 @@ lin>a {
   padding-left: 4px;
   padding-right: 4px;
   animation: dropdownAnimation 0.5s ease forwards;
-  /* Animation added */
   transform-origin: top;
-  /* Transform origin set to top */
 }
 
 .language-option {
@@ -466,12 +464,10 @@ lin>a {
 @keyframes dropdownAnimation {
   from {
     transform: scaleY(0);
-    /* Initially scale vertically to 0 */
   }
 
   to {
     transform: scaleY(1);
-    /* Scale vertically to full size */
   }
 }
 
@@ -548,9 +544,7 @@ lin>a {
   padding-left: 4px;
   padding-right: 4px;
   animation: dropdownAnimation 0.5s ease forwards;
-  /* Animation added */
   transform-origin: top;
-  /* Transform origin set to top */
 }
 
 .language-option-vertical {
