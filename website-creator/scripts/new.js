@@ -5,8 +5,6 @@ document.getElementById('buildLink').addEventListener('click', function () {
 
 });
 
-
-
 document.getElementById('templatesLink').addEventListener('click', function () {
   document.getElementById('templatesMenu').style.display = 'block';
   document.getElementById('buildMenu').style.display = 'none';

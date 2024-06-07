@@ -39,12 +39,10 @@ var(--nav_bg3)
                 </select>
             </div>
 
-            <div class="links flex gap-6">
-                <div class="navBtnsDiv">
-                    <a href="#" class="interfaceLinks" id="buildLink">Construiește</a>
-                    <a href="#" class="interfaceLinks" id="templatesLink">Șabloane</a>
-                    <a href="./help.html" class="interfaceLinks">Ajutor</a>
-                </div>
+            <div class="navBtnsDiv links flex gap-6">
+                <a href="#" class="interfaceLinks" id="buildLink">Construiește</a>
+                <a href="#" class="interfaceLinks" id="templatesLink">Șabloane</a>
+                <a href="./help.html" class="interfaceLinks">Ajutor</a>
             </div>
 
             <div class="right hidden lg:flex">
@@ -70,47 +68,73 @@ var(--nav_bg3)
             href="/website-creator/index.html">Înapoi</a>
     </div>
 
-    <!-- Templates Menu -->
-    <div class="templates" id="templatesMenu">
-        <div class="build">
-            <div class="basic">
-                <div class="title">Șabloane</div>
-                <div class="boxes">
-                    <button class="temp-boxes" id="template1"><img class="temp-img"
-                            src="/website-creator/images/nav.png" alt="">Antet</button>
-                    <button class="temp-boxes" id="template2"><img class="temp-img"
-                            src="/website-creator/images/main.png" alt="">Secțiune Principală</button>
-                    <button class="temp-boxes" id="template3"><img class="temp-img"
-                            src="/website-creator/images/blog.png" alt="">Blog</button>
-                    <button class="temp-boxes" id="template4"><img class="temp-img"
-                            src="/website-creator/images/product.png" alt="">Produs</button>
-                    <button class="temp-boxes" id="template5"><img class="temp-img"
-                            src="/website-creator/images/map-form.png" alt="">Contacte</button>
-                    <button class="temp-boxes" id="template6"><img class="temp-img"
-                            src="/website-creator/images/footer.png" alt="">Subsol</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="editStruct" id="editMenu">
-        <div class="edit">
-            <div class="align">
-                <div class="title">Aliniază</div>
-                <div class="boxes">
-                    <button class="edit-box" id="align-left">Stânga</button>
-                    <button class="edit-box" id="align-center">Centru</button>
-                    <button class="edit-box" id="align-right">Dreapta</button>
+    <section>
+        <div class="buildStruct" id="buildMenu">
+            <div class="build">
+                <div class="basic">
+                    <div class="title">Esențiale</div>
+                    <div class="boxes">
+                        <button class="box" id="title">Titlu</button>
+                        <button class="box" id="text">Text</button>
+                        <button class="box" id="image">Imagine</button>
+                        <button class="box" id="form">Formular</button>
+                        <button class="box" id="button">Buton</button>
+                        <button class="box" id="list">Listă</button>
+                    </div>
+                </div>
+                <div class="structure">
+                    <div class="title">Structură</div>
+                    <div class="boxes">
+                        <button class="box" id="spacer">Spațiu</button>
+                        <button class="box" id="divider">Separator</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- Templates Menu -->
+        <div class="templates" id="templatesMenu">
+            <div class="build">
+                <div class="basic">
+                    <div class="title">Șabloane</div>
+                    <div class="boxes">
+                        <button class="temp-boxes" id="template1"><img class="temp-img"
+                                src="/website-creator/images/nav.png" alt="">Antet</button>
+                        <button class="temp-boxes" id="template2"><img class="temp-img"
+                                src="/website-creator/images/main.png" alt="">Secțiune Principală</button>
+                        <button class="temp-boxes" id="template3"><img class="temp-img"
+                                src="/website-creator/images/blog.png" alt="">Blog</button>
+                        <button class="temp-boxes" id="template4"><img class="temp-img"
+                                src="/website-creator/images/product.png" alt="">Produs</button>
+                        <button class="temp-boxes" id="template5"><img class="temp-img"
+                                src="/website-creator/images/map-form.png" alt="">Contacte</button>
+                        <button class="temp-boxes" id="template6"><img class="temp-img"
+                                src="/website-creator/images/footer.png" alt="">Subsol</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="editStruct" id="editMenu">
+            <div class="edit">
+                <div class="align">
+                    <div class="title">Aliniază</div>
+                    <div class="boxes">
+                        <button class="edit-box" id="align-left">Stânga</button>
+                        <button class="edit-box" id="align-center">Centru</button>
+                        <button class="edit-box" id="align-right">Dreapta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
 
     <div id="new" class="new"></div>
 
-   
-    <div class="m-4 p-8 text-center items-center flex justify-center h-[80vh] rounded-[15px] lg:hidden" style="
+
+    <div class="m-4 p-8 text-center items-center flex justify-center lg:h-0 h-[80vh] rounded-[15px] absolute lg:hidden" style="
     background-image: linear-gradient(
       to bottom,
       var(--nav_bg1),
@@ -118,14 +142,17 @@ var(--nav_bg3)
       var(--nav_bg3)
     );
   ">
-            <h2 class="text-3xl font-semibold text-white ">PAGINA NU POATE FI EDITATĂ PE SMARTPHONE.</h2>
-            
-        </div>
+        <h2 class="text-3xl font-semibold text-white ">PAGINA NU POATE FI EDITATĂ PE SMARTPHONE.</h2>
 
-        
+    </div>
+
+
     <script src="/website-creator/scripts/new.js"></script>
     <script>
-        
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        }</script>
     </script>
 </body>
 

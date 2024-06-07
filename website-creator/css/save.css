@@ -1,5 +1,6 @@
 .new{
     position: absolute;
+    top: 12vh;
     right: 0;
     margin-top: 30px;
     width: calc(100vw - 240px);
