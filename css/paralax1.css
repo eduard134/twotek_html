@@ -168,22 +168,22 @@ body {
 
 @media (max-width: 1024px) {
   .circle-box {
-      height: 180px;
-      width: 180px;
-      margin-right: 4vw;
-      margin-left: 4vw;
-      margin-bottom: 0;
+    height: 180px;
+    width: 180px;
+    margin-right: 4vw;
+    margin-left: 4vw;
+    margin-bottom: 0;
   }
 }
 
 @media (max-width: 728px) {
   .circle-box {
-      height: 120px;
-      width: 120px;
-      margin-right: 0vw;
-      margin-left: 1vw;
-      margin-bottom: 0;
-      cursor: default; /* Remove pointer cursor */
+    height: 120px;
+    width: 120px;
+    margin-right: 0vw;
+    margin-left: 1vw;
+    margin-bottom: 0;
+    cursor: default;
   }
 }
 
@@ -191,7 +191,7 @@ body {
   background-color: #a4bac8;
   animation-play-state: paused;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .circle-description {
@@ -245,13 +245,14 @@ body {
 }
 
 @media (max-width: 728px) {
+
   .circle-box:hover .circle-title,
   .circle-box:hover .circle-description {
-      display: block !important; /* Ensure descriptions don't change on hover */
+    display: block !important;
   }
 
   .circle-box {
-      animation-play-state: running !important; /* Ensure animation continues */
+    animation-play-state: running !important;/
   }
 }
 
